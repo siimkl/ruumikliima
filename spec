@@ -588,98 +588,44 @@ Use only one service package. Do not show three packages.
 
 Ühe nädala mõõtmine annab hea ülevaate kodu tavapärastest mustritest: tööpäevad, nädalavahetus, magamine, toiduvalmistamine, tuulutamine ja ruumide kasutus. Teenus sobib korterile, eramajale, ridaelamule või suvilale.
 
-Create one large highlighted pricing card.
+Create one large highlighted pricing calculator card.
 
-## Pricing card
+## Pricing calculator
 
 Label:
 
-**Soovitatav teenus**
+**Hinnakalkulaator**
 
 Title:
 
 **7-päevane koduõhu uuring**
 
-Price:
+Base model:
 
-**alates 490 €**
+* 1 mõõtepunkt = 1 mõõteseade
+* 1 mõõteseade maksab 50 € / 7 päeva
+* isepaigaldus postiga: +0 €
+* meie paigaldus ja äravõtmine: +200 €
+* meie paigaldus on mandri-Eesti piires, välja arvatud saared
 
 Short description:
 
-Paigutame andurid sinu koju üheks nädalaks ning koostame selge ülevaate CO₂, temperatuuri, õhuniiskuse ja peenosakeste mustritest.
+Vali, mitu mõõtepunkti kodus korraga vaja on ja kas paigaldad seadmed ise või soovid paigaldust meie poolt.
 
-## Includes list
+## Calculator controls
 
-* 7 päeva mõõtmist
-* kuni 5 mõõtepunkti
-* CO₂, temperatuur ja õhuniiskus
-* 1 PM2.5/PM10 peenosakeste mõõtepunkt
-* ruumide võrdlus
-* magamistoa öise CO₂ profiili analüüs
-* temperatuuri ja õhuniiskuse graafikud
-* peenosakeste tõusude ajajoon
-* PDF-raport
-* visuaalsed graafikud
-* CSV-andmestik
-* kuni 30 minutit selgituskõnet
+* mõõtepunktide arvu slider ja number input
+* paigaldusviisi valik: isepaigaldus postiga või meie paigaldus ja äravõtmine
+* automaatne hinnajaotus: mõõteseadmed, paigaldus, kokku
+* CTA koostab valitud konfiguratsiooniga hinnapäringu
 
 CTA button:
 
-**Küsi 7-päevast uuringut**
+**Küsi selle valikuga pakkumist**
 
 ## Small note under pricing card
 
-Lõplik hind sõltub kodu suurusest, asukohast, ruumide arvust ja mõõtepunktide arvust. Lisamõõtepunktid, teine peenosakeste mõõtepunkt või kordusmõõtmine lepitakse vajadusel eraldi kokku.
-
-## Optional add-ons subsection
-
-Title:
-
-**Võimalikud lisad**
-
-Create three small cards.
-
-### Add-on 1
-
-Title:
-
-**Lisamõõtepunkt**
-
-Text:
-
-Kui kodus on rohkem tube või soovid võrrelda täiendavaid ruume.
-
-Price text:
-
-**kokkuleppel**
-
-### Add-on 2
-
-Title:
-
-**Teine PM2.5/PM10 mõõtepunkt**
-
-Text:
-
-Kui soovid võrrelda näiteks kööki ja välisõhku või kööki ja magamistuba.
-
-Price text:
-
-**kokkuleppel**
-
-### Add-on 3
-
-Title:
-
-**Kordusmõõtmine**
-
-Text:
-
-Kui soovid pärast tuulutus-, ventilatsiooni- või kasutusharjumuste muutmist võrrelda tulemusi algse mõõtmisega.
-
-Price text:
-
-**kokkuleppel**
+Kalkulaator arvestab 7-päevase mõõteperioodiga. Raport, graafikud ja CSV-andmestik koostatakse valitud mõõtepunktide põhjal.
 
 ---
 
@@ -807,10 +753,12 @@ Fields:
 6. Ligikaudne pindala
 7. Ruumide arv
 8. Peamine mure
-9. Kas soovid lisamõõtepunkte?
+9. Mõõtepunktide ja paigalduse eelistus
 
-   * Ei, tavaline 7-päevane uuring sobib
-   * Jah, kodus on rohkem kui 5 mõõtepunkti vaja
+   * Soovin sobiva arvu mõõtepunkte koos üle täpsustada
+   * Soovin isepaigaldust postiga
+   * Soovin meiepoolset paigaldust ja äravõtmist
+   * Kodus on rohkem kui 5 mõõtepunkti vaja
    * Soovin lisaks teist PM2.5/PM10 mõõtepunkti
    * Soovin hiljem kordusmõõtmist
    * Ei oska veel öelda
@@ -1136,13 +1084,12 @@ The page is complete when:
 
 * it loads as a static site;
 * it looks professional on desktop and mobile;
-* it has one clear service package only;
-* price is shown as **alates 490 €**;
+* it has one clear pricing calculator;
+* calculator price updates from measurement point count and installation choice;
 * all major sections are present;
-* CTA buttons scroll to contact section;
+* CTA buttons either scroll to contact section or open a relevant email draft;
 * FAQ works or is readable without JavaScript;
 * contact form is present;
-* disclaimer is clearly visible;
 * text is in Estonian;
 * page does not claim official, certified, medical, or legal measurement;
 * visual style is calm, clean, trustworthy, and practical;

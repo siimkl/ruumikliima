@@ -859,8 +859,7 @@ h4 {
 
 .info-card,
 .metric-card,
-.finding-card,
-.addon-card {
+.finding-card {
   min-width: 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -871,15 +870,13 @@ h4 {
 
 .info-card p,
 .metric-card p,
-.finding-card p,
-.addon-card p {
+.finding-card p {
   color: var(--color-muted);
 }
 
 .info-card p:last-child,
 .metric-card p:last-child,
-.finding-card p:last-child,
-.addon-card p:last-child {
+.finding-card p:last-child {
   margin-bottom: 0;
 }
 
@@ -1300,7 +1297,7 @@ h4 {
 
 .pricing-card {
   display: grid;
-  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1fr);
+  grid-template-columns: minmax(280px, 0.62fr) minmax(0, 1fr);
   gap: 32px;
   border: 1px solid rgba(10, 37, 64, 0.12);
   border-radius: var(--radius);
@@ -1360,67 +1357,218 @@ h4 {
   margin-top: 14px;
 }
 
-.pricing-includes {
+.calculator-total {
+  display: grid;
+  gap: 6px;
+  margin: 24px 0 8px;
+  border: 1px solid rgba(242, 140, 40, 0.3);
+  border-radius: 8px;
+  background: var(--color-soft-orange);
+  padding: 18px;
+}
+
+.calculator-total span {
+  color: #59320d;
+  font-size: 0.84rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.calculator-total strong {
+  color: var(--color-primary);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.calculator-footnote {
+  margin: 14px 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.pricing-calculator-panel {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
   border-left: 1px solid var(--color-border);
   padding-left: 30px;
 }
 
-.pricing-includes h4 {
-  margin-bottom: 16px;
-}
-
-.included-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 18px;
-  row-gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.included-list li {
-  position: relative;
-  display: flex;
-  min-width: 0;
-  min-height: 36px;
-  align-items: flex-start;
-  gap: 9px;
-  border: 1px solid rgba(10, 37, 64, 0.08);
+.calculator-control {
+  border: 1px solid rgba(10, 37, 64, 0.1);
   border-radius: 8px;
   background: #fbfdff;
-  color: #344255;
-  padding: 8px 10px 8px 34px;
-  font-size: 0.94rem;
+  padding: 18px;
+}
+
+.calculator-control-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.calculator-control-header label,
+.install-options legend {
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+.calculator-control-header output {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--color-soft-blue);
+  color: var(--color-primary);
+  padding: 6px 10px;
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.calculator-range {
+  width: 100%;
+  margin: 18px 0 14px;
+  accent-color: var(--color-accent);
+}
+
+.calculator-stepper {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 46px;
+  gap: 8px;
+}
+
+.calculator-stepper button,
+.calculator-stepper input {
+  min-height: 46px;
+  border: 1px solid rgba(10, 37, 64, 0.14);
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+.calculator-stepper button {
+  font-size: 1.15rem;
+}
+
+.calculator-stepper button:hover {
+  border-color: rgba(242, 140, 40, 0.5);
+  background: var(--color-soft-orange);
+}
+
+.calculator-stepper input {
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.calculator-control p {
+  margin: 12px 0 0;
+  color: var(--color-muted);
+  font-size: 0.93rem;
+}
+
+.install-options {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.install-options legend {
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.install-options label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  cursor: pointer;
+}
+
+.install-options input {
+  width: 18px;
+  height: 18px;
+  margin-top: 20px;
+  accent-color: var(--color-accent);
+}
+
+.install-options label > span {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 14px;
+  min-width: 0;
+  border: 1px solid rgba(10, 37, 64, 0.12);
+  border-radius: 8px;
+  background: #fbfdff;
+  padding: 14px;
+}
+
+.install-options input:checked + span {
+  border-color: rgba(242, 140, 40, 0.48);
+  background: var(--color-soft-orange);
+}
+
+.install-options strong {
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.install-options small {
+  color: var(--color-muted);
   line-height: 1.35;
 }
 
-.included-list li::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 15px;
-  width: 10px;
-  height: 6px;
-  border-left: 2px solid var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
-  transform: rotate(-45deg);
+.install-options b {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.price-breakdown {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(10, 37, 64, 0.12);
+  border-radius: 8px;
+  background: rgba(10, 37, 64, 0.12);
+}
+
+.price-breakdown div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--color-white);
+  padding: 13px 15px;
+}
+
+.price-breakdown span {
+  color: var(--color-muted);
+  font-weight: 750;
+}
+
+.price-breakdown strong {
+  color: var(--color-primary);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.price-breakdown div:last-child {
+  background: var(--color-primary);
+}
+
+.price-breakdown div:last-child span,
+.price-breakdown div:last-child strong {
+  color: var(--color-white);
 }
 
 .two-columns {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.addons {
-  margin-top: 30px;
-}
-
-.addons h3 {
-  margin-bottom: 18px;
-}
-
-.addon-card strong {
-  color: var(--color-primary);
 }
 
 .faq-layout {
@@ -3288,7 +3436,7 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
-  .pricing-includes {
+  .pricing-calculator-panel {
     border-left: 0;
     border-top: 1px solid var(--color-border);
     padding: 24px 0 0;
@@ -3316,10 +3464,6 @@ textarea:focus {
   .room-stat-grid,
   .action-plan,
   .interpretation-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .included-list {
     grid-template-columns: 1fr;
   }
 
@@ -3578,10 +3722,33 @@ textarea:focus {
   .card-grid.four,
   .steps,
   .two-columns,
-  .included-list,
   .form-row.two,
   .footer-links {
     grid-template-columns: 1fr;
+  }
+
+  .calculator-stepper {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+  }
+
+  .calculator-control-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .install-options label > span {
+    grid-template-columns: 1fr;
+  }
+
+  .install-options b {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .price-breakdown div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .pricing-card,
@@ -3590,7 +3757,6 @@ textarea:focus {
   .info-card,
   .metric-card,
   .finding-card,
-  .addon-card,
   .difference-grid article,
   .difference-stat,
   .chart-card,

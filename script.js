@@ -4,6 +4,7 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const faqButtons = document.querySelectorAll(".faq-item button");
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
+const pricingCalculator = document.querySelector("[data-pricing-calculator]");
 
 function setMenu(open) {
   if (!menuButton || !siteNav) return;
@@ -62,7 +63,7 @@ contactForm?.addEventListener("submit", (event) => {
     `Kodu tüüp: ${data.get("homeType") || ""}`,
     `Ligikaudne pindala: ${data.get("size") || ""}`,
     `Ruumide arv: ${data.get("rooms") || ""}`,
-    `Lisamõõtepunktid: ${data.get("extras") || ""}`,
+    `Mõõtepunktide ja paigalduse eelistus: ${data.get("extras") || ""}`,
     "",
     "Peamine mure:",
     `${data.get("concern") || ""}`,
@@ -78,6 +79,85 @@ contactForm?.addEventListener("submit", (event) => {
 
   window.location.href = mailto;
 });
+
+if (pricingCalculator) {
+  const unitPrice = 50;
+  const installServicePrice = 200;
+  const pointsRange = pricingCalculator.querySelector("[data-points-range]");
+  const pointsInput = pricingCalculator.querySelector("[data-points-input]");
+  const pointsOutput = pricingCalculator.querySelector("[data-points-output]");
+  const totalPrice = pricingCalculator.querySelector("[data-total-price]");
+  const devicesPrice = pricingCalculator.querySelector("[data-devices-price]");
+  const installPrice = pricingCalculator.querySelector("[data-install-price]");
+  const breakdownTotal = pricingCalculator.querySelector("[data-breakdown-total]");
+  const requestLink = pricingCalculator.querySelector("[data-pricing-request]");
+  const installOptions = Array.from(pricingCalculator.querySelectorAll("[data-install-option]"));
+
+  const minPoints = Number(pointsInput?.min || pointsRange?.min || 1);
+  const maxPoints = Number(pointsInput?.max || pointsRange?.max || 12);
+  const formatEuro = (value) => `${new Intl.NumberFormat("et-EE").format(value)} €`;
+
+  const clampPoints = (value) => {
+    const number = Number.parseInt(value, 10);
+    if (Number.isNaN(number)) return minPoints;
+    return Math.min(maxPoints, Math.max(minPoints, number));
+  };
+
+  const getInstallMode = () => {
+    return installOptions.find((option) => option.checked)?.value || "self";
+  };
+
+  const updatePricing = (nextValue) => {
+    const points = clampPoints(nextValue ?? pointsInput?.value ?? pointsRange?.value);
+    const installMode = getInstallMode();
+    const deviceTotal = points * unitPrice;
+    const setupTotal = installMode === "service" ? installServicePrice : 0;
+    const total = deviceTotal + setupTotal;
+    const modeLabel = installMode === "service"
+      ? "Meie paigaldus ja äravõtmine"
+      : "Isepaigaldus postiga";
+
+    if (pointsRange) pointsRange.value = String(points);
+    if (pointsInput) pointsInput.value = String(points);
+    if (pointsOutput) pointsOutput.textContent = `${points} ${points === 1 ? "seade" : "seadet"}`;
+    if (devicesPrice) devicesPrice.textContent = formatEuro(deviceTotal);
+    if (installPrice) installPrice.textContent = formatEuro(setupTotal);
+    if (totalPrice) totalPrice.textContent = formatEuro(total);
+    if (breakdownTotal) breakdownTotal.textContent = formatEuro(total);
+
+    if (requestLink) {
+      const subject = "Ruumikliima.ee hinnapäring";
+      const body = [
+        "Tere",
+        "",
+        "Soovin küsida 7-päevase sisekliima uuringu pakkumist.",
+        "",
+        `Mõõtepunkte / seadmeid: ${points}`,
+        `Paigaldusviis: ${modeLabel}`,
+        `Eeldatav hind kalkulaatori järgi: ${formatEuro(total)}`,
+        "",
+        "Palun võtke minuga ühendust ja kinnitage sobiv mõõtmisplaan."
+      ].join("\n");
+
+      requestLink.href = `mailto:info@ruumikliima.ee?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  };
+
+  pointsRange?.addEventListener("input", (event) => updatePricing(event.target.value));
+  pointsInput?.addEventListener("input", (event) => updatePricing(event.target.value));
+  pointsInput?.addEventListener("blur", (event) => updatePricing(event.target.value));
+  pricingCalculator.querySelector("[data-points-decrease]")?.addEventListener("click", () => {
+    updatePricing(clampPoints(pointsInput?.value) - 1);
+  });
+  pricingCalculator.querySelector("[data-points-increase]")?.addEventListener("click", () => {
+    updatePricing(clampPoints(pointsInput?.value) + 1);
+  });
+  installOptions.forEach((option) => {
+    option.addEventListener("change", () => updatePricing());
+  });
+
+  updatePricing();
+}
 
 const roomReportCards = document.querySelectorAll(".room-report-card");
 

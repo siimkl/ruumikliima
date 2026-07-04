@@ -558,56 +558,74 @@
           </article>
         </div>
 
-        <div class="pricing-card">
+        <div class="pricing-card pricing-calculator" data-pricing-calculator>
           <div class="pricing-main">
-            <span class="pricing-label">Soovitatav teenus</span>
+            <span class="pricing-label">Hinnakalkulaator</span>
             <h3>7-päevane sisekliima uuring</h3>
-            <p class="price">alates 490 €</p>
-            <p>Paigutame andurid sinu koju üheks nädalaks, kogume andmeid ligikaudu iga 5 minuti järel ning koostame selge ülevaate CO₂ taseme, temperatuuri, õhuniiskuse ja peenosakeste muutustest.</p>
-            <a class="button button-primary" href="#kontakt">Küsi 7-päevast uuringut</a>
+            <p>Vali, mitu mõõtepunkti kodus korraga vaja on ja kas paigaldad seadmed ise või soovid paigaldust meie poolt.</p>
+
+            <div class="calculator-total" aria-live="polite">
+              <span>Eeldatav hind</span>
+              <strong data-total-price>250 €</strong>
+            </div>
+
+            <a class="button button-primary" href="#kontakt" data-pricing-request>Küsi selle valikuga pakkumist</a>
+            <p class="calculator-footnote">Hind on indikatiivne. Saarte, erilahenduste ja tavapärasest erineva logistika puhul kinnitame lõpliku hinna eraldi.</p>
           </div>
 
-          <div class="pricing-includes">
-            <h4>Hinnas sisaldub</h4>
-            <ul class="included-list">
-              <li>7 päeva mõõtmist ligikaudu iga 5 minuti järel</li>
-              <li>kuni 5 mõõtepunkti</li>
-              <li>CO₂, temperatuur ja õhuniiskus</li>
-              <li>1 PM2.5/PM10 peenosakeste mõõtepunkt</li>
-              <li>ruumide võrdlus</li>
-              <li>magamistoa öise CO₂ profiili analüüs</li>
-              <li>temperatuuri ja õhuniiskuse graafikud</li>
-              <li>peenosakeste tõusude ajajoon</li>
-              <li>PDF-raport</li>
-              <li>visuaalsed graafikud</li>
-              <li>CSV-andmestik</li>
-              <li>kuni 30 minutit selgituskõnet</li>
-            </ul>
+          <div class="pricing-calculator-panel">
+            <div class="calculator-control">
+              <div class="calculator-control-header">
+                <label for="measurement-points">Mõõtepunktid</label>
+                <output id="measurement-points-output" for="measurement-points measurement-points-number" data-points-output>5 seadet</output>
+              </div>
+              <input class="calculator-range" type="range" id="measurement-points" min="1" max="12" value="5" data-points-range>
+              <div class="calculator-stepper">
+                <button type="button" data-points-decrease aria-label="Vähenda mõõtepunktide arvu">-</button>
+                <input type="number" id="measurement-points-number" min="1" max="12" value="5" inputmode="numeric" data-points-input aria-label="Mõõtepunktide arv">
+                <button type="button" data-points-increase aria-label="Suurenda mõõtepunktide arvu">+</button>
+              </div>
+              <p>1 mõõtepunkt = 1 mõõteseade. Ühe seadme hind on 50 € / 7 päeva.</p>
+            </div>
+
+            <fieldset class="install-options">
+              <legend>Paigaldusviis</legend>
+              <label>
+                <input type="radio" name="installMode" value="self" data-install-option checked>
+                <span>
+                  <strong>Isepaigaldus postiga</strong>
+                  <small>Saadame seadmed, paigaldad ise ja saadad pärast tagasi.</small>
+                  <b>+0 €</b>
+                </span>
+              </label>
+              <label>
+                <input type="radio" name="installMode" value="service" data-install-option>
+                <span>
+                  <strong>Meie paigaldus ja äravõtmine</strong>
+                  <small>Mandri-Eesti piires, välja arvatud saared.</small>
+                  <b>+200 €</b>
+                </span>
+              </label>
+            </fieldset>
+
+            <div class="price-breakdown" aria-label="Hinna jaotus">
+              <div>
+                <span>Mõõteseadmed</span>
+                <strong data-devices-price>250 €</strong>
+              </div>
+              <div>
+                <span>Paigaldus</span>
+                <strong data-install-price>0 €</strong>
+              </div>
+              <div>
+                <span>Kokku</span>
+                <strong data-breakdown-total>250 €</strong>
+              </div>
+            </div>
           </div>
         </div>
 
-        <p class="price-note">Lõplik hind sõltub kodu suurusest, asukohast, ruumide arvust ja mõõtepunktide arvust. Lisamõõtepunktid, teine peenosakeste mõõtepunkt või kordusmõõtmine lepitakse vajadusel eraldi kokku.</p>
-
-        <div class="addons">
-          <h3>Võimalikud lisad</h3>
-          <div class="card-grid three">
-            <article class="addon-card">
-              <h4>Lisamõõtepunkt</h4>
-              <p>Kui kodus on rohkem tube või soovid võrrelda täiendavaid ruume.</p>
-              <strong>kokkuleppel</strong>
-            </article>
-            <article class="addon-card">
-              <h4>Teine PM2.5/PM10 mõõtepunkt</h4>
-              <p>Kui soovid võrrelda näiteks kööki ja välisõhku või kööki ja magamistuba.</p>
-              <strong>kokkuleppel</strong>
-            </article>
-            <article class="addon-card">
-              <h4>Kordusmõõtmine</h4>
-              <p>Kui soovid pärast tuulutus-, ventilatsiooni- või kasutusharjumuste muutmist võrrelda tulemusi algse mõõtmisega.</p>
-              <strong>kokkuleppel</strong>
-            </article>
-          </div>
-        </div>
+        <p class="price-note">Kalkulaator arvestab 7-päevase mõõteperioodiga. Raport, graafikud ja CSV-andmestik koostatakse valitud mõõtepunktide põhjal.</p>
       </div>
     </section>
 
@@ -781,12 +799,13 @@
               <input type="number" id="rooms" name="rooms" min="1" step="1">
             </div>
             <div class="field">
-              <label for="extras">Kas soovid lisamõõtepunkte?</label>
+              <label for="extras">Mõõtepunktide ja paigalduse eelistus</label>
               <select id="extras" name="extras">
-                <option value="Ei, tavaline 7-päevane uuring sobib">Ei, tavaline 7-päevane uuring sobib</option>
-                <option value="Jah, kodus on rohkem kui 5 mõõtepunkti vaja">Jah, kodus on rohkem kui 5 mõõtepunkti vaja</option>
+                <option value="Soovin sobiva arvu mõõtepunkte koos üle täpsustada">Soovin sobiva arvu mõõtepunkte koos üle täpsustada</option>
+                <option value="Soovin isepaigaldust postiga">Soovin isepaigaldust postiga</option>
+                <option value="Soovin meiepoolset paigaldust ja äravõtmist">Soovin meiepoolset paigaldust ja äravõtmist</option>
+                <option value="Kodus on rohkem kui 5 mõõtepunkti vaja">Kodus on rohkem kui 5 mõõtepunkti vaja</option>
                 <option value="Soovin lisaks teist PM2.5/PM10 mõõtepunkti">Soovin lisaks teist PM2.5/PM10 mõõtepunkti</option>
-                <option value="Soovin andureid pakiautomaadiga ja ise paigaldada">Soovin andureid pakiautomaadiga ja ise paigaldada</option>
                 <option value="Soovin hiljem kordusmõõtmist">Soovin hiljem kordusmõõtmist</option>
                 <option value="Ei oska veel öelda">Ei oska veel öelda</option>
               </select>
