@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruumikliima.ee – 7-päevane kodu sisekliima uuring</title>
+  <meta name="description" content="Ülevaatlik 7-päevane kodu sisekliima ja õhukvaliteedi uuring sensoritega. Mõõdame ligikaudu iga 5 minuti järel CO₂ taset, temperatuuri, õhuniiskust ja PM2.5/PM10 peenosakesi ning koostame ajajoontel põhineva raporti.">
+  <meta name="keywords" content="kodu sisekliima, kodu õhukvaliteet, CO₂ mõõtmine kodus, õhuniiskuse mõõtmine, peenosakesed kodus, PM2.5 kodus, PM10 kodus, hallitusrisk, ventilatsiooni kontroll, kodu sisekliima uuring, sisekliima uuring">
+  <meta property="og:title" content="Ruumikliima.ee – 7-päevane kodu sisekliima uuring">
+  <meta property="og:description" content="Ülevaatlik 7-päevane sisekliima ja õhukvaliteedi uuring sensoritega: mõõtmised ligikaudu iga 5 minuti järel, ajajooned ja selge raport.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ruumikliima.ee">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ruumikliima.ee – 7-päevane kodu sisekliima uuring">
+  <meta name="twitter:description" content="Selge raport kodu CO₂, temperatuuri, õhuniiskuse ja peenosakeste 7-päevastest ajajoontest.">
+  <link rel="alternate" hreflang="et-EE" href="https://ruumikliima.ee/">
+  <link rel="alternate" hreflang="fi-FI" href="https://koti-ilmasto.fi/">
+  <link rel="alternate" hreflang="lv-LV" href="https://majas-klimats.lv/">
+  <link rel="alternate" hreflang="lt-LT" href="https://namu-klimatas.lt/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Liigu sisuni</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="ruumikliima.ee avaleht">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-roof"></span>
+          <span class="brand-house">
+            <span class="brand-sensor"></span>
+          </span>
+        </span>
+        <span>
+          <span class="brand-name">ruumikliima.ee</span>
+          <span class="brand-tagline">Sisekliima uuring kodudele</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Põhinavigatsioon">
+        <a href="#teenus">Teenus</a>
+        <a href="#erisus">Erisus</a>
+        <a href="#ajajooned">Graafikud</a>
+        <a href="#sobivus">Sobivus</a>
+        <a href="#kuidas-tootab">Protsess</a>
+        <a href="#raport">Raport</a>
+        <a href="#hind">Hind</a>
+        <a href="#kkk">KKK</a>
+        <a class="nav-cta" href="#kontakt">Küsi uuringut</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          <span class="menu-icon" aria-hidden="true"></span>
+          <span class="menu-text">Menüü</span>
+        </button>
+      </div>
+
+      <nav class="language-switcher" aria-label="Keele ja riigi valik">
+        <a class="language-link is-current" href="https://ruumikliima.ee/" hreflang="et-EE" lang="et" aria-current="page" title="Eesti - ruumikliima.ee">
+          <span class="flag flag-ee" aria-hidden="true"></span>
+          <span class="language-name">ET</span>
+        </a>
+        <a class="language-link" href="https://koti-ilmasto.fi/" hreflang="fi-FI" lang="fi" title="Suomi - koti-ilmasto.fi">
+          <span class="flag flag-fi" aria-hidden="true"></span>
+          <span class="language-name">FI</span>
+        </a>
+        <a class="language-link" href="https://majas-klimats.lv/" hreflang="lv-LV" lang="lv" title="Latvija - majas-klimats.lv">
+          <span class="flag flag-lv" aria-hidden="true"></span>
+          <span class="language-name">LV</span>
+        </a>
+        <a class="language-link" href="https://namu-klimatas.lt/" hreflang="lt-LT" lang="lt" title="Lietuva - namu-klimatas.lt">
+          <span class="flag flag-lt" aria-hidden="true"></span>
+          <span class="language-name">LT</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">7 päeva järjest, mitte üks hetk</p>
+          <h1 id="hero-title">Vaata, mis sinu kodu õhus tegelikult toimub</h1>
+          <p class="hero-lead">Paljud koduõhu mõõtmised näitavad ainult üht hetke. Meie paigutame andurid valitud ruumidesse 7 päevaks ja kogume näite ligikaudu iga 5 minuti järel. Nii tekivad ajajooned, kus on näha ööd, tööpäevad, nädalavahetus, toiduvalmistamine, tuulutamine ja ruumide kasutus.</p>
+
+          <div class="hero-actions" aria-label="Peamised tegevused">
+            <a class="button button-primary" href="#kontakt">Küsi 7-päevast uuringut</a>
+            <a class="button button-secondary" href="sample-report.html">Vaata näidisraportit</a>
+          </div>
+
+          <ul class="trust-list" aria-label="Teenuse lühikokkuvõte">
+            <li>7 päeva järjest</li>
+            <li>ligikaudu iga 5 minuti järel</li>
+            <li>kuni 5 mõõtepunkti</li>
+            <li>CO₂, temperatuur, niiskus, PM2.5/PM10</li>
+            <li>PDF-raport + ajajooned + CSV-andmestik</li>
+            <li>Praktilised soovitused</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-header">
+            <span>Andurid kodus</span>
+            <span>7 päeva järjest / 5 min samm</span>
+          </div>
+
+          <div class="home-scene">
+            <img class="home-render" src="assets/ruumikliima-home-sensors-3d.jpg" width="1536" height="1024" alt="3D lõikevaade kodust, kus väikesed õhukvaliteedi andurid on paigutatud magamistuppa, kööki, elutuppa, lastetuppa ja esikusse." fetchpriority="high" decoding="async">
+
+            <div class="room-markers" aria-hidden="true">
+              <span class="room-marker marker-bedroom">Magamistuba</span>
+              <span class="room-marker marker-kitchen">Köök</span>
+              <span class="room-marker marker-living">Elutuba</span>
+              <span class="room-marker marker-child">Lastetuba</span>
+              <span class="room-marker marker-hall">Esik</span>
+            </div>
+
+            <div class="scene-caption" aria-hidden="true">
+              <span></span>
+              <strong>5 mõõtepunkti</strong> eri ruumides
+            </div>
+          </div>
+
+          <div class="metric-strip" aria-hidden="true">
+            <span>CO₂</span>
+            <span>°C</span>
+            <span>RH%</span>
+            <span>PM2.5</span>
+            <span>PM10</span>
+          </div>
+
+          <div class="sample-finding">
+            <strong>Näidisleid:</strong>
+            <span>7-päevane ajajoon näitab, et magamistoa CO₂ tõuseb just nendel öödel, kui uks on suletud.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section difference-section" id="erisus" aria-labelledby="erisus-title">
+      <div class="container">
+        <div class="difference-layout">
+          <div class="difference-copy">
+            <p class="eyebrow">Meie erisus</p>
+            <h2 id="erisus-title">Ühekordne mõõtmine näitab hetke. 7-päevane ajajoon näitab mustrit.</h2>
+            <p>Kui mõõta koduõhku ainult korraks, võib tulemus sõltuda sellest, kas aken oli just lahti, keegi tegi süüa või ruum oli parasjagu tühi. Ruumikliima.ee mõõdab järjest terve nädala ja ligikaudu iga 5 minuti tagant, et näha kodu tegelikku kasutusrütmi.</p>
+          </div>
+          <div class="difference-stat">
+            <span class="difference-stat-label">1 nädal mõõtmist</span>
+            <strong>ligi 2 tuhat</strong>
+            <p>mõõtehetke iga mõõdiku ja mõõtepunkti kohta, kui andmevoog on katkematu.</p>
+            <div class="difference-stat-breakdown" aria-label="Mõõtmise sageduse selgitus">
+              <span><b>7</b> päeva</span>
+              <span><b>5 min</b> samm</span>
+              <span><b>24 h</b> ajajoon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="difference-grid">
+          <article>
+            <span class="difference-number">01</span>
+            <h3>Ööd ja tööpäevad tulevad eraldi välja</h3>
+            <p>CO₂ ja temperatuur käituvad magamise, kodukontori ja kodust eemal olemise ajal erinevalt. Ajajoon teeb need erinevused nähtavaks.</p>
+          </article>
+          <article>
+            <span class="difference-number">02</span>
+            <h3>Lühikesed tipud ei kao ära</h3>
+            <p>Praadimine, küünlad, koristamine või akna avamine võivad põhjustada lühiajalisi muutusi. 5-minutiline mõõtesamm aitab neid paremini tabada.</p>
+          </article>
+          <article>
+            <span class="difference-number">03</span>
+            <h3>Ruumid on võrreldavad</h3>
+            <p>Kui andurid on korraga mitmes ruumis, saab näha, kas murekoht on ühes toas, kogu kodus või kindlal ajal korduv kasutusmuster.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teenus" aria-labelledby="teenus-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Teenus</p>
+          <h2 id="teenus-title">Kui kodus tundub õhk halb, on raske aru saada, miks</h2>
+          <p>Paljud sisekliima mured ei ole silmaga nähtavad. Magamistuba võib öösel muutuda umbseks, niiskus võib püsida kõrge, köögis võivad tekkida peenosakeste tipud ja ruumide temperatuur võib olla ebaühtlane. Ühekordne näit võib petta, sest kodu õhk muutub päeva jooksul pidevalt. Seetõttu mõõdame terve nädala ja vaatame muutusi ajas.</p>
+        </div>
+
+        <div class="card-grid three">
+          <article class="info-card">
+            <span class="card-icon" aria-hidden="true">CO₂</span>
+            <h3>Umbne magamistuba</h3>
+            <p>CO₂ tase võib öösel kõrgele tõusta, eriti siis, kui uksed ja aknad on suletud ning õhuvahetus on nõrk.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-icon" aria-hidden="true">RH</span>
+            <h3>Niiskus ja kondensatsioonirisk</h3>
+            <p>Püsivalt kõrge või kõikuv õhuniiskus võib viidata vajadusele kontrollida ventilatsiooni, kütmist, niiskusallikaid või külmade pindade mõju.</p>
+          </article>
+          <article class="info-card">
+            <span class="card-icon" aria-hidden="true">PM</span>
+            <h3>Peenosakeste tipud</h3>
+            <p>Toiduvalmistamine, küünlad, kamin, ahi, koristamine või välisõhk võivad põhjustada lühiajalisi PM2.5 ja PM10 tõuse.</p>
+          </article>
+        </div>
+
+        <p class="section-note">Mõõtmise eesmärk ei ole hirmutada, vaid teha nähtamatud mustrid nähtavaks.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="moodikud" aria-labelledby="moodikud-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Mõõdikud</p>
+          <h2 id="moodikud-title">Mida mõõdame</h2>
+          <p>Uuring keskendub neljale praktilisele näitajale, mis aitavad mõista kodu õhuvahetust, mugavust, niiskuskoormust ja peenosakeste muutusi.</p>
+        </div>
+
+        <div class="card-grid four">
+          <article class="metric-card">
+            <div class="metric-badge">CO₂</div>
+            <h3>CO₂</h3>
+            <p class="metric-subtitle">Õhuvahetuse ja ventilatsiooni indikaator</p>
+            <p>CO₂ aitab näha, kuidas õhuvahetus inimeste kohaloleku ajal toimib. Eriti selgelt tuleb see välja magamistubades, lastetubades ja kodukontoris.</p>
+            <p class="example"><strong>Näide:</strong> magamistoa CO₂ tõuseb öösel järsult, kui uks ja aken on suletud.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-badge">°C</div>
+            <h3>Temperatuur</h3>
+            <p class="metric-subtitle">Ruumide mugavus ja stabiilsus</p>
+            <p>Temperatuuri mõõtmine näitab, kas toad on liiga jahedad, ülekuumenevad või erinevad üksteisest märgatavalt.</p>
+            <p class="example"><strong>Näide:</strong> üks tuba on püsivalt jahedam kui ülejäänud kodu.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-badge">RH</div>
+            <h3>Õhuniiskus</h3>
+            <p class="metric-subtitle">Kuivuse, niiskuse ja kondensatsiooniriski indikaator</p>
+            <p>Õhuniiskuse muutused aitavad märgata liiga kuiva õhku, liigset niiskuskoormust ja tingimusi, mis võivad soodustada kondensatsiooni või vajada edasist kontrolli.</p>
+            <p class="example"><strong>Näide:</strong> põhjapoolne tuba püsib öösiti kõrgema suhtelise õhuniiskusega.</p>
+          </article>
+          <article class="metric-card">
+            <div class="metric-badge">PM</div>
+            <h3>PM2.5 / PM10</h3>
+            <p class="metric-subtitle">Peenosakeste mustrid ja tipud</p>
+            <p>Peenosakeste mõõtmine aitab näha, millal ja kus osakeste tase tõuseb, näiteks toiduvalmistamise, küünalde, ahju, kamina, koristamise või välisõhu mõjul.</p>
+            <p class="example"><strong>Näide:</strong> köögis tekib praadimise ajal lühiajaline PM2.5 tõus.</p>
+          </article>
+        </div>
+
+        <p class="discrete-note">Mõõtmised on ülevaatlikud ja aitavad sisekliima muutusi mõista. Need ei asenda akrediteeritud laborimõõtmist, ametlikku õhukvaliteedi hindamist, ehitusekspertiisi ega meditsiinilist hinnangut.</p>
+      </div>
+    </section>
+
+    <section class="section" id="kuidas-tootab" aria-labelledby="kuidas-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Protsess</p>
+          <h2 id="kuidas-title">Kuidas 7-päevane sisekliima uuring käib</h2>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-number">1</span>
+            <h3>Lühike eelküsimustik</h3>
+            <p>Täpsustame kodu suuruse, ruumide arvu, peamised murekohad ja sobiva mõõtmisperioodi.</p>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <h3>Andurite paigaldus</h3>
+            <p>Paigutame andurid valitud ruumidesse või saadame need kokkuleppel pakiautomaati koos juhenditega. Tüüpilised mõõtepunktid on magamistuba, elutuba, köök, lastetuba ja ruum, mille pärast on kõige suurem mure.</p>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <h3>7 päeva mõõtmist</h3>
+            <p>Andurid koguvad andmeid tavapärase koduse elu käigus ligikaudu iga 5 minuti järel. Soovi korral saab üles märkida akende avamise, toiduvalmistamise, kütmise, koristamise, külalised ja muud sündmused.</p>
+          </li>
+          <li>
+            <span class="step-number">4</span>
+            <h3>Raport ja selgitus</h3>
+            <p>Koostame selge raporti, visuaalsed graafikud, ruumide võrdluse ja CSV-andmestiku. Vajadusel teeme kuni 30-minutilise selgituskõne.</p>
+          </li>
+        </ol>
+
+        <div class="timeline" aria-label="Uuringu ajajoon">
+          <span>Päev 1: paigaldus või isepaigaldus</span>
+          <span>Päevad 1-7: mõõtmine ligikaudu iga 5 min järel</span>
+          <span>Päev 8: andmete kogumine</span>
+          <span>Päev 9: raport</span>
+        </div>
+
+        <div class="delivery-option">
+          <div>
+            <p class="delivery-label">Võimalik ka pakiautomaadiga</p>
+            <h3>Isepaigalduse variant</h3>
+          </div>
+          <p>Kui kohapealne paigaldus ei ole mugav, saame saata andurid pakiautomaati koos selgete paigaldusjuhenditega. Paigaldad andurid ise valitud ruumidesse, lased neil 7 päeva mõõta ja saadad komplekti pärast mõõteperioodi pakiautomaadi kaudu tagasi.</p>
+          <p>Sellel lahendusel on omad riskid: tulemused sõltuvad rohkem sellest, kas andurid on paigutatud sobivasse kohta, turvaliselt ja juhendi järgi. Kui juhendit hoolikalt järgida, sobib see variant tavaliselt hästi lihtsama ülevaate saamiseks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft measurement-examples" id="ajajooned" aria-labelledby="ajajooned-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">7 päeva graafikutena</p>
+          <h2 id="ajajooned-title">Näited ajajoontest, mida ühe hetke mõõtmine ei näita</h2>
+          <p>Allolevad graafikud on illustratiivsed. Päris raportis kasutame sinu kodu andmeid, võrdleme ruume ja selgitame, millised muutused korduvad ning millised on pigem ühekordsed sündmused.</p>
+        </div>
+
+        <div class="chart-grid">
+          <article class="chart-card">
+            <div class="chart-head">
+              <span>CO₂ / magamistuba</span>
+              <h3>Öised tõusud korduvad</h3>
+            </div>
+            <div class="chart-frame" role="img" aria-label="Seitsme päeva CO₂ näidisgraafik, kus öised tõusud korduvad igal ööl.">
+              <svg viewBox="0 0 560 260" aria-hidden="true">
+                <line x1="52" y1="42" x2="52" y2="212" class="chart-axis"></line>
+                <line x1="52" y1="212" x2="528" y2="212" class="chart-axis"></line>
+                <g class="chart-gridlines">
+                  <line x1="52" y1="62" x2="528" y2="62"></line>
+                  <line x1="52" y1="112" x2="528" y2="112"></line>
+                  <line x1="52" y1="162" x2="528" y2="162"></line>
+                </g>
+                <path class="chart-fill co2" d="M52 188 C70 184 78 110 92 74 C106 36 124 42 136 88 C150 144 160 188 188 188 C206 184 214 108 228 72 C242 38 260 46 272 92 C286 150 296 188 324 188 C342 184 350 112 364 76 C378 40 396 44 408 90 C422 148 432 188 460 188 C478 184 488 116 500 78 C512 48 522 80 528 120 L528 212 L52 212 Z"></path>
+                <path class="chart-line co2" d="M52 188 C70 184 78 110 92 74 C106 36 124 42 136 88 C150 144 160 188 188 188 C206 184 214 108 228 72 C242 38 260 46 272 92 C286 150 296 188 324 188 C342 184 350 112 364 76 C378 40 396 44 408 90 C422 148 432 188 460 188 C478 184 488 116 500 78 C512 48 522 80 528 120"></path>
+                <g class="chart-labels">
+                  <text x="48" y="48">1600</text>
+                  <text x="48" y="116">1000</text>
+                  <text x="48" y="202">500</text>
+                  <text x="56" y="238">E</text>
+                  <text x="132" y="238">T</text>
+                  <text x="208" y="238">K</text>
+                  <text x="284" y="238">N</text>
+                  <text x="360" y="238">R</text>
+                  <text x="436" y="238">L</text>
+                  <text x="512" y="238">P</text>
+                </g>
+              </svg>
+            </div>
+            <p><strong>Mida see näitab:</strong> ühekordne päevane mõõtmine võib näida korras, kuid öösel tekib korduv CO₂ tõus. See viitab, et magamise ajal tasub õhuvahetust eraldi vaadata.</p>
+          </article>
+
+          <article class="chart-card">
+            <div class="chart-head">
+              <span>Õhuniiskus / põhjapoolne tuba</span>
+              <h3>Niiskus ei lange pärast tippu kiiresti</h3>
+            </div>
+            <div class="chart-frame" role="img" aria-label="Seitsme päeva õhuniiskuse näidisgraafik, kus niiskus püsib mitmel päeval kõrgel.">
+              <svg viewBox="0 0 560 260" aria-hidden="true">
+                <line x1="52" y1="42" x2="52" y2="212" class="chart-axis"></line>
+                <line x1="52" y1="212" x2="528" y2="212" class="chart-axis"></line>
+                <g class="chart-gridlines">
+                  <line x1="52" y1="62" x2="528" y2="62"></line>
+                  <line x1="52" y1="112" x2="528" y2="112"></line>
+                  <line x1="52" y1="162" x2="528" y2="162"></line>
+                </g>
+                <path class="chart-fill humidity" d="M52 150 C88 142 104 126 124 112 C154 92 178 104 196 132 C220 170 252 154 272 122 C296 84 330 86 350 116 C374 154 402 164 424 140 C448 112 468 86 494 78 C512 74 524 80 528 92 L528 212 L52 212 Z"></path>
+                <path class="chart-line humidity" d="M52 150 C88 142 104 126 124 112 C154 92 178 104 196 132 C220 170 252 154 272 122 C296 84 330 86 350 116 C374 154 402 164 424 140 C448 112 468 86 494 78 C512 74 524 80 528 92"></path>
+                <path class="chart-line temperature" d="M52 132 C88 136 118 138 150 134 C184 128 216 126 248 132 C284 140 316 136 348 130 C388 124 420 126 452 132 C488 138 510 136 528 132"></path>
+                <g class="chart-labels">
+                  <text x="48" y="48">75%</text>
+                  <text x="48" y="116">55%</text>
+                  <text x="48" y="202">35%</text>
+                  <text x="56" y="238">E</text>
+                  <text x="132" y="238">T</text>
+                  <text x="208" y="238">K</text>
+                  <text x="284" y="238">N</text>
+                  <text x="360" y="238">R</text>
+                  <text x="436" y="238">L</text>
+                  <text x="512" y="238">P</text>
+                </g>
+              </svg>
+            </div>
+            <p><strong>Mida see näitab:</strong> niiskuse tase tõuseb mitmel päeval ja langeb aeglaselt. Kui sama ruum on ka jahedam, tasub õhu liikumist, kütet ja niiskusallikaid vaadata koos.</p>
+          </article>
+
+          <article class="chart-card">
+            <div class="chart-head">
+              <span>PM2.5 / köök</span>
+              <h3>Lühikesed tipud seostuvad tegevustega</h3>
+            </div>
+            <div class="chart-frame" role="img" aria-label="Seitsme päeva PM2.5 näidisgraafik, kus lühikesed tipud tekivad toiduvalmistamise ajal.">
+              <svg viewBox="0 0 560 260" aria-hidden="true">
+                <line x1="52" y1="42" x2="52" y2="212" class="chart-axis"></line>
+                <line x1="52" y1="212" x2="528" y2="212" class="chart-axis"></line>
+                <g class="chart-gridlines">
+                  <line x1="52" y1="62" x2="528" y2="62"></line>
+                  <line x1="52" y1="112" x2="528" y2="112"></line>
+                  <line x1="52" y1="162" x2="528" y2="162"></line>
+                </g>
+                <path class="chart-fill pm" d="M52 196 L92 196 C102 194 106 114 114 86 C120 64 132 156 138 196 L190 196 C200 194 206 76 214 52 C222 28 236 150 242 196 L296 196 C306 194 314 122 322 94 C330 68 344 160 350 196 L404 196 C414 194 420 88 428 58 C436 30 450 148 456 196 L528 196 L528 212 L52 212 Z"></path>
+                <path class="chart-line pm" d="M52 196 L92 196 C102 194 106 114 114 86 C120 64 132 156 138 196 L190 196 C200 194 206 76 214 52 C222 28 236 150 242 196 L296 196 C306 194 314 122 322 94 C330 68 344 160 350 196 L404 196 C414 194 420 88 428 58 C436 30 450 148 456 196 L528 196"></path>
+                <g class="chart-events">
+                  <circle cx="114" cy="86" r="5"></circle>
+                  <circle cx="214" cy="52" r="5"></circle>
+                  <circle cx="428" cy="58" r="5"></circle>
+                </g>
+                <g class="chart-labels">
+                  <text x="48" y="48">80</text>
+                  <text x="48" y="116">40</text>
+                  <text x="48" y="202">5</text>
+                  <text x="56" y="238">E</text>
+                  <text x="132" y="238">T</text>
+                  <text x="208" y="238">K</text>
+                  <text x="284" y="238">N</text>
+                  <text x="360" y="238">R</text>
+                  <text x="436" y="238">L</text>
+                  <text x="512" y="238">P</text>
+                </g>
+              </svg>
+            </div>
+            <p><strong>Mida see näitab:</strong> PM2.5 tipud võivad olla lühikesed. Kui mõõta ainult juhuslikul hetkel, võib korduv seos märkamata jääda. Ajajoon aitab siduda tõusud toiduvalmistamise, küünalde või välisõhuga.</p>
+          </article>
+        </div>
+
+        <div class="chart-summary">
+          <span>Raporti tugevus</span>
+          <p>Me ei vaata ainult üksikuid numbreid. Võrdleme ruume, kellaaegu ja korduvaid sündmusi ning eristame juhusliku hetke püsivamast mustrist.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="raport" aria-labelledby="raport-title">
+      <div class="container report-grid">
+        <div>
+          <p class="eyebrow">Raport</p>
+          <h2 id="raport-title">Mida saad pärast mõõtmist</h2>
+          <div class="report-mock" aria-label="Näidisraporti lühivaade">
+            <div class="report-topline">
+              <span>Näidis</span>
+              <span>PDF + CSV</span>
+            </div>
+            <h3>Koduõhu raport: 7-päevane sisekliima ülevaade</h3>
+            <div class="report-rows">
+              <div><strong>Magamistuba:</strong> CO₂ tõus öösel</div>
+              <div><strong>Köök:</strong> PM2.5 tipud toiduvalmistamisel</div>
+              <div><strong>Elutuba:</strong> stabiilne temperatuur</div>
+              <div><strong>Põhjapoolne tuba:</strong> kõrgem suhteline õhuniiskus</div>
+              <div><strong>Soovitus:</strong> testida õhuvahetuse parandamist öisel ajal</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-content">
+          <h3>Raport sisaldab</h3>
+          <ul class="check-list">
+            <li>kokkuvõtet peamistest leidudest;</li>
+            <li>7-päevaseid ajajooni ligikaudu 5-minutilise sammuga;</li>
+            <li>ruumide võrdlust;</li>
+            <li>magamistoa öise CO₂ profiili analüüsi;</li>
+            <li>temperatuuri ja õhuniiskuse graafikuid;</li>
+            <li>PM2.5/PM10 tõusude ajajoont;</li>
+            <li>praktilisi soovitusi;</li>
+            <li>mõõtmiste piirangute selgitust;</li>
+            <li>CSV-andmestikku edasiseks kasutamiseks.</li>
+          </ul>
+          <p class="callout">Raporti eesmärk on anda arusaadav vastus: mis ruumides toimub, millal murekoht tekib ja mida oleks mõistlik järgmiseks proovida.</p>
+          <div class="report-actions">
+            <a class="button button-primary" href="sample-report.html">Vaata põhjalikku näidisraportit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="naited" aria-labelledby="naited-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Näidisleiud</p>
+          <h2 id="naited-title">Mida nendest andmetest saab otsustada</h2>
+          <p>Raporti väärtus ei seisne ühes numbris, vaid korduvate seoste selgitamises. Allpool on näited, kuidas mõõtmistulemus muutub praktiliseks tegevuseks.</p>
+        </div>
+
+        <div class="card-grid four">
+          <article class="finding-card">
+            <h3>Magamistoa CO₂ püsib öösel kõrge</h3>
+            <p>Võimalik tähendus: õhuvahetus ei pruugi magamise ajal olla piisav, eriti suletud ukse ja aknaga.</p>
+            <p class="possible-action"><strong>Järgmine samm:</strong> testida ukse avatuna hoidmist, akna mikrotuulutust või ventilatsiooni seadistust.</p>
+          </article>
+          <article class="finding-card">
+            <h3>Köögis tekivad toiduvalmistamisel peenosakeste tipud</h3>
+            <p>Võimalik tähendus: köögikubu, õhupuhasti või tuulutus ei vähenda osakeste taset piisavalt kiiresti.</p>
+            <p class="possible-action"><strong>Järgmine samm:</strong> kasutada kubu pikemalt, tuulutada pärast praadimist või vähendada suitsu- ja põlemisallikaid.</p>
+          </article>
+          <article class="finding-card">
+            <h3>Ühes ruumis püsib niiskus teistest kõrgem</h3>
+            <p>Võimalik tähendus: ruumi ventilatsioon, kasutus, pesukuivatus, õhu liikumine või külmad pinnad vajavad tähelepanu.</p>
+            <p class="possible-action"><strong>Järgmine samm:</strong> parandada õhu liikumist, jälgida niiskusallikaid või vajadusel kontrollida külmasildu.</p>
+          </article>
+          <article class="finding-card">
+            <h3>Ruumide temperatuur erineb palju</h3>
+            <p>Võimalik tähendus: kütte, õhu liikumise või ruumide kasutuse tasakaal on ebaühtlane.</p>
+            <p class="possible-action"><strong>Järgmine samm:</strong> kontrollida radiaatoreid, termostaate, uste avatust ja õhu liikumist.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft fit-section" id="sobivus" aria-labelledby="sobivus-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Sobivus</p>
+          <h2 id="sobivus-title">Millal Ruumikliima.ee on õige valik?</h2>
+          <p>Teenuse tugevus on praktiline esmane andmepilt kodu tavapärasest kasutusest. See aitab otsustada, mida saab ise proovida ja millal tasub kaasata ventilatsiooni, kütte, ehituse või muu valdkonna spetsialist.</p>
+        </div>
+
+        <div class="fit-grid">
+          <article class="fit-card fit-positive">
+            <h3>Sobib hästi, kui...</h3>
+            <ul class="check-list">
+              <li>kodus on umbne magamistuba, kõrge niiskus või ruumide temperatuurierinevus;</li>
+              <li>tahad enne suuremat investeeringut näha korduvaid seoseid;</li>
+              <li>soovid võrrelda mitut ruumi sama nädala jooksul;</li>
+              <li>vajad raportit, mida saab pere, ühistu või spetsialistiga arutada.</li>
+            </ul>
+          </article>
+
+          <article class="fit-card fit-negative">
+            <h3>Ei ole õige teenus, kui vajad...</h3>
+            <ul class="plain-list">
+              <li>akrediteeritud laborimõõtmist või ametlikku vastavushinnangut;</li>
+              <li>hallituse olemasolu, liigi või ehitusliku põhjuse kinnitamist;</li>
+              <li>meditsiinilist hinnangut sümptomitele või terviseriskile;</li>
+              <li>vaidluse, kindlustusjuhtumi või juriidilise menetluse tõendit.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="hind" aria-labelledby="hind-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Hind</p>
+          <h2 id="hind-title">7-päevane sisekliima uuring</h2>
+          <p>Ühe nädala mõõtmine annab hea ülevaate kodu tavapärasest rütmist: tööpäevad, nädalavahetus, magamine, toiduvalmistamine, tuulutamine ja ruumide kasutus. Teenus sobib korterile, eramajale, ridaelamule või suvilale.</p>
+        </div>
+
+        <div class="value-deal" aria-label="Väärtuspakkumise põhjendus">
+          <article>
+            <span>Seadmed</span>
+            <h3>Mitme anduri ost on harva otstarbekas</h3>
+            <p>Korraliku pildi jaoks on vaja mõõta mitut ruumi korraga. Ühe anduriga ringi liikudes ei teki sama ajajoont ja mitme kvaliteetse seadme ost jääb koduomanikule sageli ühekordseks kuluks.</p>
+          </article>
+          <article>
+            <span>Aeg</span>
+            <h3>Seadmete rent üksi ei anna vastust</h3>
+            <p>7 päeva mitme mõõtepunktiga tähendab seadmete broneerimist, laadimist, paigaldust, andmete eksporti ja tagastust. Teenus koondab selle üheks valmis töövooks.</p>
+          </article>
+          <article>
+            <span>Oskusteave</span>
+            <h3>Paigutus ja tõlgendus on pool väärtusest</h3>
+            <p>Andur peab olema sobivas kohas ja graafikut peab oskama lugeda. Selle õppimine võtaks palju aega, eriti kui tuleb eristada ventilatsiooni, kasutusharjumuste, niiskuse ja peenosakeste mõju.</p>
+          </article>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-main">
+            <span class="pricing-label">Soovitatav teenus</span>
+            <h3>7-päevane sisekliima uuring</h3>
+            <p class="price">alates 490 €</p>
+            <p>Paigutame andurid sinu koju üheks nädalaks, kogume andmeid ligikaudu iga 5 minuti järel ning koostame selge ülevaate CO₂ taseme, temperatuuri, õhuniiskuse ja peenosakeste muutustest.</p>
+            <a class="button button-primary" href="#kontakt">Küsi 7-päevast uuringut</a>
+          </div>
+
+          <div class="pricing-includes">
+            <h4>Hinnas sisaldub</h4>
+            <ul class="included-list">
+              <li>7 päeva mõõtmist ligikaudu iga 5 minuti järel</li>
+              <li>kuni 5 mõõtepunkti</li>
+              <li>CO₂, temperatuur ja õhuniiskus</li>
+              <li>1 PM2.5/PM10 peenosakeste mõõtepunkt</li>
+              <li>ruumide võrdlus</li>
+              <li>magamistoa öise CO₂ profiili analüüs</li>
+              <li>temperatuuri ja õhuniiskuse graafikud</li>
+              <li>peenosakeste tõusude ajajoon</li>
+              <li>PDF-raport</li>
+              <li>visuaalsed graafikud</li>
+              <li>CSV-andmestik</li>
+              <li>kuni 30 minutit selgituskõnet</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="price-note">Lõplik hind sõltub kodu suurusest, asukohast, ruumide arvust ja mõõtepunktide arvust. Lisamõõtepunktid, teine peenosakeste mõõtepunkt või kordusmõõtmine lepitakse vajadusel eraldi kokku.</p>
+
+        <div class="addons">
+          <h3>Võimalikud lisad</h3>
+          <div class="card-grid three">
+            <article class="addon-card">
+              <h4>Lisamõõtepunkt</h4>
+              <p>Kui kodus on rohkem tube või soovid võrrelda täiendavaid ruume.</p>
+              <strong>kokkuleppel</strong>
+            </article>
+            <article class="addon-card">
+              <h4>Teine PM2.5/PM10 mõõtepunkt</h4>
+              <p>Kui soovid võrrelda näiteks kööki ja välisõhku või kööki ja magamistuba.</p>
+              <strong>kokkuleppel</strong>
+            </article>
+            <article class="addon-card">
+              <h4>Kordusmõõtmine</h4>
+              <p>Kui soovid pärast tuulutus-, ventilatsiooni- või kasutusharjumuste muutmist võrrelda tulemusi algse mõõtmisega.</p>
+              <strong>kokkuleppel</strong>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="kkk" aria-labelledby="kkk-title">
+      <div class="container faq-layout">
+        <div>
+          <p class="eyebrow">KKK</p>
+          <h2 id="kkk-title">Korduma kippuvad küsimused</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="true" aria-controls="faq-1" id="faq-button-1">
+                Kas see on ametlik mõõtmine?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-button-1">
+              <p>Ei. Tegemist on ülevaatliku uuringuga, mis aitab mõista kodu sisekliima ja õhukvaliteedi muutusi. See ei ole akrediteeritud laborimõõtmine ega ametlik vastavushinnang.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-2" id="faq-button-2">
+                Kui kaua mõõtmine kestab?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-button-2" hidden>
+              <p>Tavaliselt 7 päeva. Ühe nädala mõõtmine annab parema ülevaate kui mõnetunnine või ühepäevane mõõtmine, sest siis on näha nii tööpäevade kui ka nädalavahetuse rütm.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-3" id="faq-button-3">
+                Kas andurid salvestavad heli või pilti?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-button-3" hidden>
+              <p>Ei. Teenus kasutab keskkonnaandureid, mis mõõdavad näiteks CO₂ taset, temperatuuri, õhuniiskust ja peenosakesi. Heli, pilti ega vestlusi ei salvestata.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-4" id="faq-button-4">
+                Kas saan teada, kas mul on hallitus?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-button-4" hidden>
+              <p>Teenuse abil saab hinnata niiskuse ja temperatuuri muutusi, mis võivad hallitusriski soodustada. Hallituse olemasolu, liigi või ehitusliku põhjuse kinnitamiseks on vaja eraldi ekspertiisi.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-5" id="faq-button-5">
+                Kas mõõtmine sobib korterisse?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-button-5" hidden>
+              <p>Jah. Teenus sobib nii korterisse, eramajja, ridaelamusse kui ka suvilasse. Korteris on eriti kasulik vaadata magamistuba, elutuba, kööki ja ruume, mille pärast on rohkem muret.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-6" id="faq-button-6">
+                Mida ma raportiga peale hakkan?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-6" role="region" aria-labelledby="faq-button-6" hidden>
+              <p>Raport aitab otsustada, kas piisab lihtsatest kasutus- ja tuulutamismuutustest, ventilatsiooni seadistuse kontrollist või õhupuhasti kasutamisest või tuleks kaasata spetsialist.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-7" id="faq-button-7">
+                Kas ma saan ka toorandmed?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-7" role="region" aria-labelledby="faq-button-7" hidden>
+              <p>Jah. Uuringuga saab kaasa CSV-andmestiku ning lühikese selgituse, mida andmeveerud tähendavad.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-8" id="faq-button-8">
+                Kas mõõtmine häirib kodust elu?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-8" role="region" aria-labelledby="faq-button-8" hidden>
+              <p>Üldiselt mitte. Andurid paigutatakse ruumidesse nähtavale ja turvalisele kohale ning need koguvad andmeid automaatselt. Tavapärane elu peaks mõõtmise ajal jätkuma võimalikult loomulikult.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3>
+              <button type="button" aria-expanded="false" aria-controls="faq-9" id="faq-button-9">
+                Kas saan andurid pakiautomaadiga ja ise paigaldada?
+                <span aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-9" role="region" aria-labelledby="faq-button-9" hidden>
+              <p>Jah, kokkuleppel on võimalik valida isepaigaldus. Saadame andurid pakiautomaati koos paigaldusjuhenditega, paigaldad need ise ja saadad komplekti 7 päeva pärast pakiautomaadi kaudu tagasi. Sellel variandil on veidi suurem paigutus- ja kasutusrisk, kuid juhendit järgides sobib see lihtsama ülevaate saamiseks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Kontakt</p>
+          <h2 id="kontakt-title">Soovid teada, mis sinu kodu õhus toimub?</h2>
+          <p>Kirjelda lühidalt oma kodu, ruumide arvu ja peamist murekohta. Vastame ning pakume sobiva mõõtmisplaani.</p>
+
+          <div class="direct-contact" aria-label="Otsekontakt">
+            <p><strong>E-post:</strong> <a href="mailto:info@ruumikliima.ee">info@ruumikliima.ee</a></p>
+            <p><strong>Vastus:</strong> tavaliselt 1 tööpäeva jooksul</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-row two">
+            <div class="field">
+              <label for="name">Nimi</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="area">Linn / piirkond</label>
+              <input type="text" id="area" name="area" autocomplete="address-level2">
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="field">
+              <label for="home-type">Kodu tüüp</label>
+              <select id="home-type" name="homeType">
+                <option value="korter">korter</option>
+                <option value="eramaja">eramaja</option>
+                <option value="ridaelamu">ridaelamu</option>
+                <option value="suvila">suvila</option>
+                <option value="muu">muu</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="size">Ligikaudne pindala</label>
+              <input type="text" id="size" name="size" placeholder="nt 75 m²">
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div class="field">
+              <label for="rooms">Ruumide arv</label>
+              <input type="number" id="rooms" name="rooms" min="1" step="1">
+            </div>
+            <div class="field">
+              <label for="extras">Kas soovid lisamõõtepunkte?</label>
+              <select id="extras" name="extras">
+                <option value="Ei, tavaline 7-päevane uuring sobib">Ei, tavaline 7-päevane uuring sobib</option>
+                <option value="Jah, kodus on rohkem kui 5 mõõtepunkti vaja">Jah, kodus on rohkem kui 5 mõõtepunkti vaja</option>
+                <option value="Soovin lisaks teist PM2.5/PM10 mõõtepunkti">Soovin lisaks teist PM2.5/PM10 mõõtepunkti</option>
+                <option value="Soovin andureid pakiautomaadiga ja ise paigaldada">Soovin andureid pakiautomaadiga ja ise paigaldada</option>
+                <option value="Soovin hiljem kordusmõõtmist">Soovin hiljem kordusmõõtmist</option>
+                <option value="Ei oska veel öelda">Ei oska veel öelda</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="concern">Peamine mure</label>
+            <textarea id="concern" name="concern" rows="5" placeholder="Näiteks umbne magamistuba, kõrge niiskus, köögi osakesed või ruumide temperatuurierinevus." required></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>Mõistan, et tegemist on ülevaatliku uuringuga, mitte ametliku mõõtmise, sertifikaadi ega ekspertiisiga.</span>
+          </label>
+
+          <button class="button button-primary form-submit" type="submit">Saada päring</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-brand" href="#top">ruumikliima.ee</a>
+        <p>Kodu sisekliima ja õhukvaliteedi ülevaatlik uuring sensorimõõtmiste põhjal.</p>
+      </div>
+      <nav class="footer-links" aria-label="Jaluse navigatsioon">
+        <a href="#teenus">Teenus</a>
+        <a href="#erisus">Erisus</a>
+        <a href="#ajajooned">Graafikud</a>
+        <a href="#sobivus">Sobivus</a>
+        <a href="#kuidas-tootab">Protsess</a>
+        <a href="#hind">Hind</a>
+        <a href="#kkk">KKK</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="footer-note">
+        <p>Mõõtmised on ülevaatlikud ega asenda akrediteeritud laborimõõtmist, ametlikku õhukvaliteedi hindamist, meditsiinilist hinnangut, hallituse ekspertiisi ega ehitusekspertiisi.</p>
+        <p>© 2026 ruumikliima.ee</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

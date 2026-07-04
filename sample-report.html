@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruumikliima.ee - põhjalik näidisraport</title>
+  <meta name="description" content="Fiktiivse kodu 7-päevase sisekliima uuringu põhjalik näidisraport ajajoonte, leidude ja soovitustega.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sample-report-page">
+  <main class="sample-report-shell">
+    <section class="sample-cover">
+      <div class="sample-report-topbar">
+        <a class="brand bmc-brand" href="index.html" aria-label="Tagasi avalehele">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-roof"></span>
+            <span class="brand-house">
+              <span class="brand-sensor"></span>
+            </span>
+          </span>
+          <span>
+            <span class="brand-name">ruumikliima.ee</span>
+            <span class="brand-tagline">Sisekliima uuring kodudele</span>
+          </span>
+        </a>
+        <nav class="sample-report-nav" aria-label="Raporti navigatsioon">
+          <a href="index.html#raport">Avaleht</a>
+          <a href="#kokkuvote">Kokkuvõte</a>
+          <a href="#ruumid">Ruumid</a>
+          <a href="#leiud">Leiud</a>
+          <a href="#soovitused">Soovitused</a>
+        </nav>
+      </div>
+
+      <div class="sample-cover-grid">
+        <div>
+          <p class="eyebrow">Fiktiivne näidisraport</p>
+          <h1>7-päevane kodu sisekliima raport</h1>
+          <p class="sample-lead">Näidis näitab, kui põhjalikult saab Ruumikliima.ee 7-päevase mõõtmise tulemused kliendile esitada. Andmed on realistlikud, kuid kodu, inimesed ja sündmused on väljamõeldud.</p>
+        </div>
+        <aside class="sample-cover-card" aria-label="Raporti metaandmed">
+          <dl>
+            <div>
+              <dt>Kodu</dt>
+              <dd>78 m² korter, 3 tuba, Tallinn</dd>
+            </div>
+            <div>
+              <dt>Mõõteperiood</dt>
+              <dd>10.03.2026 18:00 - 17.03.2026 18:00</dd>
+            </div>
+            <div>
+              <dt>Mõõtesamm</dt>
+              <dd>ligikaudu 5 minutit</dd>
+            </div>
+            <div>
+              <dt>Mõõtepunktid</dt>
+              <dd>5 ruumi, sh 1 PM2.5/PM10 punkt</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="report-section report-disclaimer">
+      <p><strong>Oluline:</strong> see on ülevaatlik sisekliima uuring. Raport aitab näha korduvaid muutusi ja otsustada praktilisi järgmisi tegevusi, kuid ei asenda akrediteeritud laborimõõtmist, ametlikku õhukvaliteedi hindamist, ehitusekspertiisi, hallituse ekspertiisi ega meditsiinilist hinnangut.</p>
+    </section>
+
+    <section class="report-section" id="kokkuvote">
+      <div class="report-section-heading">
+        <p class="eyebrow">1. Kokkuvõte</p>
+        <h2>Peamine ülevaade ühe nädalaga</h2>
+        <p>Mõõtmine kattis viis argipäeva ja nädalavahetuse. Kodu üldine temperatuur oli stabiilne, kuid magamistoas kordus öine CO₂ tõus ning köögis tekkisid toiduvalmistamise ajal lühiajalised PM2.5 tipud. Põhjapoolses toas püsis suhteline õhuniiskus mõnel ööl kõrgem kui ülejäänud kodus.</p>
+      </div>
+
+      <div class="report-kpi-grid">
+        <article class="report-kpi status-warning">
+          <span>Peamine tähelepanek</span>
+          <strong>Magamistoa öine CO₂</strong>
+          <p>5 ööl 7-st tõusis CO₂ üle 1200 ppm ja püsis kõrgemal 3-6 tundi.</p>
+        </article>
+        <article class="report-kpi status-watch">
+          <span>Teine tähelepanek</span>
+          <strong>Köögi PM2.5 tipud</strong>
+          <p>Praadimisega seotud lühikesed tipud, kõrgeim hetkeline näit 74 µg/m³.</p>
+        </article>
+        <article class="report-kpi status-good">
+          <span>Stabiilne ruum</span>
+          <strong>Elutuba</strong>
+          <p>Temperatuur ja niiskus olid suurema osa ajast ootuspärases vahemikus.</p>
+        </article>
+        <article class="report-kpi status-watch">
+          <span>Vajab jälgimist</span>
+          <strong>Põhjapoolne tuba</strong>
+          <p>Öine RH oli 4 ööl üle 60%, samal ajal temperatuur 19-20 °C.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="report-section">
+      <div class="report-section-heading">
+        <p class="eyebrow">2. Mõõteplaan</p>
+        <h2>Kus ja mida mõõdeti</h2>
+      </div>
+      <div class="report-table-wrap">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Mõõtepunkt</th>
+              <th>Asukoht</th>
+              <th>Mõõdikud</th>
+              <th>Paigutuse märkus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MP1</td>
+              <td>Magamistuba</td>
+              <td>CO₂, °C, RH</td>
+              <td>Kummut, hingamisteedest eemal, uksest 2,4 m.</td>
+            </tr>
+            <tr>
+              <td>MP2</td>
+              <td>Elutuba</td>
+              <td>CO₂, °C, RH</td>
+              <td>Riiul istumiskõrgusest kõrgemal, aknast 1,8 m.</td>
+            </tr>
+            <tr>
+              <td>MP3</td>
+              <td>Köök</td>
+              <td>CO₂, °C, RH, PM2.5, PM10</td>
+              <td>Tööpinnast eemal, mitte otse pliidi või kubu all.</td>
+            </tr>
+            <tr>
+              <td>MP4</td>
+              <td>Põhjapoolne tuba</td>
+              <td>CO₂, °C, RH</td>
+              <td>Välisseina lähedal, kuid mitte vastu seina.</td>
+            </tr>
+            <tr>
+              <td>MP5</td>
+              <td>Esik</td>
+              <td>°C, RH</td>
+              <td>Keskne võrdluspunkt ruumide vahel.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="report-note">Andmevoog oli katkematu 98,7% mõõteperioodist. Üks lühike andmelünk tekkis köögis 14.03 kell 11:20-12:05 seadme laadimise tõttu.</p>
+    </section>
+
+    <section class="report-section" id="ruumid">
+      <div class="report-section-heading">
+        <p class="eyebrow">3. Ruumipõhised andmed</p>
+        <h2>Iga mõõtepunkt eraldi</h2>
+        <p>Allpool on iga ruumi graafik tunniajase sammuga. Nupud vahetavad graafikul mõõdikut; tabeli saab avada päevakoondist tunniandmeteks ja sealt edasi 5 minuti mõõtehetkedeks. Täisandmestikus on ligikaudu iga 5 minuti järel kogutud kirjed, mida saab soovi korral CSV-na edasi analüüsida.</p>
+      </div>
+
+      <div class="room-report-grid" aria-label="Ruumipõhised graafikud ja andmetabelid">
+        <article class="room-report-card" data-room="bedroom">
+          <div class="room-card-heading">
+            <div>
+              <p class="finding-label status-warning">MP1</p>
+              <h3>Magamistuba</h3>
+            </div>
+            <span>CO₂, temperatuur, RH</span>
+          </div>
+          <p class="room-insight">Peamine tähelepanek on öine CO₂ tõus, mis tekib suletud ukse ja kahe magaja koosmõjus. Temperatuur ja niiskus olid muus osas stabiilsed.</p>
+          <div class="room-chart-controls" aria-label="Magamistoa mõõdiku valik">
+            <button type="button" class="room-chart-button is-active" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
+            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+          </div>
+          <div class="room-chart-panel">
+            <div class="room-interactive-chart">
+              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Magamistoa interaktiivne graafik"></svg>
+              <div class="room-chart-tooltip" hidden></div>
+            </div>
+            <div class="room-chart-summary" data-room-summary></div>
+          </div>
+          <div class="room-stat-grid" data-room-stats></div>
+          <div class="room-table-wrap" data-room-table></div>
+        </article>
+
+        <article class="room-report-card" data-room="living">
+          <div class="room-card-heading">
+            <div>
+              <p class="finding-label status-good">MP2</p>
+              <h3>Elutuba</h3>
+            </div>
+            <span>CO₂, temperatuur, RH</span>
+          </div>
+          <p class="room-insight">Elutuba toimib võrdlusruumina: CO₂ ei püsi pikalt kõrgel ning temperatuur ja niiskus jäävad kitsasse vahemikku.</p>
+          <div class="room-chart-controls" aria-label="Elutoa mõõdiku valik">
+            <button type="button" class="room-chart-button is-active" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
+            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+          </div>
+          <div class="room-chart-panel">
+            <div class="room-interactive-chart">
+              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Elutoa interaktiivne graafik"></svg>
+              <div class="room-chart-tooltip" hidden></div>
+            </div>
+            <div class="room-chart-summary" data-room-summary></div>
+          </div>
+          <div class="room-stat-grid" data-room-stats></div>
+          <div class="room-table-wrap" data-room-table></div>
+        </article>
+
+        <article class="room-report-card" data-room="kitchen">
+          <div class="room-card-heading">
+            <div>
+              <p class="finding-label status-watch">MP3</p>
+              <h3>Köök</h3>
+            </div>
+            <span>CO₂, temperatuur, RH, PM2.5, PM10</span>
+          </div>
+          <p class="room-insight">Köögis on toiduvalmistamise ajal näha lühiajalisi peenosakeste tõuse. Päevakeskmised on mõõdukad, kuid hetkelised tipud eristuvad selgelt.</p>
+          <div class="room-chart-controls" aria-label="Köögi mõõdiku valik">
+            <button type="button" class="room-chart-button is-active" data-metric="pm25">PM2.5</button>
+            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
+            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
+            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+          </div>
+          <div class="room-chart-panel">
+            <div class="room-interactive-chart">
+              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Köögi interaktiivne graafik"></svg>
+              <div class="room-chart-tooltip" hidden></div>
+            </div>
+            <div class="room-chart-summary" data-room-summary></div>
+          </div>
+          <div class="room-stat-grid" data-room-stats></div>
+          <div class="room-table-wrap" data-room-table></div>
+        </article>
+
+        <article class="room-report-card" data-room="north">
+          <div class="room-card-heading">
+            <div>
+              <p class="finding-label status-watch">MP4</p>
+              <h3>Põhjapoolne tuba</h3>
+            </div>
+            <span>CO₂, temperatuur, RH</span>
+          </div>
+          <p class="room-insight">See ruum on teistest jahedam ja niiskem. Erinevus tugevneb päevadel, mil ruumis on suurem niiskuskoormus või uks püsib pikemalt suletuna.</p>
+          <div class="room-chart-controls" aria-label="Põhjapoolse toa mõõdiku valik">
+            <button type="button" class="room-chart-button is-active" data-metric="rh">Niiskus</button>
+            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
+            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
+          </div>
+          <div class="room-chart-panel">
+            <div class="room-interactive-chart">
+              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Põhjapoolse toa interaktiivne graafik"></svg>
+              <div class="room-chart-tooltip" hidden></div>
+            </div>
+            <div class="room-chart-summary" data-room-summary></div>
+          </div>
+          <div class="room-stat-grid" data-room-stats></div>
+          <div class="room-table-wrap" data-room-table></div>
+        </article>
+
+        <article class="room-report-card" data-room="hall">
+          <div class="room-card-heading">
+            <div>
+              <p class="finding-label status-good">MP5</p>
+              <h3>Esik</h3>
+            </div>
+            <span>Temperatuur, RH</span>
+          </div>
+          <p class="room-insight">Esik annab ülejäänud koduga võrreldes neutraalse vahepunkti. Selles ruumis CO₂ ega peenosakesi ei mõõdetud.</p>
+          <div class="room-chart-controls" aria-label="Esiku mõõdiku valik">
+            <button type="button" class="room-chart-button is-active" data-metric="temp">Temperatuur</button>
+            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+          </div>
+          <div class="room-chart-panel">
+            <div class="room-interactive-chart">
+              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Esiku interaktiivne graafik"></svg>
+              <div class="room-chart-tooltip" hidden></div>
+            </div>
+            <div class="room-chart-summary" data-room-summary></div>
+          </div>
+          <div class="room-stat-grid" data-room-stats></div>
+          <div class="room-table-wrap" data-room-table></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="report-section" id="leiud">
+      <div class="report-section-heading">
+        <p class="eyebrow">4. Põhileiud</p>
+        <h2>Ajajooned ja tõlgendus</h2>
+      </div>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-warning">Leid 1</p>
+          <h3>Magamistoa CO₂ tõuseb öösiti korduvalt</h3>
+          <p>Magamistoa päevased CO₂ näidud olid enamasti tavapärased, kuid öösel suletud uksega tõusis CO₂ järjepidevalt. Kõrgeim mõõdetud hetkeline väärtus oli 1680 ppm, öine mediaan 1260 ppm. Kõige madalamad öised väärtused olid nendel öödel, mil uks jäi poolavatuks.</p>
+          <ul class="report-bullets">
+            <li>Korduvus: jah, 5 ööl 7-st.</li>
+            <li>Tõenäoline seos: magamine suletud uksega ja piiratud õhuvahetus.</li>
+            <li>Esmane proov: hoida uks praokil või kasutada olemasolevat tuulutusvõimalust.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>CO₂ magamistoas, 7 päeva</h4>
+          <svg class="report-line-chart" viewBox="0 0 720 300" role="img" aria-label="Magamistoa CO₂ seitsme päeva ajajoon, kus öised tõusud korduvad.">
+            <line x1="64" y1="36" x2="64" y2="244" class="r-axis"></line>
+            <line x1="64" y1="244" x2="680" y2="244" class="r-axis"></line>
+            <g class="r-grid">
+              <line x1="64" y1="72" x2="680" y2="72"></line>
+              <line x1="64" y1="128" x2="680" y2="128"></line>
+              <line x1="64" y1="184" x2="680" y2="184"></line>
+            </g>
+            <path class="r-band-warning" d="M64 94 H680 V36 H64 Z"></path>
+            <path class="r-line co2" d="M64 214 C86 206 94 128 112 76 C130 40 154 54 170 112 C188 178 202 212 238 214 C262 206 270 130 288 82 C306 48 328 60 344 118 C362 178 378 212 412 214 C434 206 446 132 464 86 C482 50 504 66 520 124 C540 186 556 214 590 214 C612 204 624 142 640 96 C654 58 670 86 680 132"></path>
+            <g class="r-labels">
+              <text x="56" y="42">1800</text>
+              <text x="56" y="132">1200</text>
+              <text x="56" y="238">600</text>
+              <text x="74" y="276">E</text>
+              <text x="174" y="276">T</text>
+              <text x="274" y="276">K</text>
+              <text x="374" y="276">N</text>
+              <text x="474" y="276">R</text>
+              <text x="574" y="276">L</text>
+              <text x="668" y="276">P</text>
+            </g>
+          </svg>
+          <p class="chart-caption">Oranž ala tähistab perioode, kus näit vajab tähelepanu õhuvahetuse või kasutusharjumuste seisukohalt.</p>
+        </div>
+      </article>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-watch">Leid 2</p>
+          <h3>Köögi PM2.5 tipud on lühikesed, kuid selgelt tegevustega seotud</h3>
+          <p>Köögis püsis PM2.5 tausttase enamasti 3-8 µg/m³ juures. Tipud tekkisid peamiselt praadimise ja ahju kasutamise ajal. Kõrgeim hetkeline näit oli 74 µg/m³, kuid tase langes tavaliselt 45-70 minutiga tagasi tavapärasele tasemele.</p>
+          <ul class="report-bullets">
+            <li>Korduvus: jah, toiduvalmistamise sündmustega seotud.</li>
+            <li>Tõenäoline seos: praadimine, kubu kasutamise aeg ja akna avamise hetk.</li>
+            <li>Esmane proov: käivitada kubu enne praadimist ja hoida seda töös 15-20 minutit pärast lõpetamist.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>PM2.5 köögis, sündmuste ajajoon</h4>
+          <svg class="report-line-chart" viewBox="0 0 720 300" role="img" aria-label="Köögi PM2.5 seitsme päeva ajajoon lühikeste tippudega.">
+            <line x1="64" y1="36" x2="64" y2="244" class="r-axis"></line>
+            <line x1="64" y1="244" x2="680" y2="244" class="r-axis"></line>
+            <g class="r-grid">
+              <line x1="64" y1="76" x2="680" y2="76"></line>
+              <line x1="64" y1="136" x2="680" y2="136"></line>
+              <line x1="64" y1="196" x2="680" y2="196"></line>
+            </g>
+            <path class="r-line pm" d="M64 230 L116 230 C126 228 132 94 142 68 C152 44 166 180 172 230 L240 230 C250 228 258 72 268 48 C278 30 292 176 300 230 L372 230 C382 228 390 130 400 100 C410 76 424 186 432 230 L502 230 C512 228 520 84 530 56 C540 38 556 178 564 230 L680 230"></path>
+            <g class="r-events">
+              <circle cx="142" cy="68" r="6"></circle>
+              <circle cx="268" cy="48" r="6"></circle>
+              <circle cx="530" cy="56" r="6"></circle>
+            </g>
+            <g class="r-labels">
+              <text x="56" y="42">80</text>
+              <text x="56" y="140">40</text>
+              <text x="56" y="238">0</text>
+              <text x="74" y="276">E</text>
+              <text x="174" y="276">T</text>
+              <text x="274" y="276">K</text>
+              <text x="374" y="276">N</text>
+              <text x="474" y="276">R</text>
+              <text x="574" y="276">L</text>
+              <text x="668" y="276">P</text>
+            </g>
+          </svg>
+          <p class="chart-caption">Tipud on lühikesed ega paistaks välja, kui mõõta ainult juhuslikul hetkel.</p>
+        </div>
+      </article>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-watch">Leid 3</p>
+          <h3>Põhjapoolne tuba on jahedam ja niiskem</h3>
+          <p>Põhjapoolses toas oli keskmine temperatuur 19,4 °C ja öine suhteline õhuniiskus tõusis mitmel korral 63-68% vahemikku. Muster oli selgem nendel päevadel, mil toas kuivas pesu või uks oli pikemalt suletud.</p>
+          <ul class="report-bullets">
+            <li>Korduvus: mõõdukas, tugevam niiskuskoormusega päevadel.</li>
+            <li>Tõenäoline seos: madalam temperatuur, piiratud õhuliikumine ja niiskusallikas.</li>
+            <li>Esmane proov: vältida pesu kuivatamist selles toas ja parandada õhu liikumist.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>Õhuniiskus ja temperatuur, põhjapoolne tuba</h4>
+          <svg class="report-line-chart" viewBox="0 0 720 300" role="img" aria-label="Põhjapoolse toa õhuniiskuse ja temperatuuri seitsme päeva ajajoon.">
+            <line x1="64" y1="36" x2="64" y2="244" class="r-axis"></line>
+            <line x1="64" y1="244" x2="680" y2="244" class="r-axis"></line>
+            <g class="r-grid">
+              <line x1="64" y1="76" x2="680" y2="76"></line>
+              <line x1="64" y1="136" x2="680" y2="136"></line>
+              <line x1="64" y1="196" x2="680" y2="196"></line>
+            </g>
+            <path class="r-line rh" d="M64 152 C104 144 130 116 162 100 C198 82 232 98 258 132 C292 174 332 156 360 118 C394 72 438 78 466 110 C500 150 540 166 572 138 C606 104 636 72 680 82"></path>
+            <path class="r-line temp" d="M64 144 C112 150 160 152 208 146 C256 140 304 138 352 146 C400 154 448 148 496 142 C560 136 628 142 680 148"></path>
+            <g class="r-labels">
+              <text x="56" y="42">70%</text>
+              <text x="56" y="140">55%</text>
+              <text x="56" y="238">40%</text>
+              <text x="74" y="276">E</text>
+              <text x="174" y="276">T</text>
+              <text x="274" y="276">K</text>
+              <text x="374" y="276">N</text>
+              <text x="474" y="276">R</text>
+              <text x="574" y="276">L</text>
+              <text x="668" y="276">P</text>
+            </g>
+          </svg>
+          <p class="chart-caption">Roheline joon: RH%. Sinine katkendjoon: temperatuur samale graafikule skaleerituna.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="report-section">
+      <div class="report-section-heading">
+        <p class="eyebrow">5. Ruumide võrdlus</p>
+        <h2>Nädala koondnäitajad</h2>
+      </div>
+      <div class="report-table-wrap">
+        <table class="report-table compact">
+          <thead>
+            <tr>
+              <th>Ruum</th>
+              <th>CO₂ mediaan</th>
+              <th>CO₂ max</th>
+              <th>Temp keskm.</th>
+              <th>RH keskm.</th>
+              <th>Tõlgendus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Magamistuba</td>
+              <td>890 ppm</td>
+              <td>1680 ppm</td>
+              <td>20,3 °C</td>
+              <td>48%</td>
+              <td>Öine CO₂ vajab tähelepanu.</td>
+            </tr>
+            <tr>
+              <td>Elutuba</td>
+              <td>650 ppm</td>
+              <td>980 ppm</td>
+              <td>21,4 °C</td>
+              <td>43%</td>
+              <td>Stabiilne võrdlusruum.</td>
+            </tr>
+            <tr>
+              <td>Köök</td>
+              <td>710 ppm</td>
+              <td>1090 ppm</td>
+              <td>21,1 °C</td>
+              <td>45%</td>
+              <td>PM-tipud toiduvalmistamisel.</td>
+            </tr>
+            <tr>
+              <td>Põhjapoolne tuba</td>
+              <td>720 ppm</td>
+              <td>1040 ppm</td>
+              <td>19,4 °C</td>
+              <td>57%</td>
+              <td>Jahedam ja niiskem ruum.</td>
+            </tr>
+            <tr>
+              <td>Esik</td>
+              <td>-</td>
+              <td>-</td>
+              <td>20,8 °C</td>
+              <td>46%</td>
+              <td>Neutraalne vahepunkt.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="report-section" id="soovitused">
+      <div class="report-section-heading">
+        <p class="eyebrow">6. Soovitused</p>
+        <h2>Praktiline tegevusplaan</h2>
+      </div>
+      <div class="action-plan">
+        <article>
+          <span>1</span>
+          <h3>Testi magamistoa õhuvahetust</h3>
+          <p>Hoia 7 öö jooksul magamistoa uks praokil või kasuta olemasolevat tuulutusasendit. Kui võimalik, väldi samal ajal mitme muu harjumuse muutmist, et mõju oleks paremini võrreldav.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Muuda köögi kasutusharjumust</h3>
+          <p>Käivita kubu enne praadimist, kasuta kõrgemat astet rasvasema toidu puhul ja jäta kubu tööle vähemalt 15-20 minutiks pärast toiduvalmistamist.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Vähenda põhjapoolse toa niiskuskoormust</h3>
+          <p>Väldi pesu kuivatamist selles ruumis, hoia ust rohkem avatuna ja jälgi, kas RH langeb alla 60% ka jahedamatel öödel.</p>
+        </article>
+        <article>
+          <span>4</span>
+          <h3>Tee kordusmõõtmine pärast muudatusi</h3>
+          <p>Kui muudatused on 2-4 nädalat kasutuses olnud, on mõistlik teha lühike kordusmõõtmine samades ruumides ja võrrelda ajajooni.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="report-section">
+      <div class="report-section-heading">
+        <p class="eyebrow">7. Tõlgendamise raam</p>
+        <h2>Kuidas numbreid lugeda</h2>
+      </div>
+      <div class="interpretation-grid">
+        <article>
+          <h3>CO₂</h3>
+          <p>CO₂ ei kirjelda kogu õhukvaliteeti, kuid on praktiline õhuvahetuse ja ruumi kasutuse indikaator. Raportis on rõhk korduvatel tõusudel, nende kestusel ja ruumide võrdlusel.</p>
+          <a href="https://www.ashrae.org/file%20library/about/government%20affairs/public%20policy%20resources/briefs/indoor-carbon-dioxide-ventilation-and-indoor-air-quality_2023.pdf">ASHRAE CO₂ selgitus</a>
+        </article>
+        <article>
+          <h3>PM2.5 / PM10</h3>
+          <p>Peenosakeste puhul vaatame nii taustataset kui ka lühiajalisi tippe. WHO õhukvaliteedi juhised annavad tervisekaitselise taustaraami, kuid kodune sensoruuring ei ole ametlik vastavushinnang.</p>
+          <a href="https://www.who.int/publications/i/item/9789240034228">WHO õhukvaliteedi juhised</a>
+        </article>
+        <article>
+          <h3>Õhuniiskus</h3>
+          <p>Suhteline õhuniiskus sõltub temperatuurist, niiskusallikatest ja õhu liikumisest. Käesolevas raportis on tähelepanu ruumidel, kus niiskus püsib kõrgem pikema aja jooksul.</p>
+          <a href="https://www.ashrae.org/file%20library/technical%20resources/covid-19/i-p_s16_ch22humidifiers.pdf">ASHRAE niiskuse materjal</a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
