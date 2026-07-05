@@ -2,9 +2,8 @@ const menuButton = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const faqButtons = document.querySelectorAll(".faq-item button");
-const contactForm = document.querySelector("#contact-form");
-const formStatus = document.querySelector("#form-status");
-const pricingCalculator = document.querySelector("[data-pricing-calculator]");
+const checkoutForm = document.querySelector("#checkout-form");
+const checkoutStatus = document.querySelector("#checkout-status");
 
 function setMenu(open) {
   if (!menuButton || !siteNav) return;
@@ -42,121 +41,136 @@ faqButtons.forEach((button) => {
   });
 });
 
-contactForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (checkoutForm) {
+  const basePrice = 99;
+  const extraDevicePrice = 45;
+  const damageFee = 200;
+  const deviceRange = checkoutForm.querySelector("[data-kit-device-range]");
+  const deviceInput = checkoutForm.querySelector("[data-kit-device-input]");
+  const deviceOutput = checkoutForm.querySelector("[data-kit-device-output]");
+  const kitTotal = document.querySelector("[data-kit-total]");
+  const kitSummary = document.querySelector("[data-kit-summary]");
+  const extraDevicesPrice = checkoutForm.querySelector("[data-extra-devices-price]");
+  const breakdownTotal = checkoutForm.querySelector("[data-breakdown-total]");
+  const arrivalDateInput = checkoutForm.querySelector("[data-arrival-date]");
+  const arrivalWindow = document.querySelector("[data-arrival-window]");
+  const measurementEnd = document.querySelector("[data-measurement-end]");
+  const returnDeadline = document.querySelector("[data-return-deadline]");
 
-  if (!contactForm.reportValidity()) {
-    return;
-  }
-
-  const data = new FormData(contactForm);
-  const subject = "Ruumikliima.ee päring: 7-päevane sisekliima uuring";
-  const lines = [
-    "Tere",
-    "",
-    "Soovin küsida 7-päevast sisekliima uuringut.",
-    "",
-    `Nimi: ${data.get("name") || ""}`,
-    `E-post: ${data.get("email") || ""}`,
-    `Telefon: ${data.get("phone") || ""}`,
-    `Linn / piirkond: ${data.get("area") || ""}`,
-    `Kodu tüüp: ${data.get("homeType") || ""}`,
-    `Ligikaudne pindala: ${data.get("size") || ""}`,
-    `Ruumide arv: ${data.get("rooms") || ""}`,
-    `Mõõtepunktide ja paigalduse eelistus: ${data.get("extras") || ""}`,
-    "",
-    "Peamine mure:",
-    `${data.get("concern") || ""}`,
-    "",
-    "Mõistan, et tegemist on ülevaatliku uuringuga, mitte ametliku mõõtmise, sertifikaadi ega ekspertiisiga."
-  ];
-
-  const mailto = `mailto:info@ruumikliima.ee?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
-
-  if (formStatus) {
-    formStatus.textContent = "Avan e-kirja mustandi. Kui meiliprogramm ei avane, kirjuta otse: info@ruumikliima.ee";
-  }
-
-  window.location.href = mailto;
-});
-
-if (pricingCalculator) {
-  const unitPrice = 50;
-  const installServicePrice = 200;
-  const pointsRange = pricingCalculator.querySelector("[data-points-range]");
-  const pointsInput = pricingCalculator.querySelector("[data-points-input]");
-  const pointsOutput = pricingCalculator.querySelector("[data-points-output]");
-  const totalPrice = pricingCalculator.querySelector("[data-total-price]");
-  const devicesPrice = pricingCalculator.querySelector("[data-devices-price]");
-  const installPrice = pricingCalculator.querySelector("[data-install-price]");
-  const breakdownTotal = pricingCalculator.querySelector("[data-breakdown-total]");
-  const requestLink = pricingCalculator.querySelector("[data-pricing-request]");
-  const installOptions = Array.from(pricingCalculator.querySelectorAll("[data-install-option]"));
-
-  const minPoints = Number(pointsInput?.min || pointsRange?.min || 1);
-  const maxPoints = Number(pointsInput?.max || pointsRange?.max || 12);
+  const minDevices = Number(deviceInput?.min || deviceRange?.min || 1);
+  const maxDevices = Number(deviceInput?.max || deviceRange?.max || 10);
   const formatEuro = (value) => `${new Intl.NumberFormat("et-EE").format(value)} €`;
+  const formatDate = (date) => new Intl.DateTimeFormat("et-EE", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  }).format(date);
+  const addDays = (date, days) => {
+    const next = new Date(date);
+    next.setDate(next.getDate() + days);
+    return next;
+  };
 
-  const clampPoints = (value) => {
+  const clampDevices = (value) => {
     const number = Number.parseInt(value, 10);
-    if (Number.isNaN(number)) return minPoints;
-    return Math.min(maxPoints, Math.max(minPoints, number));
+    if (Number.isNaN(number)) return minDevices;
+    return Math.min(maxDevices, Math.max(minDevices, number));
   };
 
-  const getInstallMode = () => {
-    return installOptions.find((option) => option.checked)?.value || "self";
+  const getDeviceCountText = (count) => `${count} ${count === 1 ? "seade" : "seadet"}`;
+
+  const getOrderTotal = (count) => {
+    return basePrice + Math.max(0, count - 1) * extraDevicePrice;
   };
 
-  const updatePricing = (nextValue) => {
-    const points = clampPoints(nextValue ?? pointsInput?.value ?? pointsRange?.value);
-    const installMode = getInstallMode();
-    const deviceTotal = points * unitPrice;
-    const setupTotal = installMode === "service" ? installServicePrice : 0;
-    const total = deviceTotal + setupTotal;
-    const modeLabel = installMode === "service"
-      ? "Meie paigaldus ja äravõtmine"
-      : "Isepaigaldus postiga";
+  const updateDates = () => {
+    if (!arrivalDateInput?.value) {
+      if (arrivalWindow) arrivalWindow.textContent = "Vali soovitud kuupäev";
+      if (measurementEnd) measurementEnd.textContent = "Arvutame pärast kuupäeva valikut";
+      if (returnDeadline) returnDeadline.textContent = "2 päeva pärast mõõtmise lõppu";
+      return;
+    }
 
-    if (pointsRange) pointsRange.value = String(points);
-    if (pointsInput) pointsInput.value = String(points);
-    if (pointsOutput) pointsOutput.textContent = `${points} ${points === 1 ? "seade" : "seadet"}`;
-    if (devicesPrice) devicesPrice.textContent = formatEuro(deviceTotal);
-    if (installPrice) installPrice.textContent = formatEuro(setupTotal);
-    if (totalPrice) totalPrice.textContent = formatEuro(total);
-    if (breakdownTotal) breakdownTotal.textContent = formatEuro(total);
+    const selectedDate = new Date(`${arrivalDateInput.value}T12:00:00`);
+    const windowStart = addDays(selectedDate, -2);
+    const windowEnd = addDays(selectedDate, 2);
+    const endDate = addDays(selectedDate, 7);
+    const deadlineDate = addDays(selectedDate, 9);
 
-    if (requestLink) {
-      const subject = "Ruumikliima.ee hinnapäring";
-      const body = [
-        "Tere",
-        "",
-        "Soovin küsida 7-päevase sisekliima uuringu pakkumist.",
-        "",
-        `Mõõtepunkte / seadmeid: ${points}`,
-        `Paigaldusviis: ${modeLabel}`,
-        `Eeldatav hind kalkulaatori järgi: ${formatEuro(total)}`,
-        "",
-        "Palun võtke minuga ühendust ja kinnitage sobiv mõõtmisplaan."
-      ].join("\n");
-
-      requestLink.href = `mailto:info@ruumikliima.ee?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (arrivalWindow) {
+      arrivalWindow.textContent = `${formatDate(windowStart)} - ${formatDate(windowEnd)}`;
+    }
+    if (measurementEnd) {
+      measurementEnd.textContent = formatDate(endDate);
+    }
+    if (returnDeadline) {
+      returnDeadline.textContent = formatDate(deadlineDate);
     }
   };
 
-  pointsRange?.addEventListener("input", (event) => updatePricing(event.target.value));
-  pointsInput?.addEventListener("input", (event) => updatePricing(event.target.value));
-  pointsInput?.addEventListener("blur", (event) => updatePricing(event.target.value));
-  pricingCalculator.querySelector("[data-points-decrease]")?.addEventListener("click", () => {
-    updatePricing(clampPoints(pointsInput?.value) - 1);
+  const updateCheckout = (nextValue) => {
+    const devices = clampDevices(nextValue ?? deviceInput?.value ?? deviceRange?.value);
+    const extras = Math.max(0, devices - 1);
+    const extrasTotal = extras * extraDevicePrice;
+    const total = getOrderTotal(devices);
+    const summary = `${getDeviceCountText(devices)}, 7 päeva mõõtmist, analüüs ja raport.`;
+
+    if (deviceRange) deviceRange.value = String(devices);
+    if (deviceInput) deviceInput.value = String(devices);
+    if (deviceOutput) deviceOutput.textContent = getDeviceCountText(devices);
+    if (kitTotal) kitTotal.textContent = formatEuro(total);
+    if (kitSummary) kitSummary.textContent = summary;
+    if (extraDevicesPrice) extraDevicesPrice.textContent = formatEuro(extrasTotal);
+    if (breakdownTotal) breakdownTotal.textContent = formatEuro(total);
+  };
+
+  const setMinArrivalDate = () => {
+    if (!arrivalDateInput) return;
+    const minDate = addDays(new Date(), 2).toISOString().slice(0, 10);
+    arrivalDateInput.min = minDate;
+  };
+
+  deviceRange?.addEventListener("input", (event) => updateCheckout(event.target.value));
+  deviceInput?.addEventListener("input", (event) => updateCheckout(event.target.value));
+  deviceInput?.addEventListener("blur", (event) => updateCheckout(event.target.value));
+  checkoutForm.querySelector("[data-kit-device-decrease]")?.addEventListener("click", () => {
+    updateCheckout(clampDevices(deviceInput?.value) - 1);
   });
-  pricingCalculator.querySelector("[data-points-increase]")?.addEventListener("click", () => {
-    updatePricing(clampPoints(pointsInput?.value) + 1);
+  checkoutForm.querySelector("[data-kit-device-increase]")?.addEventListener("click", () => {
+    updateCheckout(clampDevices(deviceInput?.value) + 1);
   });
-  installOptions.forEach((option) => {
-    option.addEventListener("change", () => updatePricing());
+  arrivalDateInput?.addEventListener("change", updateDates);
+
+  checkoutForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!checkoutForm.reportValidity()) {
+      return;
+    }
+
+    const data = new FormData(checkoutForm);
+    const devices = clampDevices(deviceInput?.value);
+    const total = getOrderTotal(devices);
+    const paymentMethod = data.get("paymentMethod") || "Pangalink";
+
+    if (checkoutStatus) {
+      checkoutStatus.textContent = `Tellimus on koostatud: ${getDeviceCountText(devices)}, ${formatEuro(total)}, makseviis ${paymentMethod}. Reaalne maksesuunamine vajab makseteenuse pakkuja ühendamist.`;
+    }
+
+    console.info("Checkout order draft", {
+      devices,
+      total,
+      parcelProvider: data.get("parcelProvider"),
+      parcelLocker: data.get("parcelLocker"),
+      arrivalDate: data.get("arrivalDate"),
+      paymentMethod,
+      damageFeePerDevice: damageFee
+    });
   });
 
-  updatePricing();
+  setMinArrivalDate();
+  updateCheckout();
+  updateDates();
 }
 
 const roomReportCards = document.querySelectorAll(".room-report-card");
