@@ -1592,12 +1592,12 @@ h4 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.kit-steps {
+.rental-steps {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.kit-steps li:nth-child(3n)::after,
-.kit-steps li:last-child::after {
+.rental-steps li:nth-child(3n)::after,
+.rental-steps li:last-child::after {
   display: none;
 }
 
@@ -3781,11 +3781,11 @@ textarea:focus {
 
   .card-grid.four,
   .steps,
-  .kit-steps {
+  .rental-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .kit-steps li::after {
+  .rental-steps li::after {
     display: none;
   }
 
@@ -4182,7 +4182,7 @@ textarea:focus {
 
   .card-grid.four,
   .steps,
-  .kit-steps,
+  .rental-steps,
   .two-columns,
   .form-row.two,
   .footer-links,

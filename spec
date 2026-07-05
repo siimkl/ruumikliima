@@ -2,9 +2,9 @@
 
 ## Teenuse tuum
 
-Ruumikliima.ee on pakiautomaadi kaudu renditav kodu sisekliima mõõtekit.
+Ruumikliima.ee on pakiautomaadi kaudu renditav kodu sisekliima mõõtekomplekt.
 
-Klient ei broneeri koduvisiiti ega osta seadet. Klient rendib valmis mõõtekiti lühiajaliseks kasutuseks:
+Klient ei broneeri koduvisiiti ega osta seadet. Klient rendib valmis mõõtekomplekti lühiajaliseks kasutuseks:
 
 * seadistatud mõõteseadmed;
 * USB-C laadimiskaablid;
@@ -15,7 +15,7 @@ Klient ei broneeri koduvisiiti ega osta seadet. Klient rendib valmis mõõtekiti
 
 Teenuse peamine lubadus:
 
-**Rendi mõõtekit 7 päevaks, võta see pakiautomaadist, aseta akutoitel seade juhendi järgi mõõtma, tagasta sama pakiga ja saa raport.**
+**Rendi mõõtekomplekt 7 päevaks, võta see pakiautomaadist, aseta akutoitel seade juhendi järgi mõõtma, tagasta sama pakiga ja saa raport.**
 
 ## Positsioneerimine
 
@@ -48,7 +48,7 @@ Mõõteseade on akutoitel ja võimaldab 1 minuti intervalliga andmeid, kui kasut
 
 1. Klient valib seadmete arvu, pakiautomaadi ja soovitud saabumiskuupäeva.
 2. Klient nõustub rendi- ja kasutustingimustega ning maksab rendibroneeringu eest.
-3. Ruumikliima.ee saadab seadistatud rendikiti pakiautomaati.
+3. Ruumikliima.ee saadab seadistatud rendikomplekti pakiautomaati.
 4. Klient võtab paki vastu, paigutab seadmed juhendi järgi ja kontrollib aku/laadimise.
 5. Seadmed mõõdavad 7 päeva.
 6. Klient lülitab seadmed välja ja tagastab sama pakiga 2 päeva jooksul pärast mõõteperioodi lõppu.
@@ -84,13 +84,13 @@ Staatilises prototüübis kuvatakse rendibroneeringu loogika ja maksmise kokkuv�
 Kasutaja peab nõustuma vähemalt sellega, et:
 
 * seade on rendiks, mitte ostuks;
-* mõõtekit tagastatakse hiljemalt 2 päeva pärast 7-päevase mõõteperioodi lõppu;
+* mõõtekomplekt tagastatakse hiljemalt 2 päeva pärast 7-päevase mõõteperioodi lõppu;
 * kasutaja süül katki läinud või kadunud seadme hüvitis on 200 € seadme kohta;
 * teenus on ülevaatlik sisekliima uuring ega asenda akrediteeritud laborimõõtmist, ametlikku hinnangut ega ekspertiisi.
 
 ## Lehe põhistruktuur
 
-1. Hero: pakiautomaadi mõõtekit ja privaatsuse lubadus.
+1. Hero: pakiautomaadi mõõtekomplekt ja privaatsuse lubadus.
 2. Mis pakis on.
 3. Mõõteseadme tutvustus pildi, disaini ja mõõdetavate näitajatega.
 4. Mõõdetavate näitajate selgitus: CO2, PM1/PM2.5/PM10, TVOC, NOx, temperatuur, RH ja õhurõhk.
@@ -106,7 +106,7 @@ Kasutaja peab nõustuma vähemalt sellega, et:
 Leht on valmis, kui:
 
 * vana koduvisiidi ja hinnapäringu põhine teenusemudel ei ole põhiloogikana esil;
-* peamine CTA on mõõtekiti rentimine;
+* peamine CTA on mõõtekomplekti rentimine;
 * hind arvutatakse automaatselt: 99 € rendipakett + progressiivse 5% soodustusega lisaseadmete rent;
 * rendibroneeringus saab valida seadmete arvu, pakiautomaadi, kuupäeva ja makseviisi;
 * rendi- ja kasutustingimuste checkboxid on nähtavad;

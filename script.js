@@ -46,11 +46,11 @@ if (checkoutForm) {
   const firstExtraDevicePrice = 50;
   const extraDeviceDiscountRate = 0.05;
   const damageFee = 200;
-  const deviceRange = checkoutForm.querySelector("[data-kit-device-range]");
-  const deviceInput = checkoutForm.querySelector("[data-kit-device-input]");
-  const deviceOutput = checkoutForm.querySelector("[data-kit-device-output]");
-  const kitTotal = document.querySelector("[data-kit-total]");
-  const kitSummary = document.querySelector("[data-kit-summary]");
+  const deviceRange = checkoutForm.querySelector("[data-rental-device-range]");
+  const deviceInput = checkoutForm.querySelector("[data-rental-device-input]");
+  const deviceOutput = checkoutForm.querySelector("[data-rental-device-output]");
+  const rentalTotal = document.querySelector("[data-rental-total]");
+  const rentalSummary = document.querySelector("[data-rental-summary]");
   const extraDevicesPrice = checkoutForm.querySelector("[data-extra-devices-price]");
   const breakdownTotal = checkoutForm.querySelector("[data-breakdown-total]");
   const arrivalDateInput = checkoutForm.querySelector("[data-arrival-date]");
@@ -140,8 +140,8 @@ if (checkoutForm) {
     if (deviceRange) deviceRange.value = String(devices);
     if (deviceInput) deviceInput.value = String(devices);
     if (deviceOutput) deviceOutput.textContent = getDeviceCountText(devices);
-    if (kitTotal) kitTotal.textContent = formatEuro(total);
-    if (kitSummary) kitSummary.textContent = summary;
+    if (rentalTotal) rentalTotal.textContent = formatEuro(total);
+    if (rentalSummary) rentalSummary.textContent = summary;
     if (extraDevicesPrice) extraDevicesPrice.textContent = formatEuro(extrasTotal);
     if (breakdownTotal) breakdownTotal.textContent = formatEuro(total);
   };
@@ -155,10 +155,10 @@ if (checkoutForm) {
   deviceRange?.addEventListener("input", (event) => updateCheckout(event.target.value));
   deviceInput?.addEventListener("input", (event) => updateCheckout(event.target.value));
   deviceInput?.addEventListener("blur", (event) => updateCheckout(event.target.value));
-  checkoutForm.querySelector("[data-kit-device-decrease]")?.addEventListener("click", () => {
+  checkoutForm.querySelector("[data-rental-device-decrease]")?.addEventListener("click", () => {
     updateCheckout(clampDevices(deviceInput?.value) - 1);
   });
-  checkoutForm.querySelector("[data-kit-device-increase]")?.addEventListener("click", () => {
+  checkoutForm.querySelector("[data-rental-device-increase]")?.addEventListener("click", () => {
     updateCheckout(clampDevices(deviceInput?.value) + 1);
   });
   arrivalDateInput?.addEventListener("change", updateDates);
