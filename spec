@@ -40,8 +40,9 @@ Rõhk on mugavusel, privaatsusel ja selgel vastusel:
 
 * Miinimumpakett: 99 €
 * Miinimumpakett sisaldab 1 seadet, andmete analüüsi ja raportit.
-* Iga lisaseade: 45 €
-* Lisaseade põhineb hinnal 50 € - 10%.
+* Esimene lisaseade: 50 €
+* Iga järgmine lisaseade on eelmisest lisaseadmest 5% odavam.
+* Lisaseadmete hinnad arvutatakse progressiivselt ja ümardatakse sendi täpsusega.
 * Kui seade läheb kasutaja süül katki või kaob, on hüvitis 200 € seadme kohta.
 
 ## Checkout
@@ -85,7 +86,7 @@ Leht on valmis, kui:
 
 * vana koduvisiidi ja hinnapäringu põhine teenusemudel ei ole põhiloogikana esil;
 * peamine CTA on mõõtekiti tellimine;
-* hind arvutatakse automaatselt 99 € + lisaseadmed × 45 €;
+* hind arvutatakse automaatselt: 99 € baaspakett + progressiivse 5% soodustusega lisaseadmed;
 * checkoutis saab valida seadmete arvu, pakiautomaadi, kuupäeva ja makseviisi;
 * tingimuste checkboxid on nähtavad;
 * privaatsus on selgelt esile toodud;

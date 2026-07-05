@@ -43,7 +43,8 @@ faqButtons.forEach((button) => {
 
 if (checkoutForm) {
   const basePrice = 99;
-  const extraDevicePrice = 45;
+  const firstExtraDevicePrice = 50;
+  const extraDeviceDiscountRate = 0.05;
   const damageFee = 200;
   const deviceRange = checkoutForm.querySelector("[data-kit-device-range]");
   const deviceInput = checkoutForm.querySelector("[data-kit-device-input]");
@@ -59,7 +60,15 @@ if (checkoutForm) {
 
   const minDevices = Number(deviceInput?.min || deviceRange?.min || 1);
   const maxDevices = Number(deviceInput?.max || deviceRange?.max || 10);
-  const formatEuro = (value) => `${new Intl.NumberFormat("et-EE").format(value)} €`;
+  const roundMoney = (value) => Math.round(value * 100) / 100;
+  const formatEuro = (value) => {
+    const rounded = roundMoney(value);
+    const fractionDigits = Number.isInteger(rounded) ? 0 : 2;
+    return `${new Intl.NumberFormat("et-EE", {
+      minimumFractionDigits: fractionDigits,
+      maximumFractionDigits: fractionDigits
+    }).format(rounded)} €`;
+  };
   const formatDate = (date) => new Intl.DateTimeFormat("et-EE", {
     day: "2-digit",
     month: "2-digit",
@@ -79,8 +88,21 @@ if (checkoutForm) {
 
   const getDeviceCountText = (count) => `${count} ${count === 1 ? "seade" : "seadet"}`;
 
+  const getExtraDevicePrice = (extraIndex) => {
+    return roundMoney(firstExtraDevicePrice * Math.pow(1 - extraDeviceDiscountRate, extraIndex));
+  };
+
+  const getExtraDevicesTotal = (count) => {
+    const extras = Math.max(0, count - 1);
+    let total = 0;
+    for (let index = 0; index < extras; index += 1) {
+      total += getExtraDevicePrice(index);
+    }
+    return roundMoney(total);
+  };
+
   const getOrderTotal = (count) => {
-    return basePrice + Math.max(0, count - 1) * extraDevicePrice;
+    return roundMoney(basePrice + getExtraDevicesTotal(count));
   };
 
   const updateDates = () => {
@@ -110,8 +132,7 @@ if (checkoutForm) {
 
   const updateCheckout = (nextValue) => {
     const devices = clampDevices(nextValue ?? deviceInput?.value ?? deviceRange?.value);
-    const extras = Math.max(0, devices - 1);
-    const extrasTotal = extras * extraDevicePrice;
+    const extrasTotal = getExtraDevicesTotal(devices);
     const total = getOrderTotal(devices);
     const summary = `${getDeviceCountText(devices)}, 7 päeva mõõtmist, analüüs ja raport.`;
 
