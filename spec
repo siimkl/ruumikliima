@@ -6,7 +6,7 @@ Ruumikliima.ee on pakiautomaadi kaudu renditav kodu sisekliima mõõtekit.
 
 Klient ei broneeri koduvisiiti ega osta seadet. Klient rendib valmis mõõtekiti lühiajaliseks kasutuseks:
 
-* seadistatud Atmocube mõõteseadmed;
+* seadistatud mõõteseadmed;
 * toiteadapterid ja vajadusel kaablid;
 * lihtne paigaldus- ja kasutusjuhend;
 * 7-päevane rendiperiood kodus 1 minuti andmesammuga;
@@ -15,7 +15,7 @@ Klient ei broneeri koduvisiiti ega osta seadet. Klient rendib valmis mõõtekiti
 
 Teenuse peamine lubadus:
 
-**Rendi Atmocube mõõtekit 7 päevaks, võta see pakiautomaadist, ühenda seade vooluvõrku, tagasta sama pakiga ja saa raport.**
+**Rendi mõõtekit 7 päevaks, võta see pakiautomaadist, ühenda seade vooluvõrku, tagasta sama pakiga ja saa raport.**
 
 ## Positsioneerimine
 
@@ -25,14 +25,14 @@ Rõhk on mugavusel, privaatsusel ja selgel vastusel:
 * sama pakk liigub kliendile ja tagasi;
 * keegi ei tule kliendi koju;
 * seadmed mõõdavad mürataset detsibellides, kuid ei salvesta heli, pilti ega vestlusi;
-* Atmocube seade on kodus diskreetne ja ilusa disainiga;
+* mõõteseade on kodus diskreetne ja ilusa disainiga;
 * raport valmib päev pärast seda, kui tagastatud pakk on jõudnud Ruumikliima.ee kätte.
 
-## Kasutatav seade
+## Kasutatav mõõteseade
 
-Teenuse mõõteseade on Atmocube.
+Teenuses kasutatakse kompaktseid sisekliima mõõteseadmeid. Konkreetne mudel võib ajas muutuda, kuid teenuse lubadus ja raporti sisu peavad jääma mõõdetavate näitajatega kooskõlla.
 
-Atmocube mõõdab ühes seadmes 12 näitajat:
+Praegune mõõtekomplekt võimaldab mõõta kuni 12 näitajat:
 
 * CO2;
 * PM1, PM2.5 ja PM10;
@@ -45,7 +45,7 @@ Atmocube mõõdab ühes seadmes 12 näitajat:
 * valgus;
 * müratase.
 
-Seade töötab USB-C toitega, selle mõõtmed on 128 × 128 × 38 mm ja kaal ligikaudu 300 g. Seade hoiab kohapeal ühe nädala jagu 1 minuti intervalliga andmeid.
+Mõõteseade töötab voolutoitega ja hoiab kohapeal ühe nädala jagu 1 minuti intervalliga andmeid, kui kasutatav mudel seda toetab.
 
 ## Protsess
 
@@ -95,7 +95,7 @@ Kasutaja peab nõustuma vähemalt sellega, et:
 
 1. Hero: pakiautomaadi mõõtekit ja privaatsuse lubadus.
 2. Mis pakis on.
-3. Atmocube seadme tutvustus pildi, disaini ja mõõdetavate näitajatega.
+3. Mõõteseadme tutvustus pildi, disaini ja mõõdetavate näitajatega.
 4. Kuidas mõõtmine töötab.
 5. Privaatsuse sektsioon.
 6. Hinnamudel.
@@ -112,7 +112,7 @@ Leht on valmis, kui:
 * hind arvutatakse automaatselt: 99 € rendipakett + progressiivse 5% soodustusega lisaseadmete rent;
 * rendibroneeringus saab valida seadmete arvu, pakiautomaadi, kuupäeva ja makseviisi;
 * rendi- ja kasutustingimuste checkboxid on nähtavad;
-* Atmocube mõõteseade on tutvustatud koos 12 mõõdetava näitaja ja 1 minuti andmesammuga;
+* mõõteseade on tutvustatud koos mõõdetavate näitajate ja 1 minuti andmesammuga;
 * privaatsus on selgelt esile toodud;
 * leht töötab staatilise saidina;
 * desktop ja mobiil ei sisalda teksti/elementide kattumist.
