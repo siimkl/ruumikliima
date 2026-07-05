@@ -1720,6 +1720,51 @@ h4 {
   box-shadow: 0 8px 20px rgba(10, 37, 64, 0.05);
 }
 
+.measurement-section {
+  background: var(--color-white);
+}
+
+.measurement-insights {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.measurement-insights article {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 0;
+  border: 1px solid rgba(10, 37, 64, 0.1);
+  border-radius: 8px;
+  background: #fbfdff;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(10, 37, 64, 0.05);
+}
+
+.measurement-insights span {
+  justify-self: start;
+  border-radius: 999px;
+  background: var(--color-soft-blue);
+  color: var(--color-primary);
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.measurement-insights h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 1.04rem;
+  line-height: 1.25;
+}
+
+.measurement-insights p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
 .privacy-section {
   background: var(--color-white);
 }
@@ -3700,6 +3745,7 @@ textarea:focus {
   .chart-grid,
   .value-deal,
   .price-model,
+  .measurement-insights,
   .fit-grid,
   .report-kpi-grid,
   .action-plan,
@@ -3864,6 +3910,7 @@ textarea:focus {
   .difference-grid,
   .chart-grid,
   .value-deal,
+  .measurement-insights,
   .fit-grid,
   .report-kpi-grid,
   .room-stat-grid,
