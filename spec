@@ -24,6 +24,7 @@ Rõhk on mugavusel, privaatsusel ja selgel vastusel:
 * sama pakk liigub kliendile ja tagasi;
 * keegi ei tule kliendi koju;
 * seadmed ei salvesta heli, pilti ega vestlusi;
+* seade on kodus diskreetne, ilusa disainiga ja anonüümselt esitletud;
 * raport valmib päev pärast seda, kui tagastatud pakk on jõudnud Ruumikliima.ee kätte.
 
 ## Protsess
@@ -73,12 +74,13 @@ Kasutaja peab nõustuma vähemalt sellega, et:
 
 1. Hero: pakiautomaadi mõõtekit ja privaatsuse lubadus.
 2. Mis pakis on.
-3. Kuidas mõõtmine töötab.
-4. Privaatsuse sektsioon.
-5. Hinnamudel.
-6. Checkout.
-7. Raporti selgitus ja link näidisraportile.
-8. KKK.
+3. Anonüümne seadme tutvustus pildi, disaini ja mõõdetavate näitajatega.
+4. Kuidas mõõtmine töötab.
+5. Privaatsuse sektsioon.
+6. Hinnamudel.
+7. Checkout.
+8. Raporti selgitus ja link näidisraportile.
+9. KKK.
 
 ## Vastuvõtukriteeriumid
 
@@ -89,6 +91,7 @@ Leht on valmis, kui:
 * hind arvutatakse automaatselt: 99 € baaspakett + progressiivse 5% soodustusega lisaseadmed;
 * checkoutis saab valida seadmete arvu, pakiautomaadi, kuupäeva ja makseviisi;
 * tingimuste checkboxid on nähtavad;
+* mõõteseade on tutvustatud anonüümselt ja rõhuga kodusesse interjööri sobivusele;
 * privaatsus on selgelt esile toodud;
 * leht töötab staatilise saidina;
 * desktop ja mobiil ei sisalda teksti/elementide kattumist.
