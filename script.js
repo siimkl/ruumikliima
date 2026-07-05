@@ -87,6 +87,7 @@ if (checkoutForm) {
   };
 
   const getDeviceCountText = (count) => `${count} ${count === 1 ? "seade" : "seadet"}`;
+  const getAtmocubeDeviceCountText = (count) => `${count} Atmocube ${count === 1 ? "seade" : "seadet"}`;
 
   const getExtraDevicePrice = (extraIndex) => {
     return roundMoney(firstExtraDevicePrice * Math.pow(1 - extraDeviceDiscountRate, extraIndex));
@@ -134,7 +135,7 @@ if (checkoutForm) {
     const devices = clampDevices(nextValue ?? deviceInput?.value ?? deviceRange?.value);
     const extrasTotal = getExtraDevicesTotal(devices);
     const total = getOrderTotal(devices);
-    const summary = `${getDeviceCountText(devices)}, 7 päeva mõõtmist, analüüs ja raport.`;
+    const summary = `${getAtmocubeDeviceCountText(devices)}, 7 päeva mõõtmist, analüüs ja raport.`;
 
     if (deviceRange) deviceRange.value = String(devices);
     if (deviceInput) deviceInput.value = String(devices);
@@ -175,7 +176,7 @@ if (checkoutForm) {
     const paymentMethod = data.get("paymentMethod") || "Pangalink";
 
     if (checkoutStatus) {
-      checkoutStatus.textContent = `Tellimus on koostatud: ${getDeviceCountText(devices)}, ${formatEuro(total)}, makseviis ${paymentMethod}. Reaalne maksesuunamine vajab makseteenuse pakkuja ühendamist.`;
+      checkoutStatus.textContent = `Tellimus on koostatud: ${getAtmocubeDeviceCountText(devices)}, ${formatEuro(total)}, makseviis ${paymentMethod}. Reaalne maksesuunamine vajab makseteenuse pakkuja ühendamist.`;
     }
 
     console.info("Checkout order draft", {

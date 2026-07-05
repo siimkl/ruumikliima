@@ -659,7 +659,7 @@ h4 {
 
 .metric-strip {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   margin-top: 14px;
   overflow: hidden;
@@ -688,6 +688,27 @@ h4 {
   border-radius: 50%;
   background: var(--color-accent);
   opacity: 0.82;
+}
+
+.measurement-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.measurement-strip span {
+  min-width: 0;
+  border: 1px solid rgba(10, 37, 64, 0.12);
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(10, 37, 64, 0.04);
 }
 
 .sample-finding {
@@ -1680,7 +1701,7 @@ h4 {
 
 .device-spec-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
 }
 
