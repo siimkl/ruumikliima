@@ -135,7 +135,7 @@ if (checkoutForm) {
     const devices = clampDevices(nextValue ?? deviceInput?.value ?? deviceRange?.value);
     const extrasTotal = getExtraDevicesTotal(devices);
     const total = getOrderTotal(devices);
-    const summary = `${getAtmocubeDeviceCountText(devices)}, 7 päeva mõõtmist, analüüs ja raport.`;
+    const summary = `${getAtmocubeDeviceCountText(devices)} 7 päevaks, analüüs ja raport.`;
 
     if (deviceRange) deviceRange.value = String(devices);
     if (deviceInput) deviceInput.value = String(devices);
@@ -176,7 +176,7 @@ if (checkoutForm) {
     const paymentMethod = data.get("paymentMethod") || "Pangalink";
 
     if (checkoutStatus) {
-      checkoutStatus.textContent = `Tellimus on koostatud: ${getAtmocubeDeviceCountText(devices)}, ${formatEuro(total)}, makseviis ${paymentMethod}. Reaalne maksesuunamine vajab makseteenuse pakkuja ühendamist.`;
+      checkoutStatus.textContent = `Rendibroneering on koostatud: ${getAtmocubeDeviceCountText(devices)} 7 päevaks, ${formatEuro(total)}, makseviis ${paymentMethod}. Reaalne maksesuunamine vajab makseteenuse pakkuja ühendamist.`;
     }
 
     console.info("Checkout order draft", {

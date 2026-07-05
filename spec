@@ -2,20 +2,20 @@
 
 ## Teenuse tuum
 
-Ruumikliima.ee on pakiautomaadi kaudu tellitav kodu sisekliima mõõtekit.
+Ruumikliima.ee on pakiautomaadi kaudu renditav kodu sisekliima mõõtekit.
 
-Klient ei telli koduvisiiti. Klient tellib valmis mõõtekiti:
+Klient ei broneeri koduvisiiti ega osta seadet. Klient rendib valmis mõõtekiti lühiajaliseks kasutuseks:
 
 * seadistatud Atmocube mõõteseadmed;
 * toiteadapterid ja vajadusel kaablid;
 * lihtne paigaldus- ja kasutusjuhend;
-* 7 päeva mõõtmist kodus 1 minuti andmesammuga;
+* 7-päevane rendiperiood kodus 1 minuti andmesammuga;
 * sama pakiga tagastus pakiautomaadist;
 * andmete analüüs ja raport pärast tagastust.
 
 Teenuse peamine lubadus:
 
-**Võta Atmocube mõõtekit pakiautomaadist, ühenda seade vooluvõrku, mõõda 7 päeva, tagasta sama pakiga ja saa raport.**
+**Rendi Atmocube mõõtekit 7 päevaks, võta see pakiautomaadist, ühenda seade vooluvõrku, tagasta sama pakiga ja saa raport.**
 
 ## Positsioneerimine
 
@@ -50,8 +50,8 @@ Seade töötab USB-C toitega, selle mõõtmed on 128 × 128 × 38 mm ja kaal lig
 ## Protsess
 
 1. Klient valib seadmete arvu, pakiautomaadi ja soovitud saabumiskuupäeva.
-2. Klient nõustub kasutustingimustega ja maksab checkoutis.
-3. Ruumikliima.ee saadab seadistatud mõõtekiti pakiautomaati.
+2. Klient nõustub rendi- ja kasutustingimustega ning maksab rendibroneeringu eest.
+3. Ruumikliima.ee saadab seadistatud rendikiti pakiautomaati.
 4. Klient võtab paki vastu, paigutab seadmed juhendi järgi ja ühendab need vooluvõrku.
 5. Seadmed mõõdavad 7 päeva.
 6. Klient lülitab seadmed välja ja tagastab sama pakiga 2 päeva jooksul pärast mõõteperioodi lõppu.
@@ -59,16 +59,16 @@ Seade töötab USB-C toitega, selle mõõtmed on 128 × 128 × 38 mm ja kaal lig
 
 ## Hinnastamine
 
-* Miinimumpakett: 99 €
-* Miinimumpakett sisaldab 1 seadet, andmete analüüsi ja raportit.
-* Esimene lisaseade: 50 €
-* Iga järgmine lisaseade on eelmisest lisaseadmest 5% odavam.
+* 7-päevane rendipakett: 99 €
+* Rendipakett sisaldab 1 seadet, andmete analüüsi ja raportit.
+* Esimese lisaseadme rent: 50 €
+* Iga järgmise lisaseadme rent on eelmisest lisaseadmest 5% odavam.
 * Lisaseadmete hinnad arvutatakse progressiivselt ja ümardatakse sendi täpsusega.
 * Kui seade läheb kasutaja süül katki või kaob, on hüvitis 200 € seadme kohta.
 
-## Checkout
+## Rendibroneering
 
-Kodulehel peab olema kohene checkout-loogika:
+Kodulehel peab olema kohene rendibroneeringu ja maksmise loogika:
 
 * seadmete arvu valik;
 * automaatne hinnaarvutus;
@@ -77,15 +77,16 @@ Kodulehel peab olema kohene checkout-loogika:
 * selgitus, et saabumine võib olla ligikaudu ±2 päeva;
 * kontaktandmed;
 * makseviisi valik: pangalink, kaart või mobiilimakse;
-* kasutustingimustega nõustumine;
-* “Maksa kohe” CTA.
+* rendi- ja kasutustingimustega nõustumine;
+* “Maksa rent kohe” CTA.
 
-Staatilises prototüübis kuvatakse checkout-loogika ja tellimuse kokkuvõte. Reaalne maksetöötlemine vajab makseteenuse pakkuja ühendamist.
+Staatilises prototüübis kuvatakse rendibroneeringu loogika ja maksmise kokkuvõte. Reaalne maksetöötlemine vajab makseteenuse pakkuja ühendamist.
 
 ## Kasutustingimuste olulised punktid
 
 Kasutaja peab nõustuma vähemalt sellega, et:
 
+* seade on rendiks, mitte ostuks;
 * mõõtekit tagastatakse hiljemalt 2 päeva pärast 7-päevase mõõteperioodi lõppu;
 * kasutaja süül katki läinud või kadunud seadme hüvitis on 200 € seadme kohta;
 * teenus on ülevaatlik sisekliima uuring ega asenda akrediteeritud laborimõõtmist, ametlikku hinnangut ega ekspertiisi.
@@ -98,7 +99,7 @@ Kasutaja peab nõustuma vähemalt sellega, et:
 4. Kuidas mõõtmine töötab.
 5. Privaatsuse sektsioon.
 6. Hinnamudel.
-7. Checkout.
+7. Rendibroneering ja maksmine.
 8. Raporti selgitus ja link näidisraportile.
 9. KKK.
 
@@ -107,10 +108,10 @@ Kasutaja peab nõustuma vähemalt sellega, et:
 Leht on valmis, kui:
 
 * vana koduvisiidi ja hinnapäringu põhine teenusemudel ei ole põhiloogikana esil;
-* peamine CTA on mõõtekiti tellimine;
-* hind arvutatakse automaatselt: 99 € baaspakett + progressiivse 5% soodustusega lisaseadmed;
-* checkoutis saab valida seadmete arvu, pakiautomaadi, kuupäeva ja makseviisi;
-* tingimuste checkboxid on nähtavad;
+* peamine CTA on mõõtekiti rentimine;
+* hind arvutatakse automaatselt: 99 € rendipakett + progressiivse 5% soodustusega lisaseadmete rent;
+* rendibroneeringus saab valida seadmete arvu, pakiautomaadi, kuupäeva ja makseviisi;
+* rendi- ja kasutustingimuste checkboxid on nähtavad;
 * Atmocube mõõteseade on tutvustatud koos 12 mõõdetava näitaja ja 1 minuti andmesammuga;
 * privaatsus on selgelt esile toodud;
 * leht töötab staatilise saidina;
