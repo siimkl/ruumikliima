@@ -105,13 +105,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 14px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex: 0 0 auto;
   min-width: 0;
   color: var(--color-primary);
@@ -121,81 +121,90 @@ button {
 .brand-mark {
   position: relative;
   flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  border: 1px solid rgba(10, 37, 64, 0.12);
-  background: linear-gradient(145deg, var(--color-soft-blue), #ffffff 72%);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72), 0 8px 20px rgba(10, 37, 64, 0.08);
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(10, 37, 64, 0.18);
+  background:
+    radial-gradient(circle at 74% 24%, rgba(242, 140, 40, 0.95) 0 8%, transparent 9%),
+    linear-gradient(145deg, #0a2540 0%, #123a5a 72%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 10px 24px rgba(10, 37, 64, 0.13);
 }
 
 .brand-roof {
   position: absolute;
-  left: 11px;
-  top: 8px;
-  width: 22px;
-  height: 22px;
-  border-radius: 4px 4px 2px 4px;
-  background: var(--color-primary);
-  transform: rotate(45deg);
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-white);
+  transform: none;
+}
+
+.brand-roof::before {
+  content: "S";
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
 .brand-house {
   position: absolute;
-  left: 10px;
+  left: 11px;
+  right: 11px;
   bottom: 8px;
-  width: 24px;
-  height: 20px;
-  border: 2px solid var(--color-primary);
-  border-radius: 5px;
-  background: var(--color-white);
+  width: auto;
+  height: 2px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .brand-house::before {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 5px;
-  width: 7px;
-  height: 9px;
-  border-radius: 2px;
-  background: var(--color-soft-blue);
+  left: -3px;
+  top: -5px;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
 }
 
 .brand-sensor {
   position: absolute;
-  right: 3px;
-  top: 4px;
+  right: -2px;
+  top: -8px;
   width: 8px;
   height: 8px;
-  border: 2px solid var(--color-accent);
+  border: 0;
   border-radius: 50%;
-  background: var(--color-white);
+  background: var(--color-accent);
 }
 
 .brand-sensor::after {
   content: "";
   position: absolute;
-  inset: -6px;
+  inset: -5px;
   border-radius: 50%;
-  border: 1px solid rgba(242, 140, 40, 0.38);
-}
-
-.brand-name,
-.brand-tagline {
-  display: block;
-  min-width: 0;
+  border: 1px solid rgba(242, 140, 40, 0.44);
 }
 
 .brand-name {
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.brand-tagline {
-  color: var(--color-muted);
-  font-size: 0.82rem;
-  line-height: 1.25;
+  display: block;
+  min-width: 0;
+  color: var(--color-primary);
+  font-size: 1.04rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .site-nav {
@@ -204,15 +213,15 @@ button {
   justify-content: flex-end;
   flex: 1 1 auto;
   min-width: 0;
-  gap: 2px;
-  font-size: 0.93rem;
+  gap: 1px;
+  font-size: 0.9rem;
   font-weight: 650;
 }
 
 .site-nav a {
   border-radius: 8px;
   color: var(--color-primary);
-  padding: 10px 11px;
+  padding: 10px 9px;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -222,10 +231,10 @@ button {
 }
 
 .site-nav .nav-cta {
-  margin-left: 8px;
+  margin-left: 6px;
   background: var(--color-primary);
   color: var(--color-white);
-  padding-inline: 16px;
+  padding-inline: 13px;
 }
 
 .site-nav .nav-cta:hover {
@@ -4011,7 +4020,7 @@ textarea:focus {
   .brand {
     order: 1;
     flex: 1 1 0;
-    padding-right: 54px;
+    padding-right: 0;
   }
 
   .header-actions {
@@ -4019,40 +4028,42 @@ textarea:focus {
   }
 
   .brand-mark {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
 
   .brand-roof {
-    left: 10px;
-    top: 7px;
-    width: 18px;
-    height: 18px;
+    inset: 0;
+  }
+
+  .brand-roof::before {
+    font-size: 1.22rem;
   }
 
   .brand-house {
-    left: 8px;
+    left: 10px;
+    right: 10px;
     bottom: 7px;
-    width: 22px;
-    height: 18px;
+    width: auto;
+    height: 2px;
   }
 
   .brand-house::before {
-    left: 4px;
-    top: 5px;
-    width: 6px;
-    height: 8px;
+    left: -3px;
+    top: -5px;
+    width: 19px;
+    height: 2px;
   }
 
   .brand-sensor {
-    right: 3px;
-    top: 4px;
+    right: -2px;
+    top: -7px;
     width: 7px;
     height: 7px;
   }
 
-  .brand-tagline {
-    font-size: 0.74rem;
+  .brand-name {
+    font-size: 1rem;
   }
 
   .language-switcher {
@@ -4486,15 +4497,9 @@ textarea:focus {
   }
 
   .brand-name {
-    font-size: 0.95rem;
-    max-width: 130px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 0.98rem;
+    max-width: none;
     white-space: nowrap;
-  }
-
-  .brand-tagline {
-    display: none;
   }
 
   .header-actions {

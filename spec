@@ -1,8 +1,8 @@
-# Ruumikliima.ee uus kontseptsioon
+# Sisekliimauuring.ee uus kontseptsioon
 
 ## Teenuse tuum
 
-Ruumikliima.ee on pakiautomaadi kaudu renditav kodu sisekliima mõõtekomplekt.
+Sisekliimauuring.ee on pakiautomaadi kaudu renditav kodu sisekliima mõõtekomplekt.
 
 Klient ei osta seadet. Klient rendib valmis mõõtekomplekti lühiajaliseks kasutuseks:
 
@@ -24,7 +24,7 @@ Rõhk on mugavusel, pakiautomaadi kaudu liikuval rendil ja selgel vastusel:
 * klient valib kodukoha pakiautomaadi;
 * sama pakk liigub kliendile ja tagasi;
 * mõõteseade on kodus diskreetne ja ilusa disainiga;
-* raport valmib päev pärast seda, kui tagastatud pakk on jõudnud Ruumikliima.ee kätte.
+* raport valmib päev pärast seda, kui tagastatud pakk on jõudnud Sisekliimauuring.ee kätte.
 
 ## Kasutatav mõõteseade
 
@@ -46,11 +46,11 @@ Mõõteseade on akutoitel ja teenuses kasutatakse 10 minuti andmesammu.
 
 1. Klient valib seadmete arvu, pakiautomaadi ja soovitud saabumiskuupäeva.
 2. Klient nõustub rendi- ja kasutustingimustega ning maksab rendibroneeringu eest.
-3. Ruumikliima.ee saadab seadistatud rendikomplekti pakiautomaati.
+3. Sisekliimauuring.ee saadab seadistatud rendikomplekti pakiautomaati.
 4. Klient võtab paki vastu, paigutab seadmed juhendi järgi ja kontrollib aku/laadimise.
 5. Seadmed mõõdavad 7 päeva.
 6. Klient lülitab seadmed välja ja tagastab sama pakiga 2 päeva jooksul pärast mõõteperioodi lõppu.
-7. Ruumikliima.ee võtab andmed välja, analüüsib ja saadab raporti.
+7. Sisekliimauuring.ee võtab andmed välja, analüüsib ja saadab raporti.
 
 ## Hinnastamine
 
