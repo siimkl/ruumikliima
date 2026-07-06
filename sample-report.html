@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sisekliimauuring.ee - põhjalik näidisraport</title>
-  <meta name="description" content="Fiktiivse kodu 7-päevase sisekliima uuringu põhjalik näidisraport ajajoonte, leidude ja soovitustega.">
+  <title>Sisekliimauuring.ee - kliendiraporti näidis</title>
+  <meta name="description" content="Anonüümitud 7-päevase sisekliima uuringu kliendiraporti näidis ajajoonte, leidude ja soovitustega.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,7 +28,10 @@
         <nav class="sample-report-nav" aria-label="Raporti navigatsioon">
           <a href="index.html#raport">Avaleht</a>
           <a href="#kokkuvote">Kokkuvõte</a>
+          <a href="#paevik">Päevik</a>
+          <a href="#skeem">Skeem</a>
           <a href="#ruumid">Ruumid</a>
+          <a href="#seosed">Seosed</a>
           <a href="#leiud">Leiud</a>
           <a href="#soovitused">Soovitused</a>
         </nav>
@@ -36,19 +39,35 @@
 
       <div class="sample-cover-grid">
         <div>
-          <p class="eyebrow">Fiktiivne näidisraport</p>
-          <h1>7-päevane kodu sisekliima raport</h1>
-          <p class="sample-lead">Näidis näitab, kui põhjalikult saab Sisekliimauuring.ee 7-päevase mõõtmise tulemused kliendile esitada. Andmed on realistlikud, kuid kodu, inimesed ja sündmused on väljamõeldud.</p>
+          <p class="eyebrow">Kliendiraporti näidis</p>
+          <h1>7-päevane sisekliimauuringu raport</h1>
+          <p class="sample-lead">Raport koondab ühe kodu 7-päevase mõõtmise tulemused: mõõteplaani, kliendi päeviku, ruumidevahelised seosed, ruumipõhised graafikud, andmetabelid ja praktilised soovitused. Avalik versioon on anonüümitud näidis.</p>
         </div>
         <aside class="sample-cover-card" aria-label="Raporti metaandmed">
           <dl>
             <div>
-              <dt>Kodu</dt>
+              <dt>Raporti nr</dt>
+              <dd>SIU-2026-0317-N</dd>
+            </div>
+            <div>
+              <dt>Klient</dt>
+              <dd>Eraklient, nimi eemaldatud</dd>
+            </div>
+            <div>
+              <dt>Objekt</dt>
               <dd>78 m² korter, 3 tuba, Tallinn</dd>
+            </div>
+            <div>
+              <dt>Koostatud</dt>
+              <dd>18.03.2026</dd>
             </div>
             <div>
               <dt>Mõõteperiood</dt>
               <dd>10.03.2026 18:00 - 17.03.2026 18:00</dd>
+            </div>
+            <div>
+              <dt>Teenuse tüüp</dt>
+              <dd>7-päevane rendimõõtmine + analüüs</dd>
             </div>
             <div>
               <dt>Mõõtesamm</dt>
@@ -56,7 +75,7 @@
             </div>
             <div>
               <dt>Mõõtepunktid</dt>
-              <dd>5 ruumi, sh 1 PM2.5/PM10 punkt</dd>
+              <dd>5 ruumi, kõigis sama mõõdikute komplekt</dd>
             </div>
           </dl>
         </aside>
@@ -102,6 +121,7 @@
       <div class="report-section-heading">
         <p class="eyebrow">2. Mõõteplaan</p>
         <h2>Kus ja mida mõõdeti</h2>
+        <p>Kõigis ruumides kasutati sama tüüpi mõõteseadet. Iga mõõtepunkt kogus sama näitajate komplekti: CO₂, PM1, PM2.5, PM10, TVOC, NOx, temperatuur, suhteline õhuniiskus ja õhurõhk.</p>
       </div>
       <div class="report-table-wrap">
         <table class="report-table">
@@ -117,42 +137,152 @@
             <tr>
               <td>MP1</td>
               <td>Magamistuba</td>
-              <td>CO₂, °C, RH</td>
+              <td>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</td>
               <td>Kummut, hingamisteedest eemal, uksest 2,4 m.</td>
             </tr>
             <tr>
               <td>MP2</td>
               <td>Elutuba</td>
-              <td>CO₂, °C, RH</td>
+              <td>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</td>
               <td>Riiul istumiskõrgusest kõrgemal, aknast 1,8 m.</td>
             </tr>
             <tr>
               <td>MP3</td>
               <td>Köök</td>
-              <td>CO₂, °C, RH, PM2.5, PM10</td>
+              <td>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</td>
               <td>Tööpinnast eemal, mitte otse pliidi või kubu all.</td>
             </tr>
             <tr>
               <td>MP4</td>
               <td>Põhjapoolne tuba</td>
-              <td>CO₂, °C, RH</td>
+              <td>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</td>
               <td>Välisseina lähedal, kuid mitte vastu seina.</td>
             </tr>
             <tr>
               <td>MP5</td>
               <td>Esik</td>
-              <td>°C, RH</td>
+              <td>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</td>
               <td>Keskne võrdluspunkt ruumide vahel.</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="report-note">Andmevoog oli katkematu 98,7% mõõteperioodist. Üks lühike andmelünk tekkis köögis 14.03 kell 11:20-12:05 seadme laadimise tõttu.</p>
+      <p class="report-note">Andmevoog oli katkematu 98,7% mõõteperioodist. Üks lühike andmelünk tekkis köögis 14.03 kell 11:20-12:05 seadme ajutise ümberpaigutamise tõttu.</p>
+    </section>
+
+    <section class="report-section" id="paevik">
+      <div class="report-section-heading">
+        <p class="eyebrow">3. Kliendi päevik</p>
+        <h2>Tegevuspäevik annab konteksti</h2>
+        <p>Klient märkis nädala jooksul üles kodused tegevused, akende ja uste kasutuse ning erakorralised olukorrad. Päevik ei ole mõõtmise alus, kuid aitab eristada korduvaid mustreid juhuslikest sündmustest.</p>
+      </div>
+
+      <div class="diary-grid" aria-label="Digiteeritud tegevuspäevik">
+        <article class="diary-entry">
+          <span>E 10.03 · 19:10</span>
+          <h3>Õhtusöök köögis</h3>
+          <p>Praadimine, kubu käivitati umbes 10 minutit pärast alustamist. Köögi uks jäi avatuks elutoa poole.</p>
+          <small>Seotud näitajad: PM2.5, PM10, TVOC</small>
+        </article>
+        <article class="diary-entry">
+          <span>T 11.03 · 23:30</span>
+          <h3>Magamistoa uks suletud</h3>
+          <p>Kaks inimest magasid suletud uksega. Aken oli kinni ja hommikul tuulutati 12 minutit.</p>
+          <small>Seotud näitajad: CO₂, temperatuur</small>
+        </article>
+        <article class="diary-entry">
+          <span>K 12.03 · 18:40</span>
+          <h3>Pesu kuivas põhjapoolses toas</h3>
+          <p>Pesurest oli MP4 lähedal, uks jäi õhtul poolenisti kinni. Ruum oli ülejäänud kodust jahedam.</p>
+          <small>Seotud näitajad: RH, temperatuur</small>
+        </article>
+        <article class="diary-entry">
+          <span>N 13.03 · 07:20</span>
+          <h3>Kiire hommikune tuulutus</h3>
+          <p>Magamistoa ja elutoa aknad avati korraga. Esikus oli samal ajal korteri välisuks lühidalt avatud.</p>
+          <small>Seotud näitajad: CO₂, RH, temperatuur</small>
+        </article>
+        <article class="diary-entry">
+          <span>L 15.03 · 20:05</span>
+          <h3>Külalised elutoas</h3>
+          <p>Elutoas viibis 5 inimest umbes 2 tundi. Köögis valmistati samal ajal suupisteid.</p>
+          <small>Seotud näitajad: CO₂, TVOC, PM2.5</small>
+        </article>
+        <article class="diary-entry">
+          <span>P 16.03 · 11:30</span>
+          <h3>Koristus ja põrandapesu</h3>
+          <p>Kasutati lõhnastatud puhastusvahendit. Kõik siseuksed olid koristuse ajal avatud.</p>
+          <small>Seotud näitajad: TVOC, NOx-indeks</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="report-section" id="skeem">
+      <div class="report-section-heading">
+        <p class="eyebrow">4. Kodu skeem</p>
+        <h2>Kliendi koduskeem ja paigutus</h2>
+        <p>Klient lisas lihtsa käsijoonise ruumide kasutusest, uste tavapärasest asendist ja mõõteseadmete paigutusest. Skeem aitab tõlgendada, miks ühe ruumi tegevus võib mõjuda teise ruumi mõõtetulemustele.</p>
+      </div>
+
+      <div class="home-sketch-layout">
+        <div class="home-sketch-card" aria-label="Kodu käsijoonise stiilis skeem">
+          <svg class="home-sketch" viewBox="0 0 820 520" role="img" aria-label="Digiteeritud koduskeem mõõtepunktide ja õhu liikumisega">
+            <rect x="72" y="64" width="676" height="388" rx="12" class="sketch-wall"></rect>
+            <path d="M72 232 H748 M286 64 V452 M536 64 V452 M286 302 H536" class="sketch-wall sketch-inner"></path>
+            <path d="M286 232 C314 232 330 246 338 270 M536 232 C510 232 494 248 486 272 M286 302 C314 302 330 318 338 344" class="sketch-door"></path>
+            <text x="114" y="126">Magamistuba</text>
+            <text x="330" y="126">Elutuba</text>
+            <text x="588" y="126">Köök</text>
+            <text x="112" y="364">Põhjapoolne tuba</text>
+            <text x="372" y="382">Esik</text>
+            <g class="sketch-sensor">
+              <circle cx="176" cy="174" r="18"></circle>
+              <text x="176" y="179">MP1</text>
+            </g>
+            <g class="sketch-sensor">
+              <circle cx="416" cy="176" r="18"></circle>
+              <text x="416" y="181">MP2</text>
+            </g>
+            <g class="sketch-sensor">
+              <circle cx="636" cy="178" r="18"></circle>
+              <text x="636" y="183">MP3</text>
+            </g>
+            <g class="sketch-sensor">
+              <circle cx="178" cy="384" r="18"></circle>
+              <text x="178" y="389">MP4</text>
+            </g>
+            <g class="sketch-sensor">
+              <circle cx="424" cy="398" r="18"></circle>
+              <text x="424" y="403">MP5</text>
+            </g>
+            <path d="M628 216 C594 258 534 272 472 252" class="sketch-flow"></path>
+            <path d="M188 216 C236 262 312 272 402 252" class="sketch-flow"></path>
+            <path d="M194 360 C256 330 318 326 390 358" class="sketch-flow cool"></path>
+            <text x="548" y="270" class="sketch-note">toiduvalmistamise mõju</text>
+            <text x="154" y="276" class="sketch-note">suletud ukse mõju öösel</text>
+            <text x="162" y="430" class="sketch-note">jahedam + niiskem tsoon</text>
+          </svg>
+        </div>
+        <div class="sketch-legend">
+          <article>
+            <strong>MP1-MP5</strong>
+            <p>Mõõteseadmete ligikaudne asukoht kliendi joonise põhjal.</p>
+          </article>
+          <article>
+            <strong>Oranž nool</strong>
+            <p>Õhu või tegevuse mõju liikumine teise ruumi poole, näiteks köögist elutuppa.</p>
+          </article>
+          <article>
+            <strong>Sinine nool</strong>
+            <p>Jahedama või niiskema tsooni mõju esiku kaudu ülejäänud koduga võrreldes.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section class="report-section" id="ruumid">
       <div class="report-section-heading">
-        <p class="eyebrow">3. Ruumipõhised andmed</p>
+        <p class="eyebrow">5. Ruumipõhised andmed</p>
         <h2>Iga mõõtepunkt eraldi</h2>
         <p>Allpool on iga ruumi graafik tunniajase sammuga. Nupud vahetavad graafikul mõõdikut; tabeli saab avada päevakoondist tunniandmeteks ja sealt edasi 10 minuti mõõtehetkedeks. Täisandmestikus on ligikaudu iga 10 minuti järel kogutud kirjed, mida saab soovi korral CSV-na edasi analüüsida.</p>
       </div>
@@ -164,13 +294,19 @@
               <p class="finding-label status-warning">MP1</p>
               <h3>Magamistuba</h3>
             </div>
-            <span>CO₂, temperatuur, RH</span>
+            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
           </div>
           <p class="room-insight">Peamine tähelepanek on öine CO₂ tõus, mis tekib suletud ukse ja kahe magaja koosmõjus. Temperatuur ja niiskus olid muus osas stabiilsed.</p>
           <div class="room-chart-controls" aria-label="Magamistoa mõõdiku valik">
             <button type="button" class="room-chart-button is-active" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
+            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
+            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
+            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
+            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
             <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
             <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
           </div>
           <div class="room-chart-panel">
             <div class="room-interactive-chart">
@@ -189,13 +325,19 @@
               <p class="finding-label status-good">MP2</p>
               <h3>Elutuba</h3>
             </div>
-            <span>CO₂, temperatuur, RH</span>
+            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
           </div>
           <p class="room-insight">Elutuba toimib võrdlusruumina: CO₂ ei püsi pikalt kõrgel ning temperatuur ja niiskus jäävad kitsasse vahemikku.</p>
           <div class="room-chart-controls" aria-label="Elutoa mõõdiku valik">
             <button type="button" class="room-chart-button is-active" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
+            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
+            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
+            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
+            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
             <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
             <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
           </div>
           <div class="room-chart-panel">
             <div class="room-interactive-chart">
@@ -214,15 +356,19 @@
               <p class="finding-label status-watch">MP3</p>
               <h3>Köök</h3>
             </div>
-            <span>CO₂, temperatuur, RH, PM2.5, PM10</span>
+            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
           </div>
           <p class="room-insight">Köögis on toiduvalmistamise ajal näha lühiajalisi peenosakeste tõuse. Päevakeskmised on mõõdukad, kuid hetkelised tipud eristuvad selgelt.</p>
           <div class="room-chart-controls" aria-label="Köögi mõõdiku valik">
+            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
             <button type="button" class="room-chart-button is-active" data-metric="pm25">PM2.5</button>
             <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
-            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
+            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
             <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
             <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
           </div>
           <div class="room-chart-panel">
             <div class="room-interactive-chart">
@@ -241,13 +387,19 @@
               <p class="finding-label status-watch">MP4</p>
               <h3>Põhjapoolne tuba</h3>
             </div>
-            <span>CO₂, temperatuur, RH</span>
+            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
           </div>
           <p class="room-insight">See ruum on teistest jahedam ja niiskem. Erinevus tugevneb päevadel, mil ruumis on suurem niiskuskoormus või uks püsib pikemalt suletuna.</p>
           <div class="room-chart-controls" aria-label="Põhjapoolse toa mõõdiku valik">
+            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
+            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
+            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
+            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
+            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
             <button type="button" class="room-chart-button is-active" data-metric="rh">Niiskus</button>
             <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
-            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
           </div>
           <div class="room-chart-panel">
             <div class="room-interactive-chart">
@@ -266,12 +418,19 @@
               <p class="finding-label status-good">MP5</p>
               <h3>Esik</h3>
             </div>
-            <span>Temperatuur, RH</span>
+            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
           </div>
-          <p class="room-insight">Esik annab ülejäänud koduga võrreldes neutraalse vahepunkti. Selles ruumis CO₂ ega peenosakesi ei mõõdetud.</p>
+          <p class="room-insight">Esik annab ülejäänud koduga võrreldes neutraalse vahepunkti. Sama mõõdikute komplekt aitab näha, millised muutused liiguvad ruumide vahel.</p>
           <div class="room-chart-controls" aria-label="Esiku mõõdiku valik">
+            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
+            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
+            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
+            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
+            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
+            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
             <button type="button" class="room-chart-button is-active" data-metric="temp">Temperatuur</button>
             <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
+            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
           </div>
           <div class="room-chart-panel">
             <div class="room-interactive-chart">
@@ -286,9 +445,54 @@
       </div>
     </section>
 
+    <section class="report-section" id="seosed">
+      <div class="report-section-heading">
+        <p class="eyebrow">6. Ruumidevahelised seosed</p>
+        <h2>Andmepõhine analüütika näitab, kuidas üks ruum mõjutab teist</h2>
+        <p>Lisaks ruumide eraldi graafikutele otsisime mustreid, kus ühe ruumi tegevus või kliimamuutus kordub ajaliselt teises ruumis. Seosed ei tõesta üksinda põhjuslikkust, kuid koos päeviku ja koduskeemiga aitavad need valida praktilisi katseid.</p>
+      </div>
+
+      <div class="correlation-grid">
+        <article class="correlation-card status-watch">
+          <span>Köök → elutuba</span>
+          <h3>PM2.5 tõus jõuab elutuppa 20-35 minutiga</h3>
+          <p>Kolmel toiduvalmistamise õhtul tõusis köögi PM2.5 esimesena. Elutoas järgnes väiksem, kuid nähtav tõus keskmiselt 28 minutit hiljem.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,72</dd></div>
+            <div><dt>Viiteaeg</dt><dd>~28 min</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-warning">
+          <span>Magamistuba → esik</span>
+          <h3>Hommikune ukse avamine kannab CO₂ esikusse</h3>
+          <p>Öise kõrge CO₂ järel langes magamistoa näit kiiresti, samal ajal tekkis esikus lühike CO₂ tõus. Muster kordus neljal hommikul.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,64</dd></div>
+            <div><dt>Viiteaeg</dt><dd>5-15 min</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-watch">
+          <span>Põhjapoolne tuba ↔ esik</span>
+          <h3>Niiskem ja jahedam ruum mõjutab võrdluspunkti</h3>
+          <p>Päevadel, mil põhjapoolses toas kuivas pesu, tõusis esiku RH väikese viitega 2-4 protsendipunkti. Uste avatuna hoidmine vähendas erinevust.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,58</dd></div>
+            <div><dt>Viiteaeg</dt><dd>1-2 h</dd></div>
+          </dl>
+        </article>
+      </div>
+
+      <div class="correlation-timeline" aria-label="Ruumidevaheliste mõjude ajajoon">
+        <div><span>19:10</span><strong>Köök</strong><p>PM2.5 tipp praadimise ajal</p></div>
+        <div><span>19:38</span><strong>Elutuba</strong><p>Väiksem PM2.5 tõus</p></div>
+        <div><span>23:30-06:40</span><strong>Magamistuba</strong><p>CO₂ kogunemine suletud uksega</p></div>
+        <div><span>06:55</span><strong>Esik</strong><p>Lühike CO₂ tõus pärast ukse avamist</p></div>
+      </div>
+    </section>
+
     <section class="report-section" id="leiud">
       <div class="report-section-heading">
-        <p class="eyebrow">4. Põhileiud</p>
+        <p class="eyebrow">7. Põhileiud</p>
         <h2>Ajajooned ja tõlgendus</h2>
       </div>
 
@@ -419,7 +623,7 @@
 
     <section class="report-section">
       <div class="report-section-heading">
-        <p class="eyebrow">5. Ruumide võrdlus</p>
+        <p class="eyebrow">8. Ruumide võrdlus</p>
         <h2>Nädala koondnäitajad</h2>
       </div>
       <div class="report-table-wrap">
@@ -482,7 +686,7 @@
 
     <section class="report-section" id="soovitused">
       <div class="report-section-heading">
-        <p class="eyebrow">6. Soovitused</p>
+        <p class="eyebrow">9. Soovitused</p>
         <h2>Praktiline tegevusplaan</h2>
       </div>
       <div class="action-plan">
@@ -511,7 +715,7 @@
 
     <section class="report-section">
       <div class="report-section-heading">
-        <p class="eyebrow">7. Tõlgendamise raam</p>
+        <p class="eyebrow">10. Tõlgendamise raam</p>
         <h2>Kuidas numbreid lugeda</h2>
       </div>
       <div class="interpretation-grid">

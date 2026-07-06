@@ -487,9 +487,159 @@ const sampleReportData = {
   }
 };
 
+const metricOrder = ["co2", "pm1", "pm25", "pm10", "tvoc", "nox", "temp", "rh", "hpa"];
+
+const sharedMetricMeta = {
+  pm1: {
+    label: "PM1 maksimum",
+    shortLabel: "PM1",
+    unit: "µg/m³",
+    color: "#bf4c7a",
+    chartKey: "max",
+    secondaryKey: "avg",
+    secondaryLabel: "päevakeskmine",
+    zeroBase: true,
+    bandFrom: 15,
+    bandClass: "warning",
+    note: "PM1 aitab näha väga peente osakeste lühiajalisi tõuse, mis liiguvad koos köögi, küünalde või välisõhu mõjuga.",
+    summary: "Väga peente osakeste muutused on sündmuste ajal nähtavad."
+  },
+  pm25: {
+    label: "PM2.5 maksimum",
+    shortLabel: "PM2.5",
+    unit: "µg/m³",
+    color: "#d94b5f",
+    chartKey: "max",
+    secondaryKey: "avg",
+    secondaryLabel: "päevakeskmine",
+    zeroBase: true,
+    bandFrom: 25,
+    bandClass: "warning",
+    note: "PM2.5 näitab peenosakeste muutusi. Päevakeskmine võib olla madal ka siis, kui tegevuse ajal tekib lühike tipp.",
+    summary: "Peenosakeste tipud on ajaliselt tegevustega võrreldavad."
+  },
+  pm10: {
+    label: "PM10 maksimum",
+    shortLabel: "PM10",
+    unit: "µg/m³",
+    color: "#a33b4c",
+    chartKey: "max",
+    secondaryKey: "avg",
+    secondaryLabel: "päevakeskmine",
+    zeroBase: true,
+    bandFrom: 50,
+    bandClass: "warning",
+    note: "PM10 aitab eristada suuremaid sissehingatavaid osakesi, näiteks tolmu, koristuse või toiduvalmistamise mõju.",
+    summary: "PM10 muutused toetavad osakeste allika tõlgendust."
+  },
+  tvoc: {
+    label: "TVOC maksimum",
+    shortLabel: "TVOC",
+    unit: "ppb",
+    color: "#7b61ff",
+    chartKey: "max",
+    secondaryKey: "avg",
+    secondaryLabel: "päevakeskmine",
+    zeroBase: true,
+    note: "TVOC on lenduvate orgaaniliste ühendite koondnäit ja reageerib näiteks koristusele, lõhnadele või värsketele materjalidele.",
+    summary: "TVOC annab konteksti lõhnade ja kemikaalsete allikate ajastusele."
+  },
+  nox: {
+    label: "NOx-indeksi maksimum",
+    shortLabel: "NOx",
+    unit: "indeks",
+    color: "#b86b1d",
+    chartKey: "max",
+    secondaryKey: "avg",
+    secondaryLabel: "päevakeskmine",
+    zeroBase: true,
+    note: "NOx-indeks aitab märgata põlemise, välisõhu või liiklusest tuleva õhu võimalikku mõju.",
+    summary: "NOx-indeks on abinäit gaasiliste muutuste võrdlemiseks."
+  },
+  hpa: {
+    label: "Õhurõhu keskmine",
+    shortLabel: "hPa",
+    unit: "hPa",
+    color: "#5d7896",
+    chartKey: "avg",
+    secondaryKey: "max",
+    secondaryLabel: "päeva maksimum",
+    note: "Õhurõhk kirjeldab mõõteperioodi tausttingimusi ja aitab eristada koduseid muutusi ilmastiku taustast.",
+    summary: "Õhurõhk oli taustnäitajana stabiilne."
+  }
+};
+
+const sharedRoomMetricData = {
+  bedroom: {
+    pm1: { avg: [2, 2, 3, 2, 3, 2, 2], max: [8, 9, 11, 7, 10, 6, 8] },
+    pm25: { avg: [4, 5, 5, 4, 6, 4, 4], max: [18, 22, 24, 16, 26, 15, 17] },
+    pm10: { avg: [8, 9, 10, 8, 11, 8, 9], max: [30, 34, 38, 28, 42, 26, 31] },
+    tvoc: { avg: [92, 98, 105, 96, 112, 88, 94], max: [210, 238, 260, 225, 285, 198, 220] },
+    nox: { avg: [11, 12, 13, 12, 14, 10, 11], max: [28, 30, 33, 29, 35, 24, 27] },
+    hpa: { avg: [1009, 1011, 1013, 1010, 1008, 1006, 1007], max: [1011, 1013, 1015, 1012, 1010, 1008, 1009] }
+  },
+  living: {
+    pm1: { avg: [2, 2, 2, 2, 3, 3, 2], max: [7, 8, 8, 7, 11, 12, 7] },
+    pm25: { avg: [3, 4, 4, 3, 6, 7, 4], max: [14, 17, 18, 14, 28, 30, 16] },
+    pm10: { avg: [7, 8, 8, 7, 12, 13, 8], max: [24, 28, 30, 23, 45, 48, 27] },
+    tvoc: { avg: [88, 92, 96, 90, 118, 135, 96], max: [180, 190, 205, 188, 330, 360, 210] },
+    nox: { avg: [10, 11, 11, 10, 16, 17, 11], max: [22, 25, 24, 23, 42, 46, 26] },
+    hpa: { avg: [1009, 1011, 1013, 1010, 1008, 1006, 1007], max: [1011, 1013, 1015, 1012, 1010, 1008, 1009] }
+  },
+  kitchen: {
+    pm1: { avg: [3, 4, 4, 3, 5, 6, 3], max: [32, 42, 28, 19, 38, 30, 20] },
+    tvoc: { avg: [130, 145, 138, 125, 160, 170, 132], max: [420, 520, 390, 340, 560, 480, 360] },
+    nox: { avg: [18, 22, 19, 17, 24, 26, 18], max: [58, 72, 55, 48, 80, 66, 50] },
+    hpa: { avg: [1009, 1011, 1013, 1010, 1008, 1006, 1007], max: [1011, 1013, 1015, 1012, 1010, 1008, 1009] }
+  },
+  north: {
+    pm1: { avg: [2, 2, 2, 2, 3, 2, 2], max: [7, 8, 9, 7, 10, 7, 8] },
+    pm25: { avg: [4, 4, 5, 4, 5, 4, 4], max: [16, 18, 21, 17, 23, 16, 18] },
+    pm10: { avg: [8, 9, 10, 9, 11, 8, 9], max: [27, 31, 35, 30, 38, 28, 32] },
+    tvoc: { avg: [86, 92, 95, 90, 102, 88, 90], max: [175, 190, 210, 180, 230, 170, 185] },
+    nox: { avg: [9, 10, 10, 9, 12, 9, 10], max: [21, 24, 25, 22, 28, 21, 23] },
+    hpa: { avg: [1009, 1011, 1013, 1010, 1008, 1006, 1007], max: [1011, 1013, 1015, 1012, 1010, 1008, 1009] }
+  },
+  hall: {
+    co2: {
+      label: "CO₂ maksimum",
+      shortLabel: "CO₂",
+      unit: "ppm",
+      color: "#f28c28",
+      chartKey: "max",
+      secondaryKey: "avg",
+      secondaryLabel: "päevakeskmine",
+      avg: [620, 650, 660, 640, 690, 680, 640],
+      max: [820, 890, 900, 860, 960, 940, 870],
+      bandFrom: 1200,
+      bandClass: "warning",
+      note: "Esiku CO₂ näitab kodu üldist õhu liikumist ja lühikesi muutusi pärast uste avamist.",
+      summary: "Esik toimib kodu üldise võrdluspunktina."
+    },
+    pm1: { avg: [2, 2, 2, 2, 3, 3, 2], max: [8, 9, 9, 8, 13, 12, 8] },
+    pm25: { avg: [3, 4, 4, 3, 6, 6, 4], max: [15, 18, 19, 15, 30, 28, 17] },
+    pm10: { avg: [7, 8, 8, 7, 12, 12, 8], max: [25, 29, 31, 24, 48, 44, 28] },
+    tvoc: { avg: [82, 88, 92, 85, 112, 120, 90], max: [170, 185, 200, 178, 300, 330, 195] },
+    nox: { avg: [9, 10, 10, 9, 14, 15, 10], max: [20, 23, 24, 21, 38, 40, 24] },
+    hpa: { avg: [1009, 1011, 1013, 1010, 1008, 1006, 1007], max: [1011, 1013, 1015, 1012, 1010, 1008, 1009] }
+  }
+};
+
+Object.entries(sharedRoomMetricData).forEach(([roomKey, metrics]) => {
+  const room = sampleReportData.rooms[roomKey];
+  if (!room) return;
+
+  Object.entries(metrics).forEach(([metricKey, data]) => {
+    if (room.metrics[metricKey]) return;
+    room.metrics[metricKey] = {
+      ...(sharedMetricMeta[metricKey] || {}),
+      ...data
+    };
+  });
+});
+
 const HOURS_PER_DAY = 24;
 const READINGS_PER_HOUR = 6;
-const metricOrder = ["co2", "temp", "rh", "pm25", "pm10"];
 const hourlySeriesCache = new Map();
 
 function average(values) {
@@ -550,10 +700,14 @@ function getMetricKeys(room) {
 function getMetricShortLabel(metricKey) {
   return {
     co2: "CO₂",
+    pm1: "PM1",
+    pm25: "PM2.5",
+    pm10: "PM10",
+    tvoc: "TVOC",
+    nox: "NOx",
     temp: "Temp",
     rh: "RH",
-    pm25: "PM2.5",
-    pm10: "PM10"
+    hpa: "hPa"
   }[metricKey] || metricKey;
 }
 
@@ -587,13 +741,29 @@ function buildHourlyValue(roomKey, metricKey, metric, dayIndex, hour) {
     return roundReading(clamp(value, Math.max(25, avg - 8), Math.max(max + 1, avg + 2)), metric);
   }
 
-  if (metricKey === "pm25" || metricKey === "pm10") {
+  if (metricKey === "pm1" || metricKey === "pm25" || metricKey === "pm10") {
     const eventHours = [18, 19, 18, 20, 19, 12, 10];
     const mealPeak = gaussian(circularDistance(hour, eventHours[dayIndex]), 0.9);
     const breakfast = gaussian(circularDistance(hour, 8), 0.85) * 0.22;
     const base = Math.max(1, avg * 0.55);
     const value = base + (max - base) * Math.max(mealPeak, breakfast) + wave(seed, avg * 0.08);
     return roundReading(clamp(value, 0, max + Math.max(2, avg * 0.3)), metric);
+  }
+
+  if (metricKey === "tvoc" || metricKey === "nox") {
+    const cleaning = gaussian(circularDistance(hour, 11), 1.4) * (dayIndex === 6 ? 1 : 0.28);
+    const cooking = gaussian(circularDistance(hour, 19), 1.7) * (roomKey === "kitchen" ? 1 : 0.45);
+    const guests = gaussian(circularDistance(hour, 21), 2.4) * (dayIndex === 5 ? 0.75 : 0.15);
+    const base = Math.max(1, avg * 0.68);
+    const event = Math.max(cleaning, cooking, guests);
+    const value = base + (max - base) * event + wave(seed, avg * 0.05);
+    return roundReading(clamp(value, 0, max + Math.max(2, avg * 0.25)), metric);
+  }
+
+  if (metricKey === "hpa") {
+    const slowCurve = Math.sin(((dayIndex * HOURS_PER_DAY + hour) / (HOURS_PER_DAY * 7)) * Math.PI * 2 + 0.6);
+    const value = avg + slowCurve * 1.1 + wave(seed, 0.12);
+    return roundReading(clamp(value, avg - 3, max + 1), metric);
   }
 
   const base = Math.max(420, avg - 220);
@@ -834,48 +1004,54 @@ function renderRoomChart(card, room, roomKey, metricKey) {
   };
 }
 
+const tableMetricGroups = [
+  { label: "Õhk", keys: ["co2"] },
+  { label: "Osakesed", keys: ["pm1", "pm25", "pm10"] },
+  { label: "Gaasilised", keys: ["tvoc", "nox"] },
+  { label: "Ruumikliima", keys: ["temp", "rh", "hpa"] }
+];
+
+function renderMetricStack(items) {
+  return `<div class="metric-stack">${items.map((item) => `
+    <span><b>${item.label}</b><em>${item.value}</em></span>
+  `).join("")}</div>`;
+}
+
+function getDailyMetricValue(metricKey, metric, index) {
+  if (metricKey === "temp" && metric.min && metric.max) {
+    return `${formatMetricValue(metric.avg[index], metric)} · ${formatMetricValue(metric.min[index], metric)}-${formatMetricValue(metric.max[index], metric)}`;
+  }
+
+  if (metric.max) {
+    return `${formatMetricValue(metric.avg[index], metric)} · max ${formatMetricValue(metric.max[index], metric)}`;
+  }
+
+  return formatMetricValue(metric.avg[index], metric);
+}
+
+function buildGroupedColumns(room, valueGetter) {
+  return tableMetricGroups.map((group) => ({
+    label: group.label,
+    value: (index) => {
+      const items = group.keys
+        .filter((metricKey) => room.metrics[metricKey])
+        .map((metricKey) => ({
+          label: getMetricShortLabel(metricKey),
+          value: valueGetter(metricKey, room.metrics[metricKey], index)
+        }));
+
+      return renderMetricStack(items);
+    }
+  }));
+}
+
 function renderDailyTable(room) {
-  const metrics = room.metrics;
-  const has = (key) => Boolean(metrics[key]);
-  const columns = [{ label: "Päev", value: (_, index) => sampleReportData.days[index] }];
-
-  if (has("co2")) {
-    columns.push(
-      { label: "CO₂ keskm.", value: (_, index) => formatMetricValue(metrics.co2.avg[index], metrics.co2) },
-      { label: "CO₂ max", value: (_, index) => formatMetricValue(metrics.co2.max[index], metrics.co2) }
-    );
-  }
-
-  if (has("temp")) {
-    columns.push(
-      { label: "Temp keskm.", value: (_, index) => formatMetricValue(metrics.temp.avg[index], metrics.temp) },
-      { label: "Temp vahemik", value: (_, index) => `${formatMetricValue(metrics.temp.min[index], metrics.temp)} - ${formatMetricValue(metrics.temp.max[index], metrics.temp)}` }
-    );
-  }
-
-  if (has("rh")) {
-    columns.push(
-      { label: "RH keskm.", value: (_, index) => formatMetricValue(metrics.rh.avg[index], metrics.rh) },
-      { label: "RH max", value: (_, index) => formatMetricValue(metrics.rh.max[index], metrics.rh) }
-    );
-  }
-
-  if (has("pm25")) {
-    columns.push(
-      { label: "PM2.5 keskm.", value: (_, index) => formatMetricValue(metrics.pm25.avg[index], metrics.pm25) },
-      { label: "PM2.5 max", value: (_, index) => formatMetricValue(metrics.pm25.max[index], metrics.pm25) }
-    );
-  }
-
-  if (has("pm10")) {
-    columns.push(
-      { label: "PM10 keskm.", value: (_, index) => formatMetricValue(metrics.pm10.avg[index], metrics.pm10) },
-      { label: "PM10 max", value: (_, index) => formatMetricValue(metrics.pm10.max[index], metrics.pm10) }
-    );
-  }
-
-  const body = sampleReportData.days.map((day, index) => `
-    <tr>${columns.map((column) => `<td>${column.value(day, index)}</td>`).join("")}</tr>
+  const columns = [
+    { label: "Päev", value: (index) => sampleReportData.days[index] },
+    ...buildGroupedColumns(room, (metricKey, metric, index) => getDailyMetricValue(metricKey, metric, index))
+  ];
+  const body = sampleReportData.days.map((_, index) => `
+    <tr>${columns.map((column) => `<td>${column.value(index)}</td>`).join("")}</tr>
   `).join("");
 
   return {
@@ -885,17 +1061,12 @@ function renderDailyTable(room) {
 }
 
 function renderHourlyTable(room, roomKey, dayIndex) {
-  const keys = getMetricKeys(room);
   const columns = [
     { label: "Tund", value: (hour) => `${String(hour).padStart(2, "0")}:00` },
-    ...keys.map((metricKey) => ({
-      label: getMetricShortLabel(metricKey),
-      value: (hour) => {
-        const metric = room.metrics[metricKey];
-        const value = getHourlySeries(roomKey, metricKey)[dayIndex * HOURS_PER_DAY + hour];
-        return formatMetricValue(value, metric);
-      }
-    }))
+    ...buildGroupedColumns(room, (metricKey, metric, hour) => {
+      const value = getHourlySeries(roomKey, metricKey)[dayIndex * HOURS_PER_DAY + hour];
+      return formatMetricValue(value, metric);
+    })
   ];
   const body = Array.from({ length: HOURS_PER_DAY }, (_, hour) => `
     <tr>${columns.map((column) => `<td>${column.value(hour)}</td>`).join("")}</tr>
@@ -908,17 +1079,12 @@ function renderHourlyTable(room, roomKey, dayIndex) {
 }
 
 function renderFiveMinuteTable(room, roomKey, dayIndex, hour) {
-  const keys = getMetricKeys(room);
   const columns = [
     { label: "Aeg", value: (slice) => getMinuteLabel(dayIndex, hour, slice) },
-    ...keys.map((metricKey) => ({
-      label: getMetricShortLabel(metricKey),
-      value: (slice) => {
-        const metric = room.metrics[metricKey];
-        const value = getFiveMinuteValue(roomKey, metricKey, dayIndex, hour, slice);
-        return formatMetricValue(value, metric);
-      }
-    }))
+    ...buildGroupedColumns(room, (metricKey, metric, slice) => {
+      const value = getFiveMinuteValue(roomKey, metricKey, dayIndex, hour, slice);
+      return formatMetricValue(value, metric);
+    })
   ];
   const body = Array.from({ length: READINGS_PER_HOUR }, (_, slice) => `
     <tr>${columns.map((column) => `<td>${column.value(slice)}</td>`).join("")}</tr>
@@ -942,9 +1108,9 @@ function renderRoomTable(card, room, roomKey, state) {
     <option value="${hour}" ${hour === state.hour ? "selected" : ""}>${String(hour).padStart(2, "0")}:00</option>
   `).join("");
   const detailText = {
-    daily: "Päevakoond: 7 rida ruumi kohta.",
-    hourly: `Tunnivaade: ${sampleReportData.days[state.dayIndex]} · 24 rida.`,
-    five: `10 minuti vaade: ${sampleReportData.days[state.dayIndex]} ${String(state.hour).padStart(2, "0")}:00 · 6 mõõtehetke.`
+    daily: "Päevakoond: mõõdikud on mahutamiseks koondatud temaatilistesse veergudesse.",
+    hourly: `Tunnivaade: ${sampleReportData.days[state.dayIndex]} · mõõdikud temaatilistes veergudes.`,
+    five: `10 minuti vaade: ${sampleReportData.days[state.dayIndex]} ${String(state.hour).padStart(2, "0")}:00 · mõõdikud temaatilistes veergudes.`
   }[mode];
   const table = mode === "daily"
     ? renderDailyTable(room)

@@ -84,7 +84,7 @@
         <div class="hero-copy">
           <p class="eyebrow">7-päevane rent -> sinu kodu -> sama pakiga tagasi</p>
           <h1 id="hero-title">Rendi sisekliima mõõtekomplekt oma kodukoha pakiautomaati</h1>
-          <p class="hero-lead">Rendi 7 päevaks seadistatud akutoitel mõõteseadmed. Asetad seadmed juhendi järgi ruumi, mõõdad kodus, paned komplekti samasse pakki tagasi ja saadad selle samast pakiautomaadist meile. Päev pärast seda, kui pakk on meieni jõudnud, saadame andmete põhjal raporti.</p>
+          <p class="hero-lead">Rendi 7 päevaks seadistatud akutoitel mõõteseadmed. Aseta seadmed juhendi järgi ruumidesse, perioodi lõpus pane komplekt samasse pakki tagasi ja saada pakiautomaadist meile. Päev pärast seda, kui tagastatud seadmed on meieni jõudnud, saadame andmete põhjal sisekliima raporti.</p>
 
           <div class="hero-actions" aria-label="Peamised tegevused">
             <a class="button button-primary" href="#tellimine">Rendi mõõtekomplekt</a>
@@ -174,9 +174,9 @@
     <section class="section" id="teenus" aria-labelledby="teenus-title">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Mis pakis on</p>
-          <h2 id="teenus-title">Valmis mõõteseadmete rendikomplekt pakiautomaadiga</h2>
-          <p>Komplekt on enne saatmist ette valmistatud ja jääb rendiperioodi lõpus tagastamisele. Sinu töö on valida ruumid, asetada seadmed juhendi järgi avatud kohta ja lasta neil kodu tavapärast elu mõõta.</p>
+          <p class="eyebrow">Mis komplektis sisaldub</p>
+          <h2 id="teenus-title">Mõõteseadmete rendikomplekt</h2>
+          <p>Komplekt on enne saatmist ette valmistatud ja tagastatakse rendiperioodi lõpus. Sinu töö on valida ruumid, asetada seadmed juhendi järgi mõnda avatud kohta ja lasta neil seejärel iseseisvalt 7 päeva mõõta.</p>
         </div>
 
         <div class="card-grid four">
@@ -188,17 +188,17 @@
           <article class="info-card">
             <span class="card-icon" aria-hidden="true">02</span>
             <h3>Juhend ja paigutus</h3>
-            <p>Juhend ütleb, kuhu seade panna, mida vältida ja kuidas seade 7 päevaks ruumi paigutada.</p>
+            <p>Juhend ütleb, kuhu seade panna, mida vältida ja kuidas seade 7 päevaks sisse lülitada.</p>
           </article>
           <article class="info-card">
             <span class="card-icon" aria-hidden="true">03</span>
             <h3>Sama pakk tagasi</h3>
-            <p>Kasutad tagastuseks sama pakki. Tagastus toimub pakiautomaadi kaudu.</p>
+            <p>Pakiautomaadi kaudu tagastuseks saad mugavalt kasutada sama pakendit, millega seadmed kätte said.</p>
           </article>
           <article class="info-card">
             <span class="card-icon" aria-hidden="true">04</span>
             <h3>Analüüs ja raport</h3>
-            <p>Kui komplekt jõuab meieni, võtame andmed välja, analüüsime mustreid ja saadame raporti.</p>
+            <p>Kui seadmekomplekt jõuab meieni, võtame andmed välja, analüüsime tulemusi ja saadame raporti.</p>
           </article>
         </div>
       </div>
@@ -225,66 +225,24 @@
 
         <div class="device-visual" aria-label="Mõõteseadme näidis">
           <div class="device-photo-frame">
-            <img class="device-image" src="assets/indoor-air-monitor.jpg" width="1080" height="503" alt="Kompaktne sisekliima mõõteseade ja mõõtegraafik." loading="eager" decoding="async">
+            <img class="device-image" src="assets/air-quality-monitor-illustrative.png" width="722" height="554" alt="Illustratiivne sisekliima mõõteseade koduses ruumis." loading="eager" decoding="async">
           </div>
-
-          <div class="device-spec-grid" aria-label="Mõõdetavad näitajad">
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">CO₂</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-co2" aria-label="CO₂ selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-co2" role="tooltip">Süsihappegaas, mis aitab hinnata õhuvahetust ja ruumi kasutuse mõju.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">PM1</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-pm1" aria-label="PM1 selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-pm1" role="tooltip">Väga peened osakesed läbimõõduga kuni 1 mikromeeter.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">PM2.5</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-pm25" aria-label="PM2.5 selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-pm25" role="tooltip">Peenosakesed, mis tekivad näiteks toiduvalmistamisel, põlemisel või välisõhust.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">PM10</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-pm10" aria-label="PM10 selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-pm10" role="tooltip">Suuremad sissehingatavad osakesed, näiteks tolm ja jämedam osakeste fraktsioon.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">TVOC</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-tvoc" aria-label="TVOC selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-tvoc" role="tooltip">Lenduvate orgaaniliste ühendite koondnäit, mis võib muutuda lõhnade, koristuse või materjalide mõjul.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">NOx</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-nox" aria-label="NOx selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-nox" role="tooltip">Lämmastikoksiidide indeks, mis aitab märgata põlemise, liikluse või välisõhu mõju.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">°C</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-temp" aria-label="Temperatuuri selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-temp" role="tooltip">Temperatuur, mis aitab hinnata ruumi mugavust ja tingimuste muutust.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">RH%</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-rh" aria-label="Suhtelise õhuniiskuse selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-rh" role="tooltip">Suhteline õhuniiskus, mis näitab niiskuskoormust ja kuiva või niiske õhu perioode.</span>
-            </div>
-            <div class="metric-chip metric-chip-compact">
-              <span class="metric-label">hPa</span>
-              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-hpa" aria-label="Õhurõhu selgitus">i</button>
-              <span class="metric-tooltip" id="device-tip-hpa" role="tooltip">Õhurõhk, mis aitab näha tausttingimusi ja õhumassi muutusi mõõteperioodi jooksul.</span>
-            </div>
-          </div>
+          <p class="device-image-note">* Pilt on illustratiivne ja tegelik seade võib mõnevõrra erineda.</p>
         </div>
       </div>
     </section>
 
-    <section class="section measurement-section" id="mootmine" aria-labelledby="mootmine-title">
+    <section class="section measurement-section" id="mootmine" aria-labelledby="raport-title">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Mida mõõdame</p>
-          <h2 id="mootmine-title">Raport on ehitatud seadme tegelike näitajate ümber</h2>
-          <p>Mõõteperioodi mõte ei ole koguda lihtsalt numbreid. Vaatame, millal näitajad muutuvad, kui kaua muutus kestab ja millise ruumi või tegevusega see kordub.</p>
+        <div class="measurement-report" id="raport" aria-labelledby="raport-title">
+          <div class="measurement-report-copy">
+            <p class="eyebrow">Raport</p>
+            <h2 id="raport-title">Raport selgitab, mida mõõtmistulemused tähendavad</h2>
+            <p>Kui mõõtekomplekt jõuab tagasi, ekspordime andmed, kontrollime mõõteperioodi kvaliteeti ja koostame raporti. Raport aitab aru saada, millal probleem tekib, millises ruumis see kordub ja mida on mõistlik järgmisena proovida.</p>
+          </div>
+          <div class="report-actions">
+            <a class="button button-primary" href="sample-report.html">Vaata näidisraportit</a>
+          </div>
         </div>
 
         <div class="measurement-insights" aria-label="Mõõdetavad näitajad ja raporti fookus">
@@ -353,7 +311,7 @@
           <li>
             <span class="step-number">3</span>
             <h3>Saad komplekti automaati</h3>
-            <p>Komplekt jõuab sinu valitud kodukoha pakiautomaati. Pakis on mõõteseadmed, juhend ja tagastuseks vajalik pakend.</p>
+            <p>Komplekt jõuab sinu valitud kodukoha pakiautomaati. Pakis on mõõteseadmed, juhend ja sama pakend on ette valmistatud ka tagasi saatmiseks.</p>
           </li>
           <li>
             <span class="step-number">4</span>
@@ -419,6 +377,7 @@
                 <label for="rental-device-count">Mitu seadet vajad?</label>
                 <output id="rental-device-output" for="rental-device-count rental-device-number" data-rental-device-output>1 seade</output>
               </div>
+              <p>Iga mõõtmist vajava ruumi kohta on vaja eraldi seadet.</p>
               <input class="calculator-range" type="range" id="rental-device-count" min="1" max="10" value="1" data-rental-device-range>
               <div class="calculator-stepper">
                 <button type="button" data-rental-device-decrease aria-label="Vähenda seadmete arvu">-</button>
@@ -535,33 +494,6 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="raport" aria-labelledby="raport-title">
-      <div class="container report-grid">
-        <div class="report-mock" aria-label="Näidisraporti lühivaade">
-          <div class="report-topline">
-            <span>PDF + graafikud + kokkuvõte</span>
-            <span>järgmisel päeval pärast kättesaamist</span>
-          </div>
-          <h3>Koduõhu raport: 7-päevane sisekliima ülevaade</h3>
-          <div class="report-rows">
-            <div><strong>Magamistuba:</strong> CO₂ tõus öösel</div>
-            <div><strong>Köök:</strong> PM2.5 ja TVOC tipud toiduvalmistamisel</div>
-            <div><strong>VOC/NOx:</strong> muutused pärast koristust või välisõhu mõju</div>
-            <div><strong>Soovitused:</strong> praktilised järgmised sammud</div>
-          </div>
-        </div>
-
-        <div class="report-content">
-          <p class="eyebrow">Raport</p>
-          <h2 id="raport-title">Vastused pärast mõõtmist, mitte ainult toorandmed</h2>
-          <p>Kui mõõtekomplekt jõuab tagasi, ekspordime andmed, kontrollime mõõteperioodi kvaliteeti ja koostame raporti. Raport aitab aru saada, millal probleem tekib, millises ruumis see kordub ja mida on mõistlik järgmisena proovida.</p>
-          <div class="report-actions">
-            <a class="button button-primary" href="sample-report.html">Vaata näidisraportit</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="kkk" aria-labelledby="kkk-title">
       <div class="container faq-layout">
         <div>
@@ -612,28 +544,6 @@
             </h3>
             <div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-button-4" hidden>
               <p>Renditingimus on tagastada komplekt hiljemalt 2 päeva pärast 7-päevase mõõteperioodi lõppu. Kui tekib tõrge, võta kohe ühendust, et saaksime broneeringu ja järgmised kliendid ümber planeerida.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <h3>
-              <button type="button" aria-expanded="false" aria-controls="faq-5" id="faq-button-5">
-                Kas seadmed salvestavad heli või pilti?
-                <span aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-button-5" hidden>
-              <p>Ei. Seadmed mõõdavad õhu ja ruumikliima näitajaid. Need ei salvesta heli, pilti ega vestlusi.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <h3>
-              <button type="button" aria-expanded="false" aria-controls="faq-6" id="faq-button-6">
-                Kas rendi eest saab kohe maksta?
-                <span aria-hidden="true"></span>
-              </button>
-            </h3>
-            <div class="faq-answer" id="faq-6" role="region" aria-labelledby="faq-button-6" hidden>
-              <p>Leht on ehitatud rendibroneeringu ja maksmise loogikaga. Pangalingi, kaardimakse ja mobiilimakse tegelik töötlemine ühendatakse makseteenuse pakkuja kaudu.</p>
             </div>
           </div>
         </div>
