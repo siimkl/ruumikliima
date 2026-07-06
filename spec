@@ -4,12 +4,12 @@
 
 Ruumikliima.ee on pakiautomaadi kaudu renditav kodu sisekliima mõõtekomplekt.
 
-Klient ei broneeri koduvisiiti ega osta seadet. Klient rendib valmis mõõtekomplekti lühiajaliseks kasutuseks:
+Klient ei osta seadet. Klient rendib valmis mõõtekomplekti lühiajaliseks kasutuseks:
 
 * seadistatud mõõteseadmed;
 * USB-C laadimiskaablid;
 * lihtne paigaldus- ja kasutusjuhend;
-* 7-päevane rendiperiood kodus 1 minuti andmesammuga;
+* 7-päevane rendiperiood kodus 10 minuti andmesammuga;
 * sama pakiga tagastus pakiautomaadist;
 * andmete analüüs ja raport pärast tagastust.
 
@@ -19,12 +19,10 @@ Teenuse peamine lubadus:
 
 ## Positsioneerimine
 
-Rõhk on mugavusel, privaatsusel ja selgel vastusel:
+Rõhk on mugavusel, pakiautomaadi kaudu liikuval rendil ja selgel vastusel:
 
 * klient valib kodukoha pakiautomaadi;
 * sama pakk liigub kliendile ja tagasi;
-* keegi ei tule kliendi koju;
-* seadmed ei salvesta heli, pilti ega vestlusi;
 * mõõteseade on kodus diskreetne ja ilusa disainiga;
 * raport valmib päev pärast seda, kui tagastatud pakk on jõudnud Ruumikliima.ee kätte.
 
@@ -42,7 +40,7 @@ Praegune mõõtekomplekt võimaldab mõõta järgmisi õhu ja ruumikliima näita
 * suhteline õhuniiskus;
 * õhurõhk.
 
-Mõõteseade on akutoitel ja võimaldab 1 minuti intervalliga andmeid, kui kasutatav seadistus seda toetab.
+Mõõteseade on akutoitel ja teenuses kasutatakse 10 minuti andmesammu.
 
 ## Protsess
 
@@ -90,16 +88,15 @@ Kasutaja peab nõustuma vähemalt sellega, et:
 
 ## Lehe põhistruktuur
 
-1. Hero: pakiautomaadi mõõtekomplekt ja privaatsuse lubadus.
+1. Hero: pakiautomaadi mõõtekomplekt ja 7-päevase rendi lubadus.
 2. Mis pakis on.
 3. Mõõteseadme tutvustus pildi, disaini ja mõõdetavate näitajatega.
-4. Mõõdetavate näitajate selgitus: CO2, PM1/PM2.5/PM10, TVOC, NOx, temperatuur, RH ja õhurõhk.
+4. Mõõdetavate näitajate selgitus: CO2, PM1, PM2.5, PM10, TVOC, NOx, temperatuur, RH ja õhurõhk.
 5. Kuidas mõõtmine töötab.
-6. Privaatsuse sektsioon.
-7. Hinnamudel.
-8. Rendibroneering ja maksmine.
-9. Raporti selgitus ja link näidisraportile.
-10. KKK.
+6. Hinnamudel.
+7. Rendibroneering ja maksmine.
+8. Raporti selgitus ja link näidisraportile.
+9. KKK.
 
 ## Vastuvõtukriteeriumid
 
@@ -110,7 +107,6 @@ Leht on valmis, kui:
 * hind arvutatakse automaatselt: 99 € rendipakett + progressiivse 5% soodustusega lisaseadmete rent;
 * rendibroneeringus saab valida seadmete arvu, pakiautomaadi, kuupäeva ja makseviisi;
 * rendi- ja kasutustingimuste checkboxid on nähtavad;
-* mõõteseade on tutvustatud koos seadmega päriselt mõõdetavate näitajate ja 1 minuti andmesammuga;
-* privaatsus on selgelt esile toodud;
+* mõõteseade on tutvustatud koos seadmega päriselt mõõdetavate näitajate ja 10 minuti andmesammuga;
 * leht töötab staatilise saidina;
 * desktop ja mobiil ei sisalda teksti/elementide kattumist.

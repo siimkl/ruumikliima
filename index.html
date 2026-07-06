@@ -96,9 +96,8 @@
             <li>alates 99 €</li>
             <li>lisaseadmed järjest 5% soodsamad</li>
             <li>7-päevane rent</li>
-            <li>1 minuti andmesamm</li>
+            <li>10 minuti andmesamm</li>
             <li>sama pakiga tagastus</li>
-            <li>keegi ei tule koju</li>
             <li>raport pärast tagastust</li>
           </ul>
         </div>
@@ -124,24 +123,53 @@
             </div>
           </div>
 
-          <div class="metric-strip" aria-hidden="true">
-            <span>CO₂</span>
-            <span>PM1/2.5/10</span>
-            <span>TVOC</span>
-            <span>°C/RH</span>
-            <span>hPa</span>
-            <span>NOx</span>
+          <div class="metric-strip" aria-label="Mõõdetavad näitajad">
+            <div class="metric-chip">
+              <span class="metric-label">CO₂</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-co2" aria-label="CO₂ selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-co2" role="tooltip">Süsihappegaas, mis aitab hinnata õhuvahetust ja ruumi kasutuse mõju.</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">PM1</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-pm1" aria-label="PM1 selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-pm1" role="tooltip">Väga peened osakesed läbimõõduga kuni 1 mikromeeter.</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">PM2.5</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-pm25" aria-label="PM2.5 selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-pm25" role="tooltip">Peenosakesed, mis tekivad näiteks toiduvalmistamisel, põlemisel või välisõhust.</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">PM10</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-pm10" aria-label="PM10 selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-pm10" role="tooltip">Suuremad sissehingatavad osakesed, näiteks tolm ja jämedam osakeste fraktsioon.</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">TVOC</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-tvoc" aria-label="TVOC selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-tvoc" role="tooltip">Lenduvate orgaaniliste ühendite koondnäit, mis võib muutuda lõhnade, koristuse või materjalide mõjul.</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">°C/RH</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-temp-rh" aria-label="Temperatuuri ja niiskuse selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-temp-rh" role="tooltip">Temperatuur ja suhteline õhuniiskus, mis kirjeldavad ruumi mugavust ja niiskuskoormust.</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">hPa</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-hpa" aria-label="Õhurõhu selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-hpa" role="tooltip">Õhurõhk, mis aitab näha tausttingimusi ja õhumassi muutusi mõõteperioodi jooksul.</span>
+            </div>
+            <div class="metric-chip">
+              <span class="metric-label">NOx</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="metric-tip-nox" aria-label="NOx selgitus">i</button>
+              <span class="metric-tooltip" id="metric-tip-nox" role="tooltip">Lämmastikoksiidide indeks, mis aitab märgata põlemise, liikluse või välisõhu mõju.</span>
+            </div>
           </div>
 
           <div class="measurement-strip" aria-label="Mõõdetavad näitajad">
             <span>9 näitajat</span>
-            <span>1 min intervall</span>
+            <span>10 min intervall</span>
             <span>akutoitel seade</span>
-          </div>
-
-          <div class="sample-finding">
-            <strong>Privaatne:</strong>
-            <span>mõõdad ise, koduvisiiti ei ole ning seadmed ei salvesta heli, pilti ega vestlusi.</span>
           </div>
         </div>
       </div>
@@ -151,7 +179,7 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Mis pakis on</p>
-          <h2 id="teenus-title">Valmis mõõteseadmete rendikomplekt, mitte tehniku koduvisiit</h2>
+          <h2 id="teenus-title">Valmis mõõteseadmete rendikomplekt pakiautomaadiga</h2>
           <p>Komplekt on enne saatmist ette valmistatud ja jääb rendiperioodi lõpus tagastamisele. Sinu töö on valida ruumid, asetada seadmed juhendi järgi avatud kohta ja lasta neil kodu tavapärast elu mõõta.</p>
         </div>
 
@@ -169,7 +197,7 @@
           <article class="info-card">
             <span class="card-icon" aria-hidden="true">03</span>
             <h3>Sama pakk tagasi</h3>
-            <p>Kasutad tagastuseks sama pakki. Tagastus toimub pakiautomaadist, ilma kulleri või koduvisiidita.</p>
+            <p>Kasutad tagastuseks sama pakki. Tagastus toimub pakiautomaadi kaudu.</p>
           </article>
           <article class="info-card">
             <span class="card-icon" aria-hidden="true">04</span>
@@ -193,12 +221,12 @@
               <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx-indeks, temperatuur, niiskus ja õhurõhk.</span>
             </li>
             <li>
-              <strong>1 minuti andmesamm</strong>
-              <span>Seade hoiab kohapeal nädala jagu minutipõhiseid andmeid, nii et pärast tagastust saab analüüsida ka lühikesi tippe ja korduvaid mustreid.</span>
+              <strong>10 minuti andmesamm</strong>
+              <span>Seade hoiab kohapeal nädala jagu 10 minuti põhiseid andmeid, nii et pärast tagastust saab analüüsida ka lühikesi tippe ja korduvaid mustreid.</span>
             </li>
             <li>
-              <strong>Privaatsus säilib</strong>
-              <span>Seade ei salvesta pilti, heli ega vestlusi ning keegi ei tule koju kontrollima. Raport keskendub õhu ja ruumikliima muutustele.</span>
+              <strong>Raport keskendub mustritele</strong>
+              <span>Analüüsis vaatame, millal näitajad muutuvad, kui kaua muutus kestab ja millise ruumi või tegevusega see kordub.</span>
             </li>
           </ul>
         </div>
@@ -209,15 +237,51 @@
           </div>
 
           <div class="device-spec-grid" aria-label="Mõõdetavad näitajad">
-            <span>CO₂</span>
-            <span>PM1</span>
-            <span>PM2.5</span>
-            <span>PM10</span>
-            <span>TVOC</span>
-            <span>NOx</span>
-            <span>°C</span>
-            <span>RH%</span>
-            <span>hPa</span>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">CO₂</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-co2" aria-label="CO₂ selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-co2" role="tooltip">Süsihappegaas, mis aitab hinnata õhuvahetust ja ruumi kasutuse mõju.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">PM1</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-pm1" aria-label="PM1 selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-pm1" role="tooltip">Väga peened osakesed läbimõõduga kuni 1 mikromeeter.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">PM2.5</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-pm25" aria-label="PM2.5 selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-pm25" role="tooltip">Peenosakesed, mis tekivad näiteks toiduvalmistamisel, põlemisel või välisõhust.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">PM10</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-pm10" aria-label="PM10 selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-pm10" role="tooltip">Suuremad sissehingatavad osakesed, näiteks tolm ja jämedam osakeste fraktsioon.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">TVOC</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-tvoc" aria-label="TVOC selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-tvoc" role="tooltip">Lenduvate orgaaniliste ühendite koondnäit, mis võib muutuda lõhnade, koristuse või materjalide mõjul.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">NOx</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-nox" aria-label="NOx selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-nox" role="tooltip">Lämmastikoksiidide indeks, mis aitab märgata põlemise, liikluse või välisõhu mõju.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">°C</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-temp" aria-label="Temperatuuri selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-temp" role="tooltip">Temperatuur, mis aitab hinnata ruumi mugavust ja tingimuste muutust.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">RH%</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-rh" aria-label="Suhtelise õhuniiskuse selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-rh" role="tooltip">Suhteline õhuniiskus, mis näitab niiskuskoormust ja kuiva või niiske õhu perioode.</span>
+            </div>
+            <div class="metric-chip metric-chip-compact">
+              <span class="metric-label">hPa</span>
+              <button class="metric-info" type="button" aria-expanded="false" aria-describedby="device-tip-hpa" aria-label="Õhurõhu selgitus">i</button>
+              <span class="metric-tooltip" id="device-tip-hpa" role="tooltip">Õhurõhk, mis aitab näha tausttingimusi ja õhumassi muutusi mõõteperioodi jooksul.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -238,19 +302,39 @@
             <p>CO₂ aitab näha, kas magamistuba, tööruum või lastetuba kogub pikalt välja hingatud õhku. Raport toob välja korduvad kõrged perioodid ja nende kestuse.</p>
           </article>
           <article>
-            <span>PM1 / PM2.5 / PM10</span>
-            <h3>Peenosakesed ja tolm</h3>
-            <p>Peenosakeste muutused aitavad märgata toiduvalmistamise, koristamise, küünalde, ahju või välisõhu mõju. Vaatame eraldi lühikesi tippe ja püsivamat tausta.</p>
+            <span>PM1</span>
+            <h3>Väga peened osakesed</h3>
+            <p>PM1 aitab märgata väga väikeste osakeste muutusi, mis võivad tekkida põlemise, toiduvalmistamise või välisõhu mõjul.</p>
           </article>
           <article>
-            <span>TVOC / NOx</span>
-            <h3>Lenduvad ühendid ja gaasilised muutused</h3>
-            <p>TVOC ja NOx-indeks aitavad märgata puhastusvahendite, värskete materjalide, lõhnade, põlemisprotsesside või liiklusest tuleva õhu võimalikku mõju.</p>
+            <span>PM2.5</span>
+            <h3>Peenosakesed</h3>
+            <p>PM2.5 muutused aitavad näha lühiajalisi tippe, näiteks praadimise, küünalde, ahju või välisõhu mõju ajal.</p>
           </article>
           <article>
-            <span>°C / RH% / hPa</span>
-            <h3>Temperatuur, niiskus ja tausttingimused</h3>
-            <p>Temperatuur ja suhteline õhuniiskus annavad konteksti mugavusele, kuivusele, niiskuskoormusele ja sellele, miks mõnes ruumis õhk teistmoodi käitub.</p>
+            <span>PM10</span>
+            <h3>Tolm ja jämedam osakeste fraktsioon</h3>
+            <p>PM10 aitab eristada suuremaid sissehingatavaid osakesi, näiteks tolmu, koristuse või õuest tuleva osakeste mõju.</p>
+          </article>
+          <article>
+            <span>TVOC</span>
+            <h3>Lenduvad ühendid</h3>
+            <p>TVOC koondnäit aitab märgata lõhnade, puhastusvahendite, värskete materjalide või muude lenduvate ühendite muutusi.</p>
+          </article>
+          <article>
+            <span>NOx</span>
+            <h3>Gaasilised muutused</h3>
+            <p>NOx-indeks aitab märgata põlemisprotsesside, liiklusest tuleva õhu või välisõhu muutuste võimalikku mõju.</p>
+          </article>
+          <article>
+            <span>°C / RH%</span>
+            <h3>Temperatuur ja niiskus</h3>
+            <p>Temperatuur ja suhteline õhuniiskus annavad konteksti mugavusele, kuivusele ja niiskuskoormusele.</p>
+          </article>
+          <article>
+            <span>hPa</span>
+            <h3>Õhurõhk ja tausttingimused</h3>
+            <p>Õhurõhk aitab kirjeldada mõõteperioodi tausttingimusi ja õhumassi muutusi.</p>
           </article>
         </div>
       </div>
@@ -299,33 +383,9 @@
         <div class="timeline" aria-label="Mõõtekomplekti ajajoon">
           <span>Rendibroneering</span>
           <span>Pakk automaati</span>
-          <span>7 päeva / 1 min samm</span>
+          <span>7 päeva / 10 min samm</span>
           <span>Tagastus 2 päeva jooksul</span>
           <span>Raport pärast kättesaamist</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section privacy-section" id="privaatsus" aria-labelledby="privacy-title">
-      <div class="container privacy-grid">
-        <div>
-          <p class="eyebrow">Privaatsus</p>
-          <h2 id="privacy-title">Keegi ei tule sinu koju midagi vaatama</h2>
-          <p>Teenuse mõte on teha mõõtmine mugavaks ja privaatselt kontrollitavaks. Sa saad paki, mõõdad ise ja saadad seadmed tagasi. Me ei tee koduvisiiti ning ei vaja pilte, heli ega ruumide ülevaatust.</p>
-        </div>
-        <div class="privacy-points" aria-label="Privaatsuse põhimõtted">
-          <article>
-            <strong>Ei heli ega pilti</strong>
-            <span>Seadmed mõõdavad õhu ja ruumikliima näitajaid, mitte inimesi, heli ega vestlusi.</span>
-          </article>
-          <article>
-            <strong>Ei koduvisiiti</strong>
-            <span>Kõik käib pakiautomaadi kaudu.</span>
-          </article>
-          <article>
-            <strong>Sinu ajakava</strong>
-            <span>Valid ligikaudse saabumiskuupäeva ja mõõdad tavapärases koduses rütmis.</span>
-          </article>
         </div>
       </div>
     </section>
@@ -549,12 +609,12 @@
           <div class="faq-item">
             <h3>
               <button type="button" aria-expanded="true" aria-controls="faq-1" id="faq-button-1">
-                Kas keegi tuleb minu koju?
+                Kuidas seadmed paigaldatakse?
                 <span aria-hidden="true"></span>
               </button>
             </h3>
             <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-button-1">
-              <p>Ei. Teenus on ehitatud pakiautomaadi kaudu mõõtekomplekti saatmisele ja tagastusele. Paigaldad seadmed ise juhendi järgi.</p>
+              <p>Teenus on ehitatud pakiautomaadi kaudu mõõtekomplekti saatmisele ja tagastusele. Paigaldad seadmed ise juhendi järgi.</p>
             </div>
           </div>
           <div class="faq-item">

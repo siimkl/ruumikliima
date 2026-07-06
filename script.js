@@ -2,6 +2,7 @@ const menuButton = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const faqButtons = document.querySelectorAll(".faq-item button");
+const metricInfoButtons = document.querySelectorAll(".metric-info");
 const checkoutForm = document.querySelector("#checkout-form");
 const checkoutStatus = document.querySelector("#checkout-status");
 
@@ -22,9 +23,33 @@ navLinks.forEach((link) => {
   link.addEventListener("click", () => setMenu(false));
 });
 
+function closeMetricTooltips(exceptButton = null) {
+  metricInfoButtons.forEach((button) => {
+    if (button !== exceptButton) {
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+metricInfoButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    closeMetricTooltips(button);
+    button.setAttribute("aria-expanded", String(!isOpen));
+  });
+});
+
+document.addEventListener("click", (event) => {
+  const target = event.target instanceof Element ? event.target : null;
+  if (!target?.closest(".metric-chip")) {
+    closeMetricTooltips();
+  }
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     setMenu(false);
+    closeMetricTooltips();
   }
 });
 
@@ -463,7 +488,7 @@ const sampleReportData = {
 };
 
 const HOURS_PER_DAY = 24;
-const READINGS_PER_HOUR = 12;
+const READINGS_PER_HOUR = 6;
 const metricOrder = ["co2", "temp", "rh", "pm25", "pm10"];
 const hourlySeriesCache = new Map();
 
@@ -539,7 +564,7 @@ function getHourLabel(index) {
 }
 
 function getMinuteLabel(dayIndex, hour, slice) {
-  const minute = slice * 5;
+  const minute = slice * 10;
   return `${sampleReportData.days[dayIndex]} ${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
 }
 
@@ -673,7 +698,7 @@ function renderRoomSummary(card, room, metric, metricKey, values) {
   summary.innerHTML = `
     <span>${room.point} · ${getMetricShortLabel(metricKey)} · tunnivaade</span>
     <strong>${metric.summary}</strong>
-    <p>Graafik kuvab kogu mõõteperioodi tunniajase sammuga. Tabelis saab sama ruumi andmeid vaadata päevakoondina, ühe päeva tunnivaates või valitud tunni 5 minuti mõõtehetkedena.</p>
+    <p>Graafik kuvab kogu mõõteperioodi tunniajase sammuga. Tabelis saab sama ruumi andmeid vaadata päevakoondina, ühe päeva tunnivaates või valitud tunni 10 minuti mõõtehetkedena.</p>
     <p data-room-current>Kõrgeim tunnipunkt: ${getHourLabel(peakIndex)} · ${formatMetricValue(values[peakIndex], metric)}.</p>
   `;
 }
@@ -919,7 +944,7 @@ function renderRoomTable(card, room, roomKey, state) {
   const detailText = {
     daily: "Päevakoond: 7 rida ruumi kohta.",
     hourly: `Tunnivaade: ${sampleReportData.days[state.dayIndex]} · 24 rida.`,
-    five: `5 minuti vaade: ${sampleReportData.days[state.dayIndex]} ${String(state.hour).padStart(2, "0")}:00 · 12 mõõtehetke.`
+    five: `10 minuti vaade: ${sampleReportData.days[state.dayIndex]} ${String(state.hour).padStart(2, "0")}:00 · 6 mõõtehetke.`
   }[mode];
   const table = mode === "daily"
     ? renderDailyTable(room)
@@ -950,7 +975,7 @@ function renderRoomTable(card, room, roomKey, state) {
       <div class="room-table-actions" role="group" aria-label="Tabeli täpsus">
         <button type="button" class="room-table-button ${mode === "daily" ? "is-active" : ""}" data-table-mode="daily">Päev</button>
         <button type="button" class="room-table-button ${mode === "hourly" ? "is-active" : ""}" data-table-mode="hourly">Tund</button>
-        <button type="button" class="room-table-button ${mode === "five" ? "is-active" : ""}" data-table-mode="five">5 min</button>
+        <button type="button" class="room-table-button ${mode === "five" ? "is-active" : ""}" data-table-mode="five">10 min</button>
       </div>
       ${filters}
     </div>
