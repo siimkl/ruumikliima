@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="sample-report-page">
+  <button class="sample-back-floating" type="button" data-sample-back aria-label="Tagasi eelmisele lehele">
+    <span aria-hidden="true">&lt;</span>
+    Tagasi
+  </button>
   <main class="sample-report-shell">
     <section class="sample-cover">
       <div class="sample-report-topbar">
@@ -25,23 +29,13 @@
             <span class="brand-name">sisekliimauuring.ee</span>
           </span>
         </a>
-        <nav class="sample-report-nav" aria-label="Raporti navigatsioon">
-          <a href="index.html#raport">Avaleht</a>
-          <a href="#kokkuvote">Kokkuvõte</a>
-          <a href="#paevik">Päevik</a>
-          <a href="#skeem">Skeem</a>
-          <a href="#ruumid">Ruumid</a>
-          <a href="#seosed">Seosed</a>
-          <a href="#leiud">Leiud</a>
-          <a href="#soovitused">Soovitused</a>
-        </nav>
       </div>
 
       <div class="sample-cover-grid">
-        <div>
+        <div class="sample-cover-intro">
           <p class="eyebrow">Kliendiraporti näidis</p>
           <h1>7-päevane sisekliimauuringu raport</h1>
-          <p class="sample-lead">Raport koondab ühe kodu 7-päevase mõõtmise tulemused: mõõteplaani, kliendi päeviku, ruumidevahelised seosed, ruumipõhised graafikud, andmetabelid ja praktilised soovitused. Avalik versioon on anonüümitud näidis.</p>
+          <p class="sample-lead">Raport koondab ühe kodu 7-päevase mõõtmise tulemused: mõõteplaani, kliendi päeviku, näitajapõhised ruumivõrdlused, ruumidevahelised seosed, andmetabelid ja praktilised soovitused. Avalik versioon on anonüümitud näidis.</p>
         </div>
         <aside class="sample-cover-card" aria-label="Raporti metaandmed">
           <dl>
@@ -86,42 +80,28 @@
       <p><strong>Oluline:</strong> see on ülevaatlik sisekliima uuring. Raport aitab näha korduvaid muutusi ja otsustada praktilisi järgmisi tegevusi, kuid ei asenda akrediteeritud laborimõõtmist, ametlikku õhukvaliteedi hindamist, ehitusekspertiisi, hallituse ekspertiisi ega meditsiinilist hinnangut.</p>
     </section>
 
-    <section class="report-section" id="kokkuvote">
+    <section class="report-section report-toc" aria-labelledby="toc-title">
       <div class="report-section-heading">
-        <p class="eyebrow">1. Kokkuvõte</p>
-        <h2>Peamine ülevaade ühe nädalaga</h2>
-        <p>Mõõtmine kattis viis argipäeva ja nädalavahetuse. Kodu üldine temperatuur oli stabiilne, kuid magamistoas kordus öine CO₂ tõus ning köögis tekkisid toiduvalmistamise ajal lühiajalised PM2.5 tipud. Põhjapoolses toas püsis suhteline õhuniiskus mõnel ööl kõrgem kui ülejäänud kodus.</p>
+        <p class="eyebrow">Sisukord</p>
+        <h2 id="toc-title">Raporti osad</h2>
       </div>
-
-      <div class="report-kpi-grid">
-        <article class="report-kpi status-warning">
-          <span>Peamine tähelepanek</span>
-          <strong>Magamistoa öine CO₂</strong>
-          <p>5 ööl 7-st tõusis CO₂ üle 1200 ppm ja püsis kõrgemal 3-6 tundi.</p>
-        </article>
-        <article class="report-kpi status-watch">
-          <span>Teine tähelepanek</span>
-          <strong>Köögi PM2.5 tipud</strong>
-          <p>Praadimisega seotud lühikesed tipud, kõrgeim hetkeline näit 74 µg/m³.</p>
-        </article>
-        <article class="report-kpi status-good">
-          <span>Stabiilne ruum</span>
-          <strong>Elutuba</strong>
-          <p>Temperatuur ja niiskus olid suurema osa ajast ootuspärases vahemikus.</p>
-        </article>
-        <article class="report-kpi status-watch">
-          <span>Vajab jälgimist</span>
-          <strong>Põhjapoolne tuba</strong>
-          <p>Öine RH oli 4 ööl üle 60%, samal ajal temperatuur 19-20 °C.</p>
-        </article>
-      </div>
+      <nav class="report-toc-links" aria-label="Raporti sisukord">
+        <a href="index.html#raport">Avaleht</a>
+        <a href="#mootepaan">1. Mõõteplaan</a>
+        <a href="#paevik">2. Kliendi päevik</a>
+        <a href="#ruumid">3. Näitajapõhised võrdlused</a>
+        <a href="sample-data.html">CSV-andmestik</a>
+        <a href="#seosed">4. Ruumidevahelised seosed</a>
+        <a href="#leiud">5. Põhileiud</a>
+        <a href="#soovitused">6. Soovitused</a>
+      </nav>
     </section>
 
-    <section class="report-section">
+    <section class="report-section" id="mootepaan">
       <div class="report-section-heading">
-        <p class="eyebrow">2. Mõõteplaan</p>
+        <p class="eyebrow">1. Mõõteplaan</p>
         <h2>Kus ja mida mõõdeti</h2>
-        <p>Kõigis ruumides kasutati sama tüüpi mõõteseadet. Iga mõõtepunkt kogus sama näitajate komplekti: CO₂, PM1, PM2.5, PM10, TVOC, NOx, temperatuur, suhteline õhuniiskus ja õhurõhk.</p>
+        <p>Kõigis ruumides kasutati sama tüüpi mõõteseadet. Iga mõõtepunkt kogus sama näitajate komplekti: CO₂, PM1, PM2.5, PM10, TVOC, NOx, temperatuur, suhteline õhuniiskus ja õhurõhk. Analüüsis arvestati ka argipäeva/nädalavahetuse rütmi, tuulutuse hetki, välisõhu võimalikku mõju ja kliendi päeviku sündmusi.</p>
       </div>
       <div class="report-table-wrap">
         <table class="report-table">
@@ -167,344 +147,452 @@
           </tbody>
         </table>
       </div>
-      <p class="report-note">Andmevoog oli katkematu 98,7% mõõteperioodist. Üks lühike andmelünk tekkis köögis 14.03 kell 11:20-12:05 seadme ajutise ümberpaigutamise tõttu.</p>
+      <p class="report-note">Andmevoog oli katkematu 98,7% mõõteperioodist. CSV-andmestikus on eraldi veerud sündmuse konteksti ja andmekvaliteedi märkuse jaoks. Üks lühike andmelünk tekkis köögis 14.03 kell 11:20-12:05 seadme ajutise ümberpaigutamise tõttu; see on andmestikus märgitud ega ole järelduste aluseks kasutatud.</p>
     </section>
 
     <section class="report-section" id="paevik">
       <div class="report-section-heading">
-        <p class="eyebrow">3. Kliendi päevik</p>
+        <p class="eyebrow">2. Kliendi päevik</p>
         <h2>Tegevuspäevik annab konteksti</h2>
         <p>Klient märkis nädala jooksul üles kodused tegevused, akende ja uste kasutuse ning erakorralised olukorrad. Päevik ei ole mõõtmise alus, kuid aitab eristada korduvaid mustreid juhuslikest sündmustest.</p>
       </div>
 
-      <div class="diary-grid" aria-label="Digiteeritud tegevuspäevik">
-        <article class="diary-entry">
-          <span>E 10.03 · 19:10</span>
-          <h3>Õhtusöök köögis</h3>
-          <p>Praadimine, kubu käivitati umbes 10 minutit pärast alustamist. Köögi uks jäi avatuks elutoa poole.</p>
-          <small>Seotud näitajad: PM2.5, PM10, TVOC</small>
-        </article>
-        <article class="diary-entry">
-          <span>T 11.03 · 23:30</span>
-          <h3>Magamistoa uks suletud</h3>
-          <p>Kaks inimest magasid suletud uksega. Aken oli kinni ja hommikul tuulutati 12 minutit.</p>
-          <small>Seotud näitajad: CO₂, temperatuur</small>
-        </article>
-        <article class="diary-entry">
-          <span>K 12.03 · 18:40</span>
-          <h3>Pesu kuivas põhjapoolses toas</h3>
-          <p>Pesurest oli MP4 lähedal, uks jäi õhtul poolenisti kinni. Ruum oli ülejäänud kodust jahedam.</p>
-          <small>Seotud näitajad: RH, temperatuur</small>
-        </article>
-        <article class="diary-entry">
-          <span>N 13.03 · 07:20</span>
-          <h3>Kiire hommikune tuulutus</h3>
-          <p>Magamistoa ja elutoa aknad avati korraga. Esikus oli samal ajal korteri välisuks lühidalt avatud.</p>
-          <small>Seotud näitajad: CO₂, RH, temperatuur</small>
-        </article>
-        <article class="diary-entry">
-          <span>L 15.03 · 20:05</span>
-          <h3>Külalised elutoas</h3>
-          <p>Elutoas viibis 5 inimest umbes 2 tundi. Köögis valmistati samal ajal suupisteid.</p>
-          <small>Seotud näitajad: CO₂, TVOC, PM2.5</small>
-        </article>
-        <article class="diary-entry">
-          <span>P 16.03 · 11:30</span>
-          <h3>Koristus ja põrandapesu</h3>
-          <p>Kasutati lõhnastatud puhastusvahendit. Kõik siseuksed olid koristuse ajal avatud.</p>
-          <small>Seotud näitajad: TVOC, NOx-indeks</small>
-        </article>
+      <div class="diary-table-grid" aria-label="Digiteeritud tegevuspäevik">
+        <table class="diary-table">
+          <thead>
+            <tr>
+              <th>Aeg</th>
+              <th>Kliendi vabatekstiline märge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>E 10.03 · 18:05</td><td>Tulin töölt koju, elutoa ja köögi uksed jäid lahti, aknaid ei avanud.</td></tr>
+            <tr><td>E 10.03 · 19:10</td><td>Õhtusöök köögis, praadimine. Kubu panin tööle alles umbes 10 min pärast alustamist.</td></tr>
+            <tr><td>E 10.03 · 20:05</td><td>Köögi uks jäi elutoa poole avatuks, pärast sööki nõudepesu ja lühike koristamine.</td></tr>
+            <tr><td>E 10.03 · 22:45</td><td>Magamistoa aken oli enne magamaminekut 8 minutit lahti, uks jäi praokile.</td></tr>
+            <tr><td>T 11.03 · 07:15</td><td>Hommikul avasin magamistoa ukse ja tuulutasin lühidalt, esiku uksed olid samal ajal lahti.</td></tr>
+            <tr><td>T 11.03 · 18:30</td><td>Laps tegi elutoas trenni, siseuksed olid lahti, akent ei avanud.</td></tr>
+            <tr><td>T 11.03 · 23:30</td><td>Magamistoa uks jäi ööseks kinni, akent ei avanud.</td></tr>
+            <tr><td>K 12.03 · 08:05</td><td>Kohv ja röstsai köögis, kubu ei kasutanud, köögi uks jäi avatuks.</td></tr>
+            <tr><td>K 12.03 · 18:40</td><td>Pesu kuivas põhjapoolses toas, uks jäi poolenisti kinni.</td></tr>
+            <tr><td>K 12.03 · 21:20</td><td>Elutoas põles lõhnaküünal umbes 45 minutit.</td></tr>
+            <tr><td>N 13.03 · 07:20</td><td>Magamistoa ja elutoa aknad avatud korraga, umbes 12 minutit.</td></tr>
+            <tr><td>N 13.03 · 08:00</td><td>Pärast tuulutust suleti aknad, siseuksed jäid lahti.</td></tr>
+          </tbody>
+        </table>
+
+        <table class="diary-table">
+          <thead>
+            <tr>
+              <th>Aeg</th>
+              <th>Kliendi vabatekstiline märge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>N 13.03 · 18:55</td><td>Köögis keetmine ja ahju kasutamine, köögi uks oli elutoa poole avatud.</td></tr>
+            <tr><td>N 13.03 · 22:10</td><td>Põhjapoolse toa uks jäi ööseks kinni, seal ei maganud keegi.</td></tr>
+            <tr><td>R 14.03 · 11:20</td><td>Liigutasin köögi mõõteseadet korraks riiulilt tööpinna poole.</td></tr>
+            <tr><td>R 14.03 · 19:35</td><td>Valmistasime õhtusööki, praadimine ja ahjuroog, kubu töötas, aken jäi kinni.</td></tr>
+            <tr><td>R 14.03 · 23:50</td><td>Kaks inimest magasid magamistoas, uks oli kinni.</td></tr>
+            <tr><td>L 15.03 · 10:15</td><td>Tolmupühkimine ja põrandate kuiv koristus, aknaid ei avanud.</td></tr>
+            <tr><td>L 15.03 · 12:30</td><td>Lõuna valmistamine köögis, seekord kubu töötas algusest peale.</td></tr>
+            <tr><td>L 15.03 · 20:05</td><td>Külalised elutoas, kokku 5 inimest umbes kaks tundi, köögis tehti suupisteid.</td></tr>
+            <tr><td>P 16.03 · 09:40</td><td>Pikk dušš ja vannitoa uks jäi pärast seda avatuks.</td></tr>
+            <tr><td>P 16.03 · 11:30</td><td>Koristus ja põrandapesu lõhnastatud vahendiga, kõik siseuksed lahti.</td></tr>
+            <tr><td>P 16.03 · 18:20</td><td>Õhtusöök oli lihtne, pliiti kasutati vähe, köögi aken oli korraks tuulutusasendis.</td></tr>
+            <tr><td>P 16.03 · 21:50</td><td>Enne magamaminekut tuulutasin ainult elutuba, magamistuba jäi kinni.</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="report-section" id="skeem">
+    <section class="report-section metric-comparison-section" id="ruumid">
       <div class="report-section-heading">
-        <p class="eyebrow">4. Kodu skeem</p>
-        <h2>Kliendi koduskeem ja paigutus</h2>
-        <p>Klient lisas lihtsa käsijoonise ruumide kasutusest, uste tavapärasest asendist ja mõõteseadmete paigutusest. Skeem aitab tõlgendada, miks ühe ruumi tegevus võib mõjuda teise ruumi mõõtetulemustele.</p>
+        <p class="eyebrow">3. Näitajapõhised võrdlused</p>
+        <h2>Üks näitaja, kõik ruumid samal ajateljel</h2>
+        <p>Allpool on raporti põhiline analüüsikiht: iga mõõdiku puhul võrdleme kõiki mõõtepunkte samal graafikul. Nii on näha, kas muutus algab ühes ruumis, liigub teise, kattub mitmes kohas korraga või jääb ainult ühte tsooni.</p>
       </div>
 
-      <div class="home-sketch-layout">
-        <div class="home-sketch-card" aria-label="Kodu käsijoonise stiilis skeem">
-          <svg class="home-sketch" viewBox="0 0 820 520" role="img" aria-label="Digiteeritud koduskeem mõõtepunktide ja õhu liikumisega">
-            <rect x="72" y="64" width="676" height="388" rx="12" class="sketch-wall"></rect>
-            <path d="M72 232 H748 M286 64 V452 M536 64 V452 M286 302 H536" class="sketch-wall sketch-inner"></path>
-            <path d="M286 232 C314 232 330 246 338 270 M536 232 C510 232 494 248 486 272 M286 302 C314 302 330 318 338 344" class="sketch-door"></path>
-            <text x="114" y="126">Magamistuba</text>
-            <text x="330" y="126">Elutuba</text>
-            <text x="588" y="126">Köök</text>
-            <text x="112" y="364">Põhjapoolne tuba</text>
-            <text x="372" y="382">Esik</text>
-            <g class="sketch-sensor">
-              <circle cx="176" cy="174" r="18"></circle>
-              <text x="176" y="179">MP1</text>
-            </g>
-            <g class="sketch-sensor">
-              <circle cx="416" cy="176" r="18"></circle>
-              <text x="416" y="181">MP2</text>
-            </g>
-            <g class="sketch-sensor">
-              <circle cx="636" cy="178" r="18"></circle>
-              <text x="636" y="183">MP3</text>
-            </g>
-            <g class="sketch-sensor">
-              <circle cx="178" cy="384" r="18"></circle>
-              <text x="178" y="389">MP4</text>
-            </g>
-            <g class="sketch-sensor">
-              <circle cx="424" cy="398" r="18"></circle>
-              <text x="424" y="403">MP5</text>
-            </g>
-            <path d="M628 216 C594 258 534 272 472 252" class="sketch-flow"></path>
-            <path d="M188 216 C236 262 312 272 402 252" class="sketch-flow"></path>
-            <path d="M194 360 C256 330 318 326 390 358" class="sketch-flow cool"></path>
-            <text x="548" y="270" class="sketch-note">toiduvalmistamise mõju</text>
-            <text x="154" y="276" class="sketch-note">suletud ukse mõju öösel</text>
-            <text x="162" y="430" class="sketch-note">jahedam + niiskem tsoon</text>
-          </svg>
-        </div>
-        <div class="sketch-legend">
-          <article>
-            <strong>MP1-MP5</strong>
-            <p>Mõõteseadmete ligikaudne asukoht kliendi joonise põhjal.</p>
-          </article>
-          <article>
-            <strong>Oranž nool</strong>
-            <p>Õhu või tegevuse mõju liikumine teise ruumi poole, näiteks köögist elutuppa.</p>
-          </article>
-          <article>
-            <strong>Sinine nool</strong>
-            <p>Jahedama või niiskema tsooni mõju esiku kaudu ülejäänud koduga võrreldes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="report-section" id="ruumid">
-      <div class="report-section-heading">
-        <p class="eyebrow">5. Ruumipõhised andmed</p>
-        <h2>Iga mõõtepunkt eraldi</h2>
-        <p>Allpool on iga ruumi graafik tunniajase sammuga. Nupud vahetavad graafikul mõõdikut; tabeli saab avada päevakoondist tunniandmeteks ja sealt edasi 10 minuti mõõtehetkedeks. Täisandmestikus on ligikaudu iga 10 minuti järel kogutud kirjed, mida saab soovi korral CSV-na edasi analüüsida.</p>
-      </div>
-
-      <div class="room-report-grid" aria-label="Ruumipõhised graafikud ja andmetabelid">
-        <article class="room-report-card" data-room="bedroom">
-          <div class="room-card-heading">
+      <div class="metric-comparison-grid" aria-label="Näitajapõhised ruumivõrdlused">
+        <article class="metric-comparison-card" data-metric-comparison="co2">
+          <div class="metric-comparison-heading">
             <div>
-              <p class="finding-label status-warning">MP1</p>
-              <h3>Magamistuba</h3>
+              <p class="finding-label status-warning">Õhuvahetus</p>
+              <h3>CO₂ (süsihappegaas)</h3>
             </div>
-            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
+            <span>ppm</span>
           </div>
-          <p class="room-insight">Peamine tähelepanek on öine CO₂ tõus, mis tekib suletud ukse ja kahe magaja koosmõjus. Temperatuur ja niiskus olid muus osas stabiilsed.</p>
-          <div class="room-chart-controls" aria-label="Magamistoa mõõdiku valik">
-            <button type="button" class="room-chart-button is-active" data-metric="co2">CO₂</button>
-            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
-            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
-            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
-            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
-            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
-            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
-            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
-            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
+          <p class="metric-comparison-insight">CO₂ graafikul on kõige olulisem ruumide erinevus: magamistuba tõuseb suletud uksega öödel selgelt üle teiste ruumide. Hommikul ukse avamisel langeb magamistuba kiiresti, kuid esikus tekib lühike järeltõus.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="CO₂ ruumide võrdlus 7 päeva jooksul"></svg>
           </div>
-          <div class="room-chart-panel">
-            <div class="room-interactive-chart">
-              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Magamistoa interaktiivne graafik"></svg>
-              <div class="room-chart-tooltip" hidden></div>
-            </div>
-            <div class="room-chart-summary" data-room-summary></div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>Vaata, kas mõni ruum tõuseb samal ajal teistest kõrgemale ja kas see kordub sarnasel ajal. CO₂ puhul on tähtis just öine kestus, mitte ainult üks hetkeline tipp.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>Kogu kodu ei ole pidevalt halvas seisus. Peamine kitsaskoht on magamistoa öine õhuvahetus suletud uksega.</p>
+            </article>
           </div>
-          <div class="room-stat-grid" data-room-stats></div>
-          <div class="room-table-wrap" data-room-table></div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
         </article>
 
-        <article class="room-report-card" data-room="living">
-          <div class="room-card-heading">
+        <article class="metric-comparison-card" data-metric-comparison="pm1">
+          <div class="metric-comparison-heading">
             <div>
-              <p class="finding-label status-good">MP2</p>
-              <h3>Elutuba</h3>
+              <p class="finding-label status-watch">Osakesed</p>
+              <h3>PM1 (ultrapeenosakesed)</h3>
             </div>
-            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
+            <span>µg/m³</span>
           </div>
-          <p class="room-insight">Elutuba toimib võrdlusruumina: CO₂ ei püsi pikalt kõrgel ning temperatuur ja niiskus jäävad kitsasse vahemikku.</p>
-          <div class="room-chart-controls" aria-label="Elutoa mõõdiku valik">
-            <button type="button" class="room-chart-button is-active" data-metric="co2">CO₂</button>
-            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
-            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
-            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
-            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
-            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
-            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
-            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
-            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
+          <p class="metric-comparison-insight">PM1 aitab näha väga peente osakeste kiireid muutusi. Köögi tipud eristuvad praadimise ja röstsaiaga seotud hetkedel esimesena, kuid väiksem tõus on nähtav ka elutoas ja esikus.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="PM1 ruumide võrdlus 7 päeva jooksul"></svg>
           </div>
-          <div class="room-chart-panel">
-            <div class="room-interactive-chart">
-              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Elutoa interaktiivne graafik"></svg>
-              <div class="room-chart-tooltip" hidden></div>
-            </div>
-            <div class="room-chart-summary" data-room-summary></div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>PM1 puhul on olulised kitsad ja järsud tipud. Need näitavad lühikesi sündmusi, mis võivad muidu tavapärase tausttaseme sisse ära kaduda.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>Väga peened osakesed tekivad peamiselt köögis ja liiguvad väiksema mõjuna edasi. Kubu ja tuulutuse ajastus mõjutab tulemust rohkem kui ruumi püsiv seisukord.</p>
+            </article>
           </div>
-          <div class="room-stat-grid" data-room-stats></div>
-          <div class="room-table-wrap" data-room-table></div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
         </article>
 
-        <article class="room-report-card" data-room="kitchen">
-          <div class="room-card-heading">
+        <article class="metric-comparison-card" data-metric-comparison="pm25">
+          <div class="metric-comparison-heading">
             <div>
-              <p class="finding-label status-watch">MP3</p>
-              <h3>Köök</h3>
+              <p class="finding-label status-warning">Osakesed</p>
+              <h3>PM2.5 (peenosakesed)</h3>
             </div>
-            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
+            <span>µg/m³</span>
           </div>
-          <p class="room-insight">Köögis on toiduvalmistamise ajal näha lühiajalisi peenosakeste tõuse. Päevakeskmised on mõõdukad, kuid hetkelised tipud eristuvad selgelt.</p>
-          <div class="room-chart-controls" aria-label="Köögi mõõdiku valik">
-            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
-            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
-            <button type="button" class="room-chart-button is-active" data-metric="pm25">PM2.5</button>
-            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
-            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
-            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
-            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
-            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
-            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
+          <p class="metric-comparison-insight">PM2.5 näitab, kuidas toiduvalmistamisega seotud tipp tekib köögis ja kandub väiksema amplituudiga elutuppa ning esikusse. Reede õhtusöök on nädalas kõige selgem ülekande näide.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="PM2.5 ruumide võrdlus 7 päeva jooksul"></svg>
           </div>
-          <div class="room-chart-panel">
-            <div class="room-interactive-chart">
-              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Köögi interaktiivne graafik"></svg>
-              <div class="room-chart-tooltip" hidden></div>
-            </div>
-            <div class="room-chart-summary" data-room-summary></div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>Vaata, kus tipp algab ja kas teised ruumid tõusevad pärast seda väikese viitega. Kui köök tõuseb enne elutuba, on tõenäoline seos toiduvalmistamisega.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>PM2.5 probleem ei ole nädala jooksul pidev. Mõju tekib lühikestel hetkedel, eriti praadimisel, ning osa sellest jõuab avatud ühenduse kaudu elutuppa.</p>
+            </article>
           </div>
-          <div class="room-stat-grid" data-room-stats></div>
-          <div class="room-table-wrap" data-room-table></div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
         </article>
 
-        <article class="room-report-card" data-room="north">
-          <div class="room-card-heading">
+        <article class="metric-comparison-card" data-metric-comparison="pm10">
+          <div class="metric-comparison-heading">
             <div>
-              <p class="finding-label status-watch">MP4</p>
-              <h3>Põhjapoolne tuba</h3>
+              <p class="finding-label status-watch">Osakesed</p>
+              <h3>PM10 (tolm)</h3>
             </div>
-            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
+            <span>µg/m³</span>
           </div>
-          <p class="room-insight">See ruum on teistest jahedam ja niiskem. Erinevus tugevneb päevadel, mil ruumis on suurem niiskuskoormus või uks püsib pikemalt suletuna.</p>
-          <div class="room-chart-controls" aria-label="Põhjapoolse toa mõõdiku valik">
-            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
-            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
-            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
-            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
-            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
-            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
-            <button type="button" class="room-chart-button is-active" data-metric="rh">Niiskus</button>
-            <button type="button" class="room-chart-button" data-metric="temp">Temperatuur</button>
-            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
+          <p class="metric-comparison-insight">PM10 eristab suuremate osakeste ja tolmu dünaamikat. Laupäevane kuiv koristus tõstab PM10 eelkõige elutoas ja esikus, toiduvalmistamise ajal on tipp tugevam köögis.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="PM10 ruumide võrdlus 7 päeva jooksul"></svg>
           </div>
-          <div class="room-chart-panel">
-            <div class="room-interactive-chart">
-              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Põhjapoolse toa interaktiivne graafik"></svg>
-              <div class="room-chart-tooltip" hidden></div>
-            </div>
-            <div class="room-chart-summary" data-room-summary></div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>PM10 reageerib rohkem tolmule ja suurematele osakestele. Kui tõus tekib elutoas ja esikus, võib põhjus olla koristus või liikumine, mitte ainult köök.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>Kuiv koristus tõstab suuremaid osakesi teistmoodi kui toiduvalmistamine. Praktiline katse on koristuse ajal rohkem tuulutada ja vähendada tolmu üleskeeramist.</p>
+            </article>
           </div>
-          <div class="room-stat-grid" data-room-stats></div>
-          <div class="room-table-wrap" data-room-table></div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
         </article>
 
-        <article class="room-report-card" data-room="hall">
-          <div class="room-card-heading">
+        <article class="metric-comparison-card" data-metric-comparison="tvoc">
+          <div class="metric-comparison-heading">
             <div>
-              <p class="finding-label status-good">MP5</p>
-              <h3>Esik</h3>
+              <p class="finding-label status-watch">Gaasilised</p>
+              <h3>TVOC (lendühendid)</h3>
             </div>
-            <span>CO₂, PM1, PM2.5, PM10, TVOC, NOx, °C, RH, hPa</span>
+            <span>ppb</span>
           </div>
-          <p class="room-insight">Esik annab ülejäänud koduga võrreldes neutraalse vahepunkti. Sama mõõdikute komplekt aitab näha, millised muutused liiguvad ruumide vahel.</p>
-          <div class="room-chart-controls" aria-label="Esiku mõõdiku valik">
-            <button type="button" class="room-chart-button" data-metric="co2">CO₂</button>
-            <button type="button" class="room-chart-button" data-metric="pm1">PM1</button>
-            <button type="button" class="room-chart-button" data-metric="pm25">PM2.5</button>
-            <button type="button" class="room-chart-button" data-metric="pm10">PM10</button>
-            <button type="button" class="room-chart-button" data-metric="tvoc">TVOC</button>
-            <button type="button" class="room-chart-button" data-metric="nox">NOx</button>
-            <button type="button" class="room-chart-button is-active" data-metric="temp">Temperatuur</button>
-            <button type="button" class="room-chart-button" data-metric="rh">Niiskus</button>
-            <button type="button" class="room-chart-button" data-metric="hpa">hPa</button>
+          <p class="metric-comparison-insight">TVOC muutused aitavad siduda lõhnad, koristuse ja toiduvalmistamise ajaliselt ruumidega. Lõhnaküünal tõstab eelkõige elutuba, pühapäevane koristus tõstab korraga mitu ruumi.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="TVOC ruumide võrdlus 7 päeva jooksul"></svg>
           </div>
-          <div class="room-chart-panel">
-            <div class="room-interactive-chart">
-              <svg class="room-chart-svg" viewBox="0 0 720 340" role="img" aria-label="Esiku interaktiivne graafik"></svg>
-              <div class="room-chart-tooltip" hidden></div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>TVOC näitab lenduvaid lõhnu ja keemilisi ühendeid. Vaata, kas tõus on ühes ruumis või kõigis ruumides korraga.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>Ühe ruumi tõus viitab kohalikule allikale, näiteks lõhnaküünlale. Mitme ruumi korraga tõus viitab laiemale mõjule, näiteks koristusvahendile või läbi kodu liikuvale õhule.</p>
+            </article>
+          </div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
+        </article>
+
+        <article class="metric-comparison-card" data-metric-comparison="nox">
+          <div class="metric-comparison-heading">
+            <div>
+              <p class="finding-label status-watch">Gaasilised</p>
+              <h3>NOx (lämmastikoksiidid)</h3>
             </div>
-            <div class="room-chart-summary" data-room-summary></div>
+            <span>indeks</span>
           </div>
-          <div class="room-stat-grid" data-room-stats></div>
-          <div class="room-table-wrap" data-room-table></div>
+          <p class="metric-comparison-insight">NOx-indeks on taustmõõdik, mis aitab eristada gaasilisi muutusi osakeste muutustest. Kõige selgemad muutused kattuvad köögis tehtud soojade toitude ja koristusjärgse õhuliikumisega.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="NOx ruumide võrdlus 7 päeva jooksul"></svg>
+          </div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>NOx on siin abimõõdik. Seda tasub võrrelda PM ja TVOC graafikutega, et aru saada, kas muutus on seotud gaasilise koormuse, osakeste või mõlemaga.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>Kui NOx liigub koos köögi või koristuse sündmustega, aitab see kinnitada, et tegu oli kindla tegevuse mõjuga, mitte juhusliku üksiku mõõtepunktiga.</p>
+            </article>
+          </div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
+        </article>
+
+        <article class="metric-comparison-card" data-metric-comparison="temp">
+          <div class="metric-comparison-heading">
+            <div>
+              <p class="finding-label status-good">Ruumikliima</p>
+              <h3>Temperatuur</h3>
+            </div>
+            <span>°C</span>
+          </div>
+          <p class="metric-comparison-insight">Temperatuuri võrdlus näitab, et põhjapoolne tuba püsib kogu perioodi madalamal. Köögis tekivad lühikesed soojemad perioodid toiduvalmistamise ajal ning elutoas külaliste õhtul.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="Temperatuuri ruumide võrdlus 7 päeva jooksul"></svg>
+          </div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>Temperatuuri puhul vaata püsivat erinevust, mitte ainult väikest kõikumist. Kui üks ruum on terve nädala madalam, käitub ka niiskus seal teistmoodi.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>Põhjapoolne tuba ei ole lihtsalt ühel hetkel jahedam, vaid eristub püsivalt. See seletab, miks sama niiskuskoormus võib seal tunduda suurema probleemina.</p>
+            </article>
+          </div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
+        </article>
+
+        <article class="metric-comparison-card" data-metric-comparison="rh">
+          <div class="metric-comparison-heading">
+            <div>
+              <p class="finding-label status-warning">Ruumikliima</p>
+              <h3>RH (õhuniiskus)</h3>
+            </div>
+            <span>%</span>
+          </div>
+          <p class="metric-comparison-insight">Õhuniiskuse võrdlus toob välja, et põhjapoolne tuba eristub pesu kuivatamise järel ja suletud uksega ööl. Pühapäevane dušš on nähtav eelkõige esikus.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="Õhuniiskuse ruumide võrdlus 7 päeva jooksul"></svg>
+          </div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>RH ehk suhteline õhuniiskus sõltub ka temperatuurist. Seetõttu tuleb vaadata, kas niiskus püsib kõrgel kauem ja kas sama ruum on samal ajal jahedam.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>Põhjapoolse toa kõrgem RH ei tähenda ainult ühte niisket hetke. Pesu kuivatamine ja jahedam ruum loovad mustri, mis püsib kauem kui teistes ruumides.</p>
+            </article>
+          </div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
+        </article>
+
+        <article class="metric-comparison-card" data-metric-comparison="hpa">
+          <div class="metric-comparison-heading">
+            <div>
+              <p class="finding-label status-good">Tausttingimus</p>
+              <h3>hPa (õhurõhk)</h3>
+            </div>
+            <span>hPa</span>
+          </div>
+          <p class="metric-comparison-insight">Õhurõhk liigub ruumides koos ja toimib taustinfona. Kui õhurõhu jooned kattuvad, saab koduseid muutusi paremini eristada väliskeskkonna mõjust.</p>
+          <div class="metric-comparison-chart">
+            <svg class="room-chart-svg metric-comparison-svg" viewBox="0 0 920 390" role="img" aria-label="Õhurõhu ruumide võrdlus 7 päeva jooksul"></svg>
+          </div>
+          <div class="graph-explain">
+            <article>
+              <strong>Kuidas seda lugeda?</strong>
+              <p>Õhurõhk peaks kõigis ruumides liikuma peaaegu koos. Kui jooned kattuvad, näitab see, et mõõtepunktid näevad sama väliskeskkonna tausta.</p>
+            </article>
+            <article>
+              <strong>Mida sellest järeldada?</strong>
+              <p>hPa ei ole probleemikoht, vaid kontrollnäit. See aitab öelda, et CO₂, PM või TVOC erinevused tulid pigem kodustest tegevustest, mitte ilmast.</p>
+            </article>
+          </div>
+          <div class="metric-comparison-legend" data-metric-legend></div>
+          <div class="metric-comparison-summary" data-metric-summary></div>
+          <div class="metric-comparison-table" data-metric-table></div>
         </article>
       </div>
     </section>
 
     <section class="report-section" id="seosed">
       <div class="report-section-heading">
-        <p class="eyebrow">6. Ruumidevahelised seosed</p>
+        <p class="eyebrow">4. Ruumidevahelised seosed</p>
         <h2>Andmepõhine analüütika näitab, kuidas üks ruum mõjutab teist</h2>
-        <p>Lisaks ruumide eraldi graafikutele otsisime mustreid, kus ühe ruumi tegevus või kliimamuutus kordub ajaliselt teises ruumis. Seosed ei tõesta üksinda põhjuslikkust, kuid koos päeviku ja koduskeemiga aitavad need valida praktilisi katseid.</p>
+        <p>Näitajapõhiste graafikute põhjal otsisime mustreid, kus ühe ruumi tegevus või kliimamuutus kordub ajaliselt teises ruumis. Seosed ei tõesta üksinda põhjuslikkust, kuid koos päeviku ja mõõtepunktide paigutusega aitavad need valida praktilisi katseid.</p>
       </div>
 
       <div class="correlation-grid">
         <article class="correlation-card status-watch">
           <span>Köök → elutuba</span>
-          <h3>PM2.5 tõus jõuab elutuppa 20-35 minutiga</h3>
-          <p>Kolmel toiduvalmistamise õhtul tõusis köögi PM2.5 esimesena. Elutoas järgnes väiksem, kuid nähtav tõus keskmiselt 28 minutit hiljem.</p>
+          <h3>Osakeste tipp liigub avatuks jäänud ukse kaudu</h3>
+          <p>Esmaspäeva ja reede õhtusöögi ajal tõusis PM2.5/PM10 kõigepealt köögis. Elutoas järgnes väiksem tõus keskmiselt 24-32 minutit hiljem ning esikus veel madalama amplituudiga.</p>
           <dl>
-            <div><dt>Seose tugevus</dt><dd>0,72</dd></div>
-            <div><dt>Viiteaeg</dt><dd>~28 min</dd></div>
+            <div><dt>Seose tugevus</dt><dd>0,76</dd></div>
+            <div><dt>Viiteaeg</dt><dd>24-32 min</dd></div>
           </dl>
         </article>
         <article class="correlation-card status-warning">
           <span>Magamistuba → esik</span>
-          <h3>Hommikune ukse avamine kannab CO₂ esikusse</h3>
-          <p>Öise kõrge CO₂ järel langes magamistoa näit kiiresti, samal ajal tekkis esikus lühike CO₂ tõus. Muster kordus neljal hommikul.</p>
+          <h3>Hommikune ukse avamine vahetab CO₂ mustri asukohta</h3>
+          <p>Suletud uksega öödel kogunes CO₂ magamistoas. Ukse avamise järel langes magamistoa näit kiiresti, kuid esikus tekkis 5-15 minuti jooksul lühike järeltõus.</p>
           <dl>
-            <div><dt>Seose tugevus</dt><dd>0,64</dd></div>
+            <div><dt>Seose tugevus</dt><dd>0,68</dd></div>
             <div><dt>Viiteaeg</dt><dd>5-15 min</dd></div>
           </dl>
         </article>
         <article class="correlation-card status-watch">
-          <span>Põhjapoolne tuba ↔ esik</span>
-          <h3>Niiskem ja jahedam ruum mõjutab võrdluspunkti</h3>
-          <p>Päevadel, mil põhjapoolses toas kuivas pesu, tõusis esiku RH väikese viitega 2-4 protsendipunkti. Uste avatuna hoidmine vähendas erinevust.</p>
+          <span>Põhjapoolne tuba → esik</span>
+          <h3>Niiskuskoormus liigub aeglaselt</h3>
+          <p>Pesu kuivatamise õhtul tõusis põhjapoolse toa RH kõige rohkem. Esikus oli samal ajal väiksem, 1-2 tunni viitega tõus, mis viitab aeglasele õhuliikumisele ruumide vahel.</p>
           <dl>
-            <div><dt>Seose tugevus</dt><dd>0,58</dd></div>
+            <div><dt>Seose tugevus</dt><dd>0,61</dd></div>
             <div><dt>Viiteaeg</dt><dd>1-2 h</dd></div>
           </dl>
         </article>
-      </div>
-
-      <div class="correlation-timeline" aria-label="Ruumidevaheliste mõjude ajajoon">
-        <div><span>19:10</span><strong>Köök</strong><p>PM2.5 tipp praadimise ajal</p></div>
-        <div><span>19:38</span><strong>Elutuba</strong><p>Väiksem PM2.5 tõus</p></div>
-        <div><span>23:30-06:40</span><strong>Magamistuba</strong><p>CO₂ kogunemine suletud uksega</p></div>
-        <div><span>06:55</span><strong>Esik</strong><p>Lühike CO₂ tõus pärast ukse avamist</p></div>
+        <article class="correlation-card status-watch">
+          <span>Elutuba → esik</span>
+          <h3>Külaliste õhtu on näha CO₂ ja TVOC koosmustrina</h3>
+          <p>Laupäeva õhtul tõusis elutoa CO₂ ja TVOC samaaegselt. Esikus järgnes väiksem tõus, samal ajal kui magamistuba ei liikunud samas tempos.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,66</dd></div>
+            <div><dt>Viiteaeg</dt><dd>20-40 min</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-warning">
+          <span>Koristus → kõik ruumid</span>
+          <h3>TVOC tõus ei ole ühe toa probleem</h3>
+          <p>Pühapäevase lõhnastatud koristuse järel tõusis TVOC mitmes ruumis korraga. See eristub köögisündmustest, sest tõus ei alga ainult köögist ega piirdu ühe mõõtepunktiga.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,74</dd></div>
+            <div><dt>Kestus</dt><dd>2-4 h</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-good">
+          <span>Tuulutus → magamistuba/elutuba</span>
+          <h3>Läbiv tuulutus vähendab muutust kiiresti</h3>
+          <p>Neljapäeva hommikul langes CO₂ korraga magamistoas ja elutoas ning TVOC vähenes mõlemas ruumis. See näitab, et lühike läbiv tuulutus mõjutas mitut mõõtepunkti korraga.</p>
+          <dl>
+            <div><dt>Mõju tugevus</dt><dd>selge</dd></div>
+            <div><dt>Kestus</dt><dd>30-60 min</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-watch">
+          <span>Köök → esik</span>
+          <h3>Osakeste mõju jõuab esikusse nõrgemalt kui elutuppa</h3>
+          <p>Köögi PM2.5/PM10 tipud olid esikus nähtavad ainult suuremate toiduvalmistamise sündmuste järel. Esiku tõus oli madalam ja hilisem kui elutoas, mis sobib keskse vahepunkti rolliga.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,49</dd></div>
+            <div><dt>Viiteaeg</dt><dd>35-55 min</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-watch">
+          <span>Elutuba → esik</span>
+          <h3>Lõhnaküünla TVOC tõus liigub esikusse, kuid ei muutu kogu kodu sündmuseks</h3>
+          <p>Kolmapäeva õhtul eristus TVOC eelkõige elutoas. Esikus tekkis väiksem järelmuutus, kuid magamistuba ja põhjapoolne tuba ei liikunud samas tempos.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,57</dd></div>
+            <div><dt>Viiteaeg</dt><dd>25-45 min</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-good">
+          <span>Elutuba ↛ magamistuba</span>
+          <h3>Külaliste mõju ei kandunud kiiresti magamistuppa</h3>
+          <p>Laupäeva õhtul tõusis elutoa CO₂ ja TVOC, kuid magamistoa näidud ei järgnenud samas rütmis. See viitab, et magamistoa peamine probleem on öine ukse ja õhuvahetuse muster, mitte elutoa sündmused.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>nõrk</dd></div>
+            <div><dt>Tõlgendus</dt><dd>eraldi tsoon</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-good">
+          <span>Õhurõhk → kõik ruumid</span>
+          <h3>Taustanäit liigub ruumides koos</h3>
+          <p>hPa muutus kattus kõigis mõõtepunktides. See aitab eristada väliskeskkonna tausta kohalikest sündmustest: kui rõhk liigub koos, aga PM, TVOC või CO₂ mitte, on erinevus tõenäoliselt koduse tegevusega seotud.</p>
+          <dl>
+            <div><dt>Kattuvus</dt><dd>väga tugev</dd></div>
+            <div><dt>Roll</dt><dd>kontrollnäit</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-watch">
+          <span>Põhjapoolne tuba ↔ esik</span>
+          <h3>Temperatuuri ja RH seos selgitab niiskuse püsimist</h3>
+          <p>Põhjapoolne tuba oli esikust jahedam. Kui RH tõusis selles toas, ei langenud see sama kiiresti kui esikus, mis viitab sellele, et madalam temperatuur ja piiratum õhuliikumine hoiavad niiskusmustrit kauem nähtavana.</p>
+          <dl>
+            <div><dt>Seose tugevus</dt><dd>0,64</dd></div>
+            <div><dt>Kestus</dt><dd>3-6 h</dd></div>
+          </dl>
+        </article>
+        <article class="correlation-card status-good">
+          <span>Tuulutus → PM/TVOC</span>
+          <h3>Tuulutus aitab gaasilistel ja osakeste muutustel erineva kiirusega langeda</h3>
+          <p>Hommikuse tuulutuse järel langes CO₂ kiiresti, samas kui TVOC ja niiskus taandusid aeglasemalt. See eristab kiiret õhuvahetuse efekti aeglasemast pindade, niiskuskoormuse ja lõhnaallikate mõjust.</p>
+          <dl>
+            <div><dt>Mõju CO₂-le</dt><dd>kiire</dd></div>
+            <div><dt>Mõju TVOC/RH-le</dt><dd>aeglasem</dd></div>
+          </dl>
+        </article>
       </div>
     </section>
 
     <section class="report-section" id="leiud">
       <div class="report-section-heading">
-        <p class="eyebrow">7. Põhileiud</p>
-        <h2>Ajajooned ja tõlgendus</h2>
+        <p class="eyebrow">5. Põhileiud</p>
+        <h2>Ajajooned, sündmused ja tõlgendus</h2>
       </div>
 
       <article class="finding-section">
         <div class="finding-copy">
           <p class="finding-label status-warning">Leid 1</p>
-          <h3>Magamistoa CO₂ tõuseb öösiti korduvalt</h3>
-          <p>Magamistoa päevased CO₂ näidud olid enamasti tavapärased, kuid öösel suletud uksega tõusis CO₂ järjepidevalt. Kõrgeim mõõdetud hetkeline väärtus oli 1680 ppm, öine mediaan 1260 ppm. Kõige madalamad öised väärtused olid nendel öödel, mil uks jäi poolavatuks.</p>
+          <h3>Magamistoa CO₂ sõltub ukse ja tuulutuse kasutusest</h3>
+          <p>Magamistoa päevased CO₂ näidud olid enamasti tavapärased, kuid suletud uksega öödel tõusis CO₂ selgelt üle ülejäänud kodu. Kõrgeim tunnipunkt tekkis öösel pärast seda, kui klient märkis päevikusse “uks oli kinni”. Öödel, mil enne magamaminekut tuulutati või uks jäi praokile, oli sama ruumi CO₂ madalam ja langes hommikul kiiremini.</p>
           <ul class="report-bullets">
-            <li>Korduvus: jah, 5 ööl 7-st.</li>
-            <li>Tõenäoline seos: magamine suletud uksega ja piiratud õhuvahetus.</li>
-            <li>Esmane proov: hoida uks praokil või kasutada olemasolevat tuulutusvõimalust.</li>
+            <li>Korduvus: tugev, 4 ööl 7-st oli öine tõus selgelt eristatav.</li>
+            <li>Ruumidevaheline muster: hommikul ukse avamisel ilmub CO₂ lühike tõus esikus.</li>
+            <li>Praktiline tõlgendus: probleem ei ole kogu korteri püsiv CO₂ tase, vaid magamistoa öine õhuvahetus.</li>
           </ul>
         </div>
         <div class="report-chart-card">
@@ -532,19 +620,23 @@
               <text x="668" y="276">P</text>
             </g>
           </svg>
-          <p class="chart-caption">Oranž ala tähistab perioode, kus näit vajab tähelepanu õhuvahetuse või kasutusharjumuste seisukohalt.</p>
+          <p class="chart-caption">Kõrged öised perioodid kattuvad päeviku märkmetega suletud ukse kohta; hommikune langus kattub ukse avamise või tuulutusega.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Kui magamistoa uks on öösel kinni, koguneb CO₂ mitmeks tunniks. See ei ütle, et kogu kodu õhk oleks halb, vaid et magamistoas tasub öösel õhu liikumist parandada.</p>
+          </div>
         </div>
       </article>
 
       <article class="finding-section">
         <div class="finding-copy">
           <p class="finding-label status-watch">Leid 2</p>
-          <h3>Köögi PM2.5 tipud on lühikesed, kuid selgelt tegevustega seotud</h3>
-          <p>Köögis püsis PM2.5 tausttase enamasti 3-8 µg/m³ juures. Tipud tekkisid peamiselt praadimise ja ahju kasutamise ajal. Kõrgeim hetkeline näit oli 74 µg/m³, kuid tase langes tavaliselt 45-70 minutiga tagasi tavapärasele tasemele.</p>
+          <h3>Köögi osakeste tipud on lühikesed ja liiguvad nõrgemalt edasi</h3>
+          <p>Köögis püsis PM2.5 tausttase madalal, kuid praadimise, ahju kasutamise ja röstsaia tegemise ajal tekkisid lühikesed tipud. Sama sündmuse järel tekkis elutoas väiksem tõus ja esikus veel nõrgem muutus, mis viitab sellele, et avatud uksega liigub osa koormusest kodus edasi.</p>
           <ul class="report-bullets">
-            <li>Korduvus: jah, toiduvalmistamise sündmustega seotud.</li>
-            <li>Tõenäoline seos: praadimine, kubu kasutamise aeg ja akna avamise hetk.</li>
-            <li>Esmane proov: käivitada kubu enne praadimist ja hoida seda töös 15-20 minutit pärast lõpetamist.</li>
+            <li>Korduvus: tugev esmaspäeva ja reede õhtusöögi ajal, nõrgem kolmapäeva hommikul.</li>
+            <li>Viiteaeg: elutoa muutus järgnes köögile ligikaudu 24-32 minutiga.</li>
+            <li>Praktiline tõlgendus: kubu käivitamise aeg ja ukse/akna kasutus mõjutavad, kui palju osakesi jõuab teistesse ruumidesse.</li>
           </ul>
         </div>
         <div class="report-chart-card">
@@ -576,19 +668,23 @@
               <text x="668" y="276">P</text>
             </g>
           </svg>
-          <p class="chart-caption">Tipud on lühikesed ega paistaks välja, kui mõõta ainult juhuslikul hetkel.</p>
+          <p class="chart-caption">Tipud on lühikesed ja sündmusepõhised; juhuslik üksikmõõtmine võiks need täielikult vahele jätta.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Köögi osakeste probleem tekib lühikeste tippudena, mitte terve päeva kestva kõrge tasemena. Kõige mõistlikum on muuta just praadimise ja ahju kasutamise hetki.</p>
+          </div>
         </div>
       </article>
 
       <article class="finding-section">
         <div class="finding-copy">
           <p class="finding-label status-watch">Leid 3</p>
-          <h3>Põhjapoolne tuba on jahedam ja niiskem</h3>
-          <p>Põhjapoolses toas oli keskmine temperatuur 19,4 °C ja öine suhteline õhuniiskus tõusis mitmel korral 63-68% vahemikku. Muster oli selgem nendel päevadel, mil toas kuivas pesu või uks oli pikemalt suletud.</p>
+          <h3>Põhjapoolne tuba on jahedam ja niiskuse suhtes tundlikum</h3>
+          <p>Põhjapoolses toas oli temperatuur kogu nädala jooksul madalam kui elutoas. Sama absoluutne niiskuskoormus annab jahedamas ruumis kõrgema RH näidu, mistõttu pesu kuivatamise ja suletud ukse mõju paistab selles ruumis selgemalt välja.</p>
           <ul class="report-bullets">
-            <li>Korduvus: mõõdukas, tugevam niiskuskoormusega päevadel.</li>
-            <li>Tõenäoline seos: madalam temperatuur, piiratud õhuliikumine ja niiskusallikas.</li>
-            <li>Esmane proov: vältida pesu kuivatamist selles toas ja parandada õhu liikumist.</li>
+            <li>Korduvus: mõõdukas, kuid hästi seotud pesu kuivatamise ja suletud uksega.</li>
+            <li>Ruumidevaheline muster: esikus tõusis RH väiksema amplituudiga 1-2 tundi hiljem.</li>
+            <li>Praktiline tõlgendus: ruum vajab eelkõige niiskuskoormuse ja õhuliikumise juhtimist, mitte ainult temperatuuri tõstmist.</li>
           </ul>
         </div>
         <div class="report-chart-card">
@@ -617,122 +713,210 @@
             </g>
           </svg>
           <p class="chart-caption">Roheline joon: RH%. Sinine katkendjoon: temperatuur samale graafikule skaleerituna.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Jahedamas ruumis võib suhteline õhuniiskus püsida kõrgem ka siis, kui niiskusallikas ei ole suur. Pesu kuivatamine teeb selle ruumi mustri selgelt nähtavamaks.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-warning">Leid 4</p>
+          <h3>TVOC tõusud eristavad lõhnaallikaid ja koristust</h3>
+          <p>TVOC ei käitunud nagu osakesed. Lõhnaküünla ajal oli tõus peamiselt elutoas, köögisündmustel köögis ja pühapäevase koristuse ajal korraga mitmes ruumis. See aitab eristada lokaalse lõhnaallika laiemast keemilisest koormusest.</p>
+          <ul class="report-bullets">
+            <li>Korduvus: nähtav kolmapäeva õhtul, reede õhtul ja pühapäeva koristuse ajal.</li>
+            <li>Ruumidevaheline muster: koristuse järel tõusis TVOC elutoas, esikus, köögis ja mõlemas toas.</li>
+            <li>Praktiline tõlgendus: lõhnastatud puhastusvahend mõjutab kogu kodu õhku rohkem kui üksik köögisündmus.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>TVOC sündmuste tõlgendus</h4>
+          <div class="report-table-wrap">
+            <table class="report-table compact">
+              <thead>
+                <tr><th>Sündmus</th><th>Peamine ruum</th><th>Muster</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Lõhnaküünal</td><td>Elutuba</td><td>Lokaalne tõus, nõrgem levik esikusse.</td></tr>
+                <tr><td>Õhtusöök</td><td>Köök</td><td>TVOC ja osakesed liiguvad koos.</td></tr>
+                <tr><td>Koristus</td><td>Kogu kodu</td><td>Mitme ruumi samaaegne TVOC tõus.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="chart-caption">TVOC graafikut tuleb lugeda koos päevikuga, sest sama näit võib tulla väga erinevatest allikatest.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Kui TVOC tõuseb ainult ühes ruumis, otsime kohalikku allikat. Kui tõus on mitmes ruumis korraga, on mõistlik mõelda koristusele, lõhnastatud vahenditele või õhu liikumisele kogu kodus.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-watch">Leid 5</p>
+          <h3>Külaliste õhtu tõstis elutoa CO₂ ja TVOC taset</h3>
+          <p>Laupäeva õhtul viibis elutoas viis inimest umbes kaks tundi. Sel ajal tõusis elutoa CO₂, temperatuur ja TVOC korraga, kuid osakeste tipp jäi väiksemaks kui köögi praadimise ajal. See viitab pigem inimeste kohalolule ja suupistete valmistamisele kui suurele osakeste allikale.</p>
+          <ul class="report-bullets">
+            <li>Korduvus: üks selge sündmus, kuid mitme näitaja koosmuster on tugev.</li>
+            <li>Ruumidevaheline muster: esikus on sama sündmuse järel väiksem CO₂ ja TVOC tõus.</li>
+            <li>Praktiline tõlgendus: külaliste ajal piisab sageli lühikesest õhuvahetuse suurendamisest enne ja pärast koosviibimist.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>Külaliste õhtu</h4>
+          <div class="report-table-wrap">
+            <table class="report-table compact">
+              <thead>
+                <tr><th>Näitaja</th><th>Elutuba</th><th>Esik</th><th>Tõlgendus</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>CO₂</td><td>selge tõus</td><td>väiksem tõus</td><td>inimeste arv ja piiratud õhuvahetus</td></tr>
+                <tr><td>TVOC</td><td>selge tõus</td><td>väiksem tõus</td><td>suupisted, lõhnad ja õhu liikumine</td></tr>
+                <tr><td>PM2.5</td><td>väike tõus</td><td>nõrk tõus</td><td>ei olnud peamine probleem</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="chart-caption">Mitme näitaja kooslugemine aitab eristada inimeste kohalolu köögis tekkivast osakeste tipust.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Külaliste ajal on normaalne, et CO₂ ja temperatuur tõusevad. Probleemiks muutub see siis, kui tase püsib kaua kõrgel või ruumi ei tuulutata pärast sündmust.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-good">Leid 6</p>
+          <h3>Õhurõhk kinnitab, et ruumierinevused ei tule ilmast</h3>
+          <p>Õhurõhu jooned kattusid kõigis mõõtepunktides. See on kasulik kontrollnäit: kui hPa liigub ruumides koos, kuid CO₂, PM või TVOC liiguvad eri ruumides erinevalt, on tõenäolisem, et muutus on seotud koduse tegevuse, ruumi kasutuse või õhu liikumisega.</p>
+          <ul class="report-bullets">
+            <li>Korduvus: hPa kõverad kattusid kogu nädala jooksul.</li>
+            <li>Tõlgendus: rõhumuutus on väliskeskkonna taust, mitte ühe ruumi probleem.</li>
+            <li>Praktiline väärtus: aitab vältida valede järelduste tegemist üksiku ruumi kohta.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>Taustanäidu roll raportis</h4>
+          <p class="chart-caption">hPa ei anna kodu kohta eraldi soovitust, kuid aitab kontrollida, kas ruumide erinevused on sisemiste sündmuste või laiema tausta mõjul.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Õhurõhk on raportis nagu kontrollküsimus: kas kõik seadmed näevad sama tausta? Kui jah, saame ruumide erinevusi usaldusväärsemalt seostada koduste tegevustega.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-good">Leid 7</p>
+          <h3>Argipäeva ja nädalavahetuse rütm on mõõteandmetes nähtav</h3>
+          <p>Argipäevadel langesid elutoa ja köögi CO₂ ning TVOC tasemed päevasel ajal madalamale, mis sobib päevikuga: kodu oli suure osa päevast tühjem. Nädalavahetusel oli tausttase ühtlasem ja laupäeva õhtul eristus külaliste sündmus. See on oluline, sest kõik tõusud ei tähenda probleemi; osa neist kirjeldab normaalset kodu kasutust.</p>
+          <ul class="report-bullets">
+            <li>Korduvus: argipäevane madalam päevatase ja õhtune tõus kordusid mitmel päeval.</li>
+            <li>Tõlgendus: kodusoleku rütm mõjutab eriti CO₂, TVOC ja temperatuuri.</li>
+            <li>Praktiline väärtus: soovitusi tuleb anda kasutusmustri, mitte üksiku tipu põhjal.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>Tavaline rütm vs erandlik sündmus</h4>
+          <div class="report-table-wrap">
+            <table class="report-table compact">
+              <thead>
+                <tr><th>Muster</th><th>Andmetes nähtav</th><th>Tõlgendus</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Argipäeva päev</td><td>madalam CO₂/TVOC</td><td>kodu on osaliselt tühi</td></tr>
+                <tr><td>Õhtune aeg</td><td>CO₂ ja temperatuur tõusevad</td><td>pere on kodus</td></tr>
+                <tr><td>Külalised</td><td>elutoa CO₂ ja TVOC eristuvad</td><td>ajutine suurem koormus</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="chart-caption">Raportis käsitleme korduvaid ja ruumidevahelisi mustreid eraldi tavapärasest kodusoleku rütmist.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Kõik tõusud ei ole halvad märgid. Mõned tõusud lihtsalt näitavad, millal inimesed on kodus, teevad süüa või võtavad külalisi vastu.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="finding-section">
+        <div class="finding-copy">
+          <p class="finding-label status-watch">Leid 8</p>
+          <h3>Andmekvaliteedi märkus ei muuda põhijäreldusi</h3>
+          <p>Köögis oli 14.03 kell 11:20-12:05 lühike märgitud andmelünk, sest seadet liigutati ajutiselt. See periood ei kattu peamiste köögi osakeste tippudega ega ole kasutatud köögi põhijärelduse tegemiseks. Andmestikus on sellised kohad eraldi märgitud, et CSV-d edasi kasutades ei käsitletaks neid tavapäraste mõõtepunktidena.</p>
+          <ul class="report-bullets">
+            <li>Kestus: ligikaudu 45 minutit kogu 7-päevasest mõõteperioodist.</li>
+            <li>Mõju: ei kattu peamiste õhtusöögi ega koristuse sündmustega.</li>
+            <li>Praktiline väärtus: raport eristab mõõteandmeid, päevikusündmusi ja kvaliteedimärkusi.</li>
+          </ul>
+        </div>
+        <div class="report-chart-card">
+          <h4>Kvaliteedikontroll</h4>
+          <p class="chart-caption">Kvaliteedimärkustega read jäävad CSV-s alles läbipaistvuse jaoks, kuid tõlgenduses neid ei käsitleta samamoodi nagu tavapärast mõõtevoogu.</p>
+          <div class="chart-plain-note">
+            <strong>Lihtne tõlgendus</strong>
+            <p>Kui seadet liigutati või andmes on lühike katkestus, märgime selle ära. Nii ei tee raport juhuslikust tehnilisest hetkest sisekliima järeldust.</p>
+          </div>
         </div>
       </article>
     </section>
 
-    <section class="report-section">
-      <div class="report-section-heading">
-        <p class="eyebrow">8. Ruumide võrdlus</p>
-        <h2>Nädala koondnäitajad</h2>
-      </div>
-      <div class="report-table-wrap">
-        <table class="report-table compact">
-          <thead>
-            <tr>
-              <th>Ruum</th>
-              <th>CO₂ mediaan</th>
-              <th>CO₂ max</th>
-              <th>Temp keskm.</th>
-              <th>RH keskm.</th>
-              <th>Tõlgendus</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Magamistuba</td>
-              <td>890 ppm</td>
-              <td>1680 ppm</td>
-              <td>20,3 °C</td>
-              <td>48%</td>
-              <td>Öine CO₂ vajab tähelepanu.</td>
-            </tr>
-            <tr>
-              <td>Elutuba</td>
-              <td>650 ppm</td>
-              <td>980 ppm</td>
-              <td>21,4 °C</td>
-              <td>43%</td>
-              <td>Stabiilne võrdlusruum.</td>
-            </tr>
-            <tr>
-              <td>Köök</td>
-              <td>710 ppm</td>
-              <td>1090 ppm</td>
-              <td>21,1 °C</td>
-              <td>45%</td>
-              <td>PM-tipud toiduvalmistamisel.</td>
-            </tr>
-            <tr>
-              <td>Põhjapoolne tuba</td>
-              <td>720 ppm</td>
-              <td>1040 ppm</td>
-              <td>19,4 °C</td>
-              <td>57%</td>
-              <td>Jahedam ja niiskem ruum.</td>
-            </tr>
-            <tr>
-              <td>Esik</td>
-              <td>-</td>
-              <td>-</td>
-              <td>20,8 °C</td>
-              <td>46%</td>
-              <td>Neutraalne vahepunkt.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
     <section class="report-section" id="soovitused">
       <div class="report-section-heading">
-        <p class="eyebrow">9. Soovitused</p>
-        <h2>Praktiline tegevusplaan</h2>
+        <p class="eyebrow">6. Soovitused</p>
+        <h2>Andmepõhine tegevusplaan</h2>
       </div>
       <div class="action-plan">
         <article>
           <span>1</span>
-          <h3>Testi magamistoa õhuvahetust</h3>
-          <p>Hoia 7 öö jooksul magamistoa uks praokil või kasuta olemasolevat tuulutusasendit. Kui võimalik, väldi samal ajal mitme muu harjumuse muutmist, et mõju oleks paremini võrreldav.</p>
+          <h3>Muuda magamistoa öist õhu liikumist kontrollitult</h3>
+          <p>CO₂ tõus eristus ainult suletud uksega öödel. Tee 7 öö jooksul üks selge katse: hoia uks praokil või kasuta olemasolevat tuulutusasendit. Ära muuda samal ajal teisi magamisharjumusi, et mõju oleks võrreldav.</p>
         </article>
         <article>
           <span>2</span>
-          <h3>Muuda köögi kasutusharjumust</h3>
-          <p>Käivita kubu enne praadimist, kasuta kõrgemat astet rasvasema toidu puhul ja jäta kubu tööle vähemalt 15-20 minutiks pärast toiduvalmistamist.</p>
+          <h3>Käivita kubu enne kuuma panni ja hoia seda kauem töös</h3>
+          <p>PM2.5/PM10 tipud algasid köögist ja jõudsid nõrgemalt elutuppa. Käivita kubu 3-5 minutit enne praadimist, kasuta kõrgemat astet ning jäta kubu tööle 15-20 minutiks pärast lõpetamist.</p>
         </article>
         <article>
           <span>3</span>
-          <h3>Vähenda põhjapoolse toa niiskuskoormust</h3>
-          <p>Väldi pesu kuivatamist selles ruumis, hoia ust rohkem avatuna ja jälgi, kas RH langeb alla 60% ka jahedamatel öödel.</p>
+          <h3>Ära kuivata pesu põhjapoolses toas suletud uksega</h3>
+          <p>RH tõus oli selles ruumis kõige selgem pesu kuivatamise järel. Kui pesu tuleb kodus kuivatada, eelista avatud uksega ruumi, suuremat õhuliikumist või lühemat kuivatamise perioodi. Kontrolli, kas RH püsib seejärel alla 60%.</p>
         </article>
         <article>
           <span>4</span>
-          <h3>Tee kordusmõõtmine pärast muudatusi</h3>
-          <p>Kui muudatused on 2-4 nädalat kasutuses olnud, on mõistlik teha lühike kordusmõõtmine samades ruumides ja võrrelda ajajooni.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="report-section">
-      <div class="report-section-heading">
-        <p class="eyebrow">10. Tõlgendamise raam</p>
-        <h2>Kuidas numbreid lugeda</h2>
-      </div>
-      <div class="interpretation-grid">
-        <article>
-          <h3>CO₂</h3>
-          <p>CO₂ ei kirjelda kogu õhukvaliteeti, kuid on praktiline õhuvahetuse ja ruumi kasutuse indikaator. Raportis on rõhk korduvatel tõusudel, nende kestusel ja ruumide võrdlusel.</p>
-          <a href="https://www.ashrae.org/file%20library/about/government%20affairs/public%20policy%20resources/briefs/indoor-carbon-dioxide-ventilation-and-indoor-air-quality_2023.pdf">ASHRAE CO₂ selgitus</a>
+          <h3>Kasuta lõhnastatud koristusvahendeid koos tuulutusega</h3>
+          <p>Pühapäevase koristuse järel tõusis TVOC mitmes ruumis korraga. Kui kasutad lõhnastatud või tugevama lõhnaga vahendeid, tee koristuse ajal ja järel lühike läbiv tuulutus ning väldi magamistoa ukse sulgemist kohe pärast koristust.</p>
         </article>
         <article>
-          <h3>PM2.5 / PM10</h3>
-          <p>Peenosakeste puhul vaatame nii taustataset kui ka lühiajalisi tippe. WHO õhukvaliteedi juhised annavad tervisekaitselise taustaraami, kuid kodune sensoruuring ei ole ametlik vastavushinnang.</p>
-          <a href="https://www.who.int/publications/i/item/9789240034228">WHO õhukvaliteedi juhised</a>
+          <span>5</span>
+          <h3>Planeeri külaliste ajal õhuvahetus ette</h3>
+          <p>Laupäeva õhtul tõusid elutoas CO₂, TVOC ja temperatuur koos. Enne külalisi tuuluta elutuba, koosviibimise ajal ava vahepeal aken või kasuta sundventilatsiooni suuremat astet ning tuuluta 10-15 minutit pärast külaliste lahkumist.</p>
         </article>
         <article>
-          <h3>Õhuniiskus</h3>
-          <p>Suhteline õhuniiskus sõltub temperatuurist, niiskusallikatest ja õhu liikumisest. Käesolevas raportis on tähelepanu ruumidel, kus niiskus püsib kõrgem pikema aja jooksul.</p>
-          <a href="https://www.ashrae.org/file%20library/technical%20resources/covid-19/i-p_s16_ch22humidifiers.pdf">ASHRAE niiskuse materjal</a>
+          <span>6</span>
+          <h3>Hoia köögi ja elutoa vahel õhu liikumine teadlikult juhituna</h3>
+          <p>Avatud köögiuksega jõudsid osakesed elutuppa väikese viitega. Kui toiduvalmistamine on intensiivne, tasub ajutiselt vähendada köögist elutuppa liikuvat õhuvoolu või suunata õhk esmalt välja, mitte läbi elutoa.</p>
+        </article>
+        <article>
+          <span>7</span>
+          <h3>Kasuta päevikut ka järgmise katse ajal</h3>
+          <p>Selle raporti kõige kasulikumad järeldused tekkisid mõõteandmete ja päeviku kokkupanekust. Järgmise katse ajal märgi üles ainult olulised muutused: uks kinni/lahti, tuulutus, söögitegemine, koristus, pesu kuivatamine ja külalised.</p>
+        </article>
+        <article>
+          <span>8</span>
+          <h3>Tee kordusmõõtmine sama ruumiplaaniga</h3>
+          <p>Kui muudatused on 2-4 nädalat kasutuses olnud, tee kordusmõõtmine samades mõõtepunktides. Võrdle eelkõige magamistoa öist CO₂, köögi PM2.5 tippude kestust, põhjapoolse toa RH taset ja koristusejärgset TVOC langemisaega.</p>
+        </article>
+        <article>
+          <span>9</span>
+          <h3>Erista tavapärane kodurütm päris probleemist</h3>
+          <p>Õhtune CO₂ või TVOC tõus ei ole automaatselt probleem, kui see langeb kiiresti ja ei kordu pikalt. Keskendu mustritele, mis püsivad mitu tundi, korduvad sarnasel kujul või liiguvad ühest ruumist teise nii, et mõjutavad igapäevast kasutust.</p>
+        </article>
+        <article>
+          <span>10</span>
+          <h3>Jälgi andmekvaliteedi märkusi ka CSV kasutamisel</h3>
+          <p>Kui andmestikku kasutatakse hiljem eraldi analüüsiks, filtreeri välja või märgi eraldi read, millel on kvaliteedimärkus. Nii ei teki näiteks köögi seadme ajutisest ümberpaigutamisest ekslikku järeldust.</p>
         </article>
       </div>
     </section>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sisekliimauuring.ee - näidisandmestik</title>
+  <meta name="description" content="Näidisraporti juurde kuuluv CSV-laadne sisekliima mõõteandmestik 10 minuti sammuga.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sample-report-page dataset-page">
+  <button class="sample-back-floating" type="button" data-sample-back aria-label="Tagasi eelmisele lehele">
+    <span aria-hidden="true">&lt;</span>
+    Tagasi
+  </button>
+
+  <main class="sample-report-shell">
+    <section class="sample-cover dataset-cover">
+      <div class="sample-report-topbar">
+        <a class="brand bmc-brand" href="index.html" aria-label="Tagasi avalehele">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-roof"></span>
+            <span class="brand-house">
+              <span class="brand-sensor"></span>
+            </span>
+          </span>
+          <span>
+            <span class="brand-name">sisekliimauuring.ee</span>
+          </span>
+        </a>
+        <nav class="sample-report-nav" aria-label="Andmestiku navigatsioon">
+          <a href="index.html#raport">Avaleht</a>
+          <a href="sample-report.html">Näidisraport</a>
+          <a href="#andmestik">Andmestik</a>
+        </nav>
+      </div>
+
+      <div class="sample-cover-intro">
+        <p class="eyebrow">CSV-andmestiku näidis</p>
+        <h1>10 minuti mõõteandmed</h1>
+        <p class="sample-lead">See leht näitab, millise detailse andmestiku klient raporti kõrvale saab. Tabelis on iga mõõtepunkti ligikaudu 10 minuti sammuga read, kõik samad näitajad, kliendi päeviku põhjal lisatud sündmuse kontekst ning andmekvaliteedi märkus.</p>
+      </div>
+    </section>
+
+    <section class="report-section" id="andmestik">
+      <div class="dataset-heading">
+        <div class="report-section-heading">
+          <p class="eyebrow">Täisandmestik</p>
+          <h2>CSV-laadne vaade kõikidele mõõtmistele</h2>
+          <p>Tabel on mõeldud andmete kontrollimiseks, filtreerimiseks või edasi töötlemiseks. Sündmuse konteksti veerg aitab siduda mõõtehetki koduste tegevustega ning andmekvaliteedi märkus näitab, kas konkreetset rida tuleb tõlgendada ettevaatusega.</p>
+        </div>
+        <div class="dataset-actions">
+          <span data-dataset-count>Andmestik laadib</span>
+          <button class="button button-primary" type="button" data-download-csv>Laadi CSV alla</button>
+        </div>
+      </div>
+
+      <div class="dataset-table-wrap" data-sample-dataset aria-label="CSV-laadne näidisandmestik">
+        <p>Andmestik laadib...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
